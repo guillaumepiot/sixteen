@@ -1,0 +1,194 @@
+@import "../settings";
+@import "util";
+@import "mixin";
+
+/**
+ * Modal
+ *
+ *
+ * <div class="modal">
+ *     <div class="modal__wrapper modal__wrapper--small">
+ *         <div class="modal__content">
+ *             <div class="modal__header">
+ *                 <h3>Modal title</h3>
+ *             </div>
+ *             <div class="modal__body">
+ *                 Modal body
+ *             </div>
+ *             <div class="modal__footer">
+ *                 <button class="btn btn--primary">Save</button>
+ *                 <button class="btn">Cancel</button>
+ *             </div>
+ *         </div>
+ *         <div class="modal__sub-footer text-center">
+ *             <button class="btn btn--primary btn--full-width btn--large btn--margin-bottom">Sign up free</button>
+ *             <p class="small text-grey-light">Already have an account? <a href="">Sign in</a></p>
+ *         </div>
+ *     </div>
+ * </div>
+ *
+ */
+
+.modal{
+    
+
+    &__wrapper{
+        @include position(absolute, 0 null null 0);
+        z-index: 101;
+
+        width: 100%;
+        height: 100%;
+
+        @include media($tablet) {
+            height: auto;
+            max-height: 500px;
+
+            left: 50%;
+            top: 10%;
+
+            width: 540px;
+            margin-left: -270px;
+        }
+
+        @include media($mobile) {
+            padding-top: calc-em($vertical_padding);
+        }
+
+        &--small{
+            @include media($tablet) {
+                width: 360px;
+                margin-left: -160px;
+            }
+        }
+        
+        
+    }
+    &__content{
+        background-color: $modal_content_bg;
+
+        @include media($tablet) {
+            height: auto;
+            border-radius: $border-radius;
+        }
+    }
+    &__pre-header{
+        padding: calc-em($vertical_padding) calc-em($horizontal_padding);
+        @include media($tablet) {
+            padding: calc-em($vertical_padding) 0;
+        }
+    }
+
+    &__header{
+        h3{
+            margin:0;
+        }
+        padding: calc-em($vertical_padding) calc-em($horizontal_padding) * 2;
+
+        background-color: $modal_header_bg;
+
+        @include media($tablet) {
+            @include border-top-radius($border-radius);
+        }
+    }
+    &__body{
+        padding: 0 calc-em($horizontal_padding);
+        @include media($tablet) {
+            padding: calc-em($vertical_padding) calc-em($horizontal_padding * 2);
+        }
+    }
+    &__footer{
+        position: absolute;
+        bottom:0;
+
+        width: 100%;
+
+        padding: calc-em($vertical_padding) calc-em($horizontal_padding * 2);
+
+        background-color: $modal_footer_bg;
+
+        @include media($tablet) {
+            position: relative;
+
+            @include border-bottom-radius($border-radius);
+        }
+    }
+    &__sub-footer{
+        padding: 0 calc-em($horizontal_padding) calc-em($vertical_padding) calc-em($horizontal_padding);
+        @include media($tablet) {
+            position: relative;
+            padding: calc-em($vertical_padding) 0;
+        }
+    }
+
+    &__close{
+        width: calc-em($font_size * 3);
+        height: calc-em($font_size * 3);
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;//calc-em($horizontal_padding);
+        z-index: 102;
+
+        // background-color: $grey--dark;
+
+        @include transition(background-color 0.2s ease-in-out);
+
+        &:after{
+            content: "×";
+            display: block;
+            color: $grey;
+            font-size: calc-em($font_size * 2);
+            text-align: center;
+            position: relative;
+            top: 50%;
+            margin-top: - calc-em($font_size / 2);
+        }
+        &:hover{
+            // background-color: ligthen($grey--dark, 5%);
+            &:after{
+                color: $cyan;
+            }
+
+        }
+
+        @include media($tablet) {
+            &:after{
+                color: #fff;;
+            }
+        }
+    }
+    &:after{
+        content: '';
+        position: fixed;
+        
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        z-index: 100;
+
+        @include media($tablet) {
+            background-color: rgba(0,0,0,0.7);
+        }
+        @include media($mobile) {
+            background-color: #fff;
+        }
+    }
+
+    // Make modal full screen
+
+    &--full-screen{
+        .modal__content{
+            background-color: transparent;
+        }
+        @include media($tablet) {
+            .modal__body{
+                padding: 0;
+            }
+        }
+        &:after{
+            background-color: #fff;
+        }
+    }
+}

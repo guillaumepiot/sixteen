@@ -1,0 +1,116 @@
+@import "../settings";
+
+/**
+ * Text
+ *
+ */
+
+h1, h2, h3, p {
+margin: 0;
+}
+
+hr {
+    border-bottom: 1px solid $grey--light;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: $vertical_padding 0;
+}
+
+p {
+    color: $font_color;
+    line-height: $base-line-height;
+    font-size: $font_size;
+}
+
+a{
+    color: $font_color--primary;
+    text-decoration: none;
+    &:hover{
+        color: lighten($font_color--primary, 3%);
+    }
+}
+
+h1 {
+    font-family: $font_family--heading;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+
+    @include media($mobile) {
+        font-size: 2.6em;
+    }
+}
+
+h2 {
+    font-family: $font_family--heading;
+    font-size: 1.6em;
+    font-weight: 400;
+    line-height: 2.0em;
+    margin-bottom: 1.1em;
+
+    @include media($mobile) {
+        font-size: 1.3em;
+    }
+}
+
+h3 {
+    font-family: $font_family--heading;
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 1.8em;
+    margin-bottom: 0.4em;
+}
+
+p {
+    font-family: $font_family--primary;
+    font-size: 1.05em;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+
+    &.small{
+        font-size: calc-em($font_size--small);
+    }
+}
+
+code {
+    background: #F7F7F7;
+    border-radius: $border-radius * 1.5;
+    border: 1px solid #E0E0E0;
+    font-size: 0.7em;
+    font-style: normal;
+    padding: 0.1em 0.4em;
+    white-space: nowrap;
+}
+
+hr {
+    width: 3em;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-grey-light{
+    color: $font_color--light;
+}
+
+.text-grey{
+    color: $grey--medium;
+}
+
+.text-cyan{
+    color: $cyan;
+}
+
+.text-strong{
+    font-weight: 700;
+}

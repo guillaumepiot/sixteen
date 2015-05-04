@@ -1,0 +1,31 @@
+/** ---- GRID ----
+ * CSS styles used to format grid layouts.
+ */
+
+/*
+----
+HTML EXAMPLE:
+----
+<div class="grid  span-8  rigid  collapse">
+    <div class="col-2">
+        COLUMN 1
+    </div>
+    
+    <div class="col-2  pull-right">
+        COLUMN 2
+    </div>
+    
+    <div class="col-4">
+        COLUMN 3
+    </div>
+</div>
+----
+*/
+
+.pull-right{
+    float: right;
+}
+
+.pull-left{
+    float: left;
+}

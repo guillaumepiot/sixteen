@@ -1,0 +1,91 @@
+/**
+ * Base settings
+ */
+
+
+/**
+ * Colors
+ */
+
+$cyan: #00abd3;
+$red: #d50000;
+$green: #00b100;
+$orange: #ff8a00;
+$grey: #666666;
+$grey--dark: #333333;
+$grey--medium: #aaaaaa;
+$grey--light: #eeeeee;
+$grey--lighter: #fafafa;
+
+$background_color: #ffffff;
+$background_color--primary: $cyan;
+$background_color--create: $green;
+$background_color--change: $orange;
+$background_color--cancel: $grey;
+$background_color--delete: $red;
+
+
+/**
+ * Typography
+ */
+
+$font_family--primary: "Lucida Grande", sans-serif !default;
+$font_family--heading: "Lucida Grande", sans-serif !default;
+
+$font_color: #444444;
+$font_color--primary: $cyan;
+$font_color--light: $grey--light;
+
+$font_size: 13px;
+$font_size--small: 12px;
+$font_size--large: 18px;
+
+$font_size_mobile: 15px;
+$font_size_mobile--small: 13px;
+
+$font_weight: 400;
+$font_weight--bold: 700;
+
+$base-line-height: 1.5em !default;
+$base-spacing: 1.5em !default;
+
+
+/**
+ * Layout
+ */
+
+$vertical_padding: 12px;
+$horizontal_padding: 16px;
+
+$border-radius: 4px;
+
+/**
+ * Modal
+ */
+
+$modal_content_bg: #ffffff;
+$modal_header_bg: #ffffff;
+$modal_footer_bg: #ffffff;
+
+/**
+ * Form
+ */
+
+$input_border_color: #dddddd;
+$error_background: rgba(213, 0, 0, 0.8);
+
+/**
+ * Breakpoints
+ */
+
+/* Mobile */
+$mobile-width: 767px;
+$mobile: new-breakpoint(max-width $mobile-width);
+
+/* Tablet */
+$tablet-width: 768px;
+$tablet: new-breakpoint(min-width $tablet-width);
+
+/* Desktop */
+$desktop-width: 1024px;
+$desktop: new-breakpoint(min-width $desktop-width + 1);

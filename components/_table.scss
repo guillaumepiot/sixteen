@@ -1,0 +1,36 @@
+@import "../settings";
+
+/**
+ * Text
+ *
+ */
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	tr{
+		border-bottom: 1px solid $grey--light;
+		&:hover, &:active, &:focus{
+			background-color: darken(#fff, 2%);
+		}
+	}
+	th{
+		background-color: $grey--light;
+		padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
+		font-weight: 700;
+	}
+	td{
+		padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
+
+	}
+
+	&--clickable{
+		td{
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
+}

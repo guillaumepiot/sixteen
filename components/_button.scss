@@ -1,0 +1,156 @@
+@import "../settings";
+@import "util";
+@import "mixin";
+@import "animation";
+
+/**
+ * Btn - Standard button mixin.
+ */
+
+@mixin btn(
+    $background_color: #666, 
+    $text_color: #fff, 
+    $font_family: $font_family--primary,
+    $font_size: $font_size, 
+    $font_weight: normal, 
+    $height: 2em, 
+    $border_radius: $border-radius) {
+    
+    cursor: pointer;
+    display: inline-block;
+
+    min-height: 1em;
+
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    background-color: $background_color;
+    color: $text_color;
+
+    margin: 0 calc-em($horizontal_padding) 0 0;
+    padding: calc-em($vertical_padding) calc-em($horizontal_padding);
+    min-height: calc-em(($vertical_padding * 2) + $font_size);
+
+    font-family: $font_family;
+    font-size: calc-em($font_size);
+    font-weight: $font_weight;
+    line-height: 1;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: $border_radius;
+
+    user-select: none;
+    @include transition(background-color 0.2s ease-in-out);
+
+    &:hover {
+        background-color: lighten($background-color, 3%);
+        text-decoration: none;
+        color: $text_color;
+    }
+    
+    &:active{
+        background-color: darken($background-color, 3%);
+    }
+}
+
+/**
+ * Btn - Standard button component style.
+ */
+
+.btn {
+    @include btn();
+
+    &--primary{
+        background-color: $background_color--primary;
+        &:hover {
+            background-color: lighten($background_color--primary, 3%);
+        }
+        &:active{
+            background-color: darken($background_color--primary, 3%);
+        }
+    }
+
+    &--create{
+        background-color: $background_color--create;
+        &:hover {
+            background-color: lighten($background_color--create, 3%);
+        }
+        &:active{
+            background-color: darken($background_color--create, 3%);
+        }
+    }
+
+    &--change{
+        background-color: $background_color--change;
+        &:hover {
+            background-color: lighten($background_color--change, 3%);
+        }
+        &:active{
+            background-color: darken($background_color--change, 3%);
+        }
+    }
+
+    &--cancel{
+        background-color: $background_color--cancel;
+        &:hover {
+            background-color: lighten($background_color--cancel, 3%);
+        }
+        &:active{
+            background-color: darken($background_color--cancel, 3%);
+        }
+    }
+
+    &--delete{
+        background-color: $background_color--delete;
+        &:hover {
+            background-color: lighten($background_color--delete, 3%);
+        }
+        &:active{
+            background-color: darken($background_color--delete, 3%);
+        }
+    }
+
+    &--full-width{
+        display: block;
+        width:100%;
+    }
+
+    &--large{
+        padding: calc-em($vertical_padding * 1.4) calc-em($horizontal_padding);
+        min-height: calc-em(($vertical_padding * 1.4 * 2) + $font_size);
+    }
+
+    &--margin-bottom{
+        margin-bottom: calc-em($vertical_padding);
+    }
+
+    &--loading{
+        .btn__text{
+            display: none;
+        }
+        &:before{
+            content: "";
+            display: inline-block;
+            height: 24px;
+            width: 24px;
+
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            margin-left: -12px;
+
+            border-radius: 100%;
+            border: 2px solid #fff;
+            border-bottom-color: transparent;
+            
+            background: transparent !important;
+
+            @include animation(rotate 1s 0s linear infinite);
+            
+        }
+        
+    }
+}
+
