@@ -1,5 +1,3 @@
-@import "../settings";
-@import "util";
 @import "mixin";
 
 /**
@@ -30,7 +28,6 @@
  */
 
 .modal{
-    
 
     &__wrapper{
         @include position(absolute, 0 null null 0);
@@ -57,7 +54,7 @@
         &--small{
             @include media($tablet) {
                 width: 360px;
-                margin-left: -160px;
+                margin-left: -180px;
             }
         }
         
@@ -79,9 +76,6 @@
     }
 
     &__header{
-        h3{
-            margin:0;
-        }
         padding: calc-em($vertical_padding) calc-em($horizontal_padding) * 2;
 
         background-color: $modal_header_bg;
@@ -93,7 +87,7 @@
     &__body{
         padding: 0 calc-em($horizontal_padding);
         @include media($tablet) {
-            padding: calc-em($vertical_padding) calc-em($horizontal_padding * 2);
+            padding: 0 calc-em($horizontal_padding * 2) calc-em($vertical_padding * 2) calc-em($horizontal_padding * 2);
         }
     }
     &__footer{

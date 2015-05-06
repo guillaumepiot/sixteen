@@ -30,7 +30,9 @@ $background_color--delete: $red;
  */
 
 $font_family--primary: "Lucida Grande", sans-serif !default;
-$font_family--heading: "Lucida Grande", sans-serif !default;
+$font_family--heading: "Helvetica Neue", sans-serif !default;
+$font_family--serif: Georgia, serif !default;
+$font_family--monospace: Courier, serif !default;
 
 $font_color: #444444;
 $font_color--primary: $cyan;
@@ -46,8 +48,21 @@ $font_size_mobile--small: 13px;
 $font_weight: 400;
 $font_weight--bold: 700;
 
-$base-line-height: 1.5em !default;
-$base-spacing: 1.5em !default;
+$base-line-height: 1.5em;
+
+$h1-ratio: 2.441;
+$h2-ratio: 1.953;
+$h3-ratio: 1.563;
+$h4-ratio: 1.25;
+$h5-ratio: 1;
+$h6-ratio: 1;
+
+$h1-weight: 400;
+$h2-weight: 400;
+$h3-weight: 400;
+$h4-weight: 400;
+$h5-weight: 400;
+$h6-weight: 400;
 
 
 /**

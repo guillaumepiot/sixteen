@@ -1,7 +1,5 @@
-@import "../settings";
-
 /**
- * Text
+ * Table
  *
  */
 
@@ -20,6 +18,7 @@
 		background-color: $grey--light;
 		padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
 		font-weight: 700;
+		text-align: left;
 	}
 	td{
 		padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
