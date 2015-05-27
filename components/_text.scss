@@ -8,7 +8,7 @@ body {
     font-family: $font_family--primary;
     font-size: $font_size;
     font-style: normal;
-    font-weight: 400;
+    font-weight: $font_weight;
     line-height: $base-line-height;
 
     @include media($mobile) {
@@ -27,7 +27,7 @@ h4,
 h5,
 h6 {
     font-family: $font_family--heading;
-    margin: calc-em($vertical_padding / 2) 0;
+    padding: calc-em($vertical_padding / 2) 0;
     font-style: normal;
     font-weight: normal;
     line-height: $base-line-height;
@@ -71,21 +71,35 @@ h6 {
 
 small {
     font-size: $font-size--small;
-    color: $grey;
+    color: $grey--medium;
 }
 
-code {
-    background: $grey--lighter;
-    border-radius: $border-radius;
+pre {
+    font-size: calc-em($font_size - 2);
     border: 1px solid $grey--light;
+    background: $grey--lighter;
+    display: block;
+    border-radius: $border-radius;
     font-family: $font_family--monospace;
-    font-size: calc-em($font_size * 0.7);
-    font-style: normal;
-    padding: 0.1em 0.4em;
-    white-space: nowrap;
+    padding: 0 calc-em($horizontal_padding);
     word-break: break-all;
     word-wrap: break-word;
 }
+
+code {
+    font-size: calc-em($font_size - 2);
+    background: $grey--lighter;
+    font-family: $font_family--monospace;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+p code{
+    display: inline-block;
+    border: 1px solid $grey--light;
+    border-radius: $border-radius;
+}
+
 
 a {
     color: $font_color--primary;
@@ -99,19 +113,33 @@ a {
 
 ul,
 ol {
-    // margin-bottom: $sm-pad;
-    // padding-left: $lg-pad;
+    padding-left: calc-em($horizontal_padding * 2);
+}
+
+ul{
+    list-style-type: disc;
+}
+
+ol{
+    list-style-type: decimal;
+}
+
+figure{
+    margin: calc-em($vertical_padding * 2) 0 ;
 }
 
 blockquote {
-    border-left: calc-em($font_size * 0.2) solid $font_color--primary;
+    border-left: 4px solid $grey--medium;
     font-family: $font_family--serif;
     font-style: italic;
     margin: calc-em($vertical_padding) 0;
     padding-left: calc-em($horizontal_padding);
+    margin-left: calc-em($horizontal_padding);
 }
 
 figcaption {
+    padding-left: calc-em($horizontal_padding + 4);
+    margin-left: calc-em($horizontal_padding);
     font-family: $font_family--serif;
 }
 
