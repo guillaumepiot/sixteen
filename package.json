@@ -29,8 +29,7 @@
   "homepage": "https://github.com/Cotidia/sixteen",
   "readme": "# sixteen\n\nSixteen uses Font Awesome icon set (v4.3).\n\n\t$ npm install font-awesome",
   "readmeFilename": "README.md",
-  "gitHead": "0495b4c6636e54f2f9fef2bbfa8331f8eff28270",
-  "_id": "sixteen@0.0.2",
+  "_id": "sixteen@0.0.3",
   "_shasum": "4ef5e0a7fb929672f2ff98a40465c672ec29b25b",
   "_from": "sixteen@*"
 }
