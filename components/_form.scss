@@ -1,48 +1,6 @@
 /** ---- FORM ----
  * CSS styles used to format standard forms.
  *
- * NOTE: We are temporarily using 2 form stylesheets and will slowly phase out
- * the old one (_form.scss). The new form stuff will use BEM, but during the
- * transition every form element must be contained within the class '.form'.
- * After the transition, we will remove this requirement.
- *
- * - John Blackshaw (johnb@getme.co.uk) - 24/02/15
- *
- * ----
- * HTML EXAMPLE:
- * ----
- * <form
- *     action="#"
- *     method="get"
- *     class="form"
- *     >
- *     <fieldset class="form__fieldset">
- *         <div class="form__group">
- *             <div class="[ form__controls ]  [ grid  span-8  rigid  collapse ]">
- *                 <div class="[ form__control ]  [ col-4 ]">
- *                     <select
- *                         class="form__select"
- *                         name="title"
- *                         >
- *                         <option value="">Select...</option>
- *                         <option value="mr">Mr</option>
- *                         <option value="mrs">Mrs</option>
- *                         <option value="miss">Miss</option>
- *                     </select>
- *                 </div>
- *
- *                 <div class="[ form__control ]  [ col-4 ]">
- *                     <input
- *                         class="form__text"
- *                         name="full_name"
- *                         type="text"
- *                         />
- *                 </div>
- *             </div>
- *         </div>
- *     </fieldset>
- * </form>
- * ----
  */
 
  .form{
@@ -112,6 +70,11 @@
         
     }
 
+    &__label{
+        display: block;
+        padding: calc-em($vertical_padding / 2) 0;
+    }
+
     &__text{
 
         /* Remove First */
@@ -132,7 +95,7 @@
         &:focus, *:focus {
             outline: none;
             box-shadow: none;
-            border: 1px solid $cyan;
+            border: 1px solid $input_focus_color;
         }
 
         
@@ -213,7 +176,7 @@
         font-size: calc-em($font_size--small);
         text-align: left;
 
-        padding: calc-em($vertical_padding/2) calc-em($horizontal_padding);
+        padding: calc-em($vertical_padding/2) 0;
 
         
         &--tooltip{
@@ -225,6 +188,7 @@
             background-color: rgba(0,0,0,0.8);
 
             border-radius: $border-radius;
+            padding: calc-em($vertical_padding/2) calc-em($horizontal_padding);
 
             @include transition(opacity 0.2s ease-in-out);
 

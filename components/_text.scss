@@ -74,31 +74,31 @@ small {
     color: $grey--medium;
 }
 
-pre {
-    font-size: calc-em($font_size - 2);
-    border: 1px solid $grey--light;
-    background: $grey--lighter;
-    display: block;
-    border-radius: $border-radius;
-    font-family: $font_family--monospace;
-    padding: 0 calc-em($horizontal_padding);
-    word-break: break-all;
-    word-wrap: break-word;
-}
+// pre {
+//     font-size: calc-em($font_size - 2);
+//     border: 1px solid $grey--light;
+//     background: $grey--lighter;
+//     display: block;
+//     border-radius: $border-radius;
+//     font-family: $font_family--monospace;
+//     padding: 0 calc-em($horizontal_padding);
+//     word-break: break-all;
+//     word-wrap: break-word;
+// }
 
-code {
-    font-size: calc-em($font_size - 2);
-    background: $grey--lighter;
-    font-family: $font_family--monospace;
-    word-break: break-all;
-    word-wrap: break-word;
-}
+// code {
+//     font-size: calc-em($font_size - 2);
+//     background: $grey--lighter;
+//     font-family: $font_family--monospace;
+//     word-break: break-all;
+//     word-wrap: break-word;
+// }
 
-p code{
-    display: inline-block;
-    border: 1px solid $grey--light;
-    border-radius: $border-radius;
-}
+// p code{
+//     display: inline-block;
+//     border: 1px solid $grey--light;
+//     border-radius: $border-radius;
+// }
 
 
 a {
@@ -129,12 +129,16 @@ figure{
 }
 
 blockquote {
-    border-left: 4px solid $grey--medium;
+    
+    color: $grey;
     font-family: $font_family--serif;
     font-style: italic;
+    font-size: $font_size * 1.25;
+    line-height: calc-em($font_size * 1.25 * 1.25);
+
+    border-left: 4px solid $grey--medium;
     margin: calc-em($vertical_padding) 0;
     padding-left: calc-em($horizontal_padding);
-    margin-left: calc-em($horizontal_padding);
 }
 
 figcaption {
@@ -144,7 +148,11 @@ figcaption {
 }
 
 hr {
-    
+    border-style: none;
+    border-top: 1px solid $grey--light;
+
+    padding: 0;
+    margin: calc-em($vertical_padding * 4) 0;
 }
 
 
@@ -158,18 +166,6 @@ hr {
 
 .text-center{
     text-align: center;
-}
-
-.text-grey-light{
-    color: $font_color--light;
-}
-
-.text-grey{
-    color: $grey--medium;
-}
-
-.text-cyan{
-    color: $cyan;
 }
 
 .text-strong{

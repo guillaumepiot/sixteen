@@ -2,30 +2,22 @@
  * CSS styles used to format grid layouts.
  */
 
-/*
-----
-HTML EXAMPLE:
-----
-<div class="grid  span-8  rigid  collapse">
-    <div class="col-2">
-        COLUMN 1
-    </div>
-    
-    <div class="col-2  pull-right">
-        COLUMN 2
-    </div>
-    
-    <div class="col-4">
-        COLUMN 3
-    </div>
-</div>
-----
-*/
+.grid{
+    @include outer-container(100%);
 
-.pull-right{
-    float: right;
-}
+    @for $i from 1 through $grid-columns {
+        &__span-#{$i}{
+            @include span-columns($i);
+        }
+    }
 
-.pull-left{
-    float: left;
+    &--collapse{
+
+        @for $i from 1 through $grid-columns {
+            .grid__span-#{$i}{
+                width: (100 * ($i / $grid-columns)) * 1%;
+                @include omega;
+            }
+        }
+    }
 }

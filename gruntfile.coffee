@@ -8,12 +8,26 @@ module.exports = (grunt) ->
                     # - or - 
                     loadPath: require('node-neat').includePaths
                 files:
-                    'sixteen.css': 'sixteen.scss'
+                    'docs/sixteen.css': 'sixteen.scss'
+
+        watch:
+            frontend:
+                files: [
+                    'components/*.scss'
+                    '_settings.scss'
+                    'sixteen.scss'
+                    ]
+                tasks: ['frontend']
     })
 
     grunt.loadNpmTasks 'grunt-contrib-sass'
+    grunt.loadNpmTasks 'grunt-contrib-watch'
 
     # Tasks
     grunt.registerTask 'frontend', [
         'sass'
+    ]
+
+    grunt.registerTask 'watch-frontend', [
+        'watch:frontend'
     ]

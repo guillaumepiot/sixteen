@@ -1,6 +1,6 @@
 {
   "name": "sixteen",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "SASS foundation for web projects following the BEM method.",
   "main": "index.js",
   "scripts": {
@@ -23,13 +23,15 @@
     "url": "https://github.com/Cotidia/sixteen/issues"
   },
   "dependencies": {
-    "node-neat": "^1.7.1-beta1",
-    "font-awesome": "^4.3.0"
+    "node-neat": "^1.7.1-beta1"
   },
   "homepage": "https://github.com/Cotidia/sixteen",
   "readme": "# sixteen\n\nSixteen uses Font Awesome icon set (v4.3).\n\n\t$ npm install font-awesome",
   "readmeFilename": "README.md",
-  "_id": "sixteen@0.0.3",
+  "_id": "sixteen@0.0.4",
   "_shasum": "4ef5e0a7fb929672f2ff98a40465c672ec29b25b",
-  "_from": "sixteen@*"
+  "_from": "sixteen@*",
+  "devDependencies": {
+    "grunt-contrib-sass": "^0.9.2"
+  }
 }

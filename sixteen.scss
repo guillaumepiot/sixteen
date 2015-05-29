@@ -1,8 +1,14 @@
 @import "bourbon";
 @import "neat";
 
+// Sixteen framework
+@import "settings";
+@import "components/reset";
+@import "components/mixin";
 @import "components/grid";
 @import "components/form";
 @import "components/button";
+@import "components/modal";
+@import "components/text";
+@import "components/table";
 
-@import "../font-awesome/scss/font-awesome"

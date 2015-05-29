@@ -87,6 +87,7 @@ $modal_footer_bg: #ffffff;
  */
 
 $input_border_color: #dddddd;
+$input_focus_color: #666666;
 $error_background: rgba(213, 0, 0, 0.8);
 
 /**
@@ -104,3 +105,9 @@ $tablet: new-breakpoint(min-width $tablet-width);
 /* Desktop */
 $desktop-width: 1024px;
 $desktop: new-breakpoint(min-width $desktop-width + 1);
+
+/**
+ * Grid
+ */
+
+$grid-columns: 12 !default;
