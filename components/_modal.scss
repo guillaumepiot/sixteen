@@ -28,45 +28,62 @@
  */
 
 .modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow-y: auto;
+    z-index: 101;
+
+    // Give table behaviour, use to center content
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+
+    // Transition
+    opacity: 0;
+    @include transition(all 0.2s ease-in-out);
+
+    &--open{
+        opacity: 1;
+    }
 
     &__wrapper{
-        @include position(absolute, 0 null null 0);
-        z-index: 101;
 
         width: 100%;
         height: 100%;
+        vertical-align: middle;
+
+        display: table-cell;
+        position: relative;
+        z-index: 102;  
+
+        @include media($mobile) {
+            vertical-align: top;
+        }
+ 
+    }
+
+    &__content{
+        background-color: $modal_content_bg;
+        margin: 0 auto;
+        position: relative;
 
         @include media($tablet) {
             height: auto;
-            max-height: 500px;
-
-            left: 50%;
-            top: 10%;
-
+            border-radius: $border-radius;
             width: 540px;
-            margin-left: -270px;
-        }
-
-        @include media($mobile) {
-            padding-top: calc-em($vertical_padding);
         }
 
         &--small{
             @include media($tablet) {
                 width: 360px;
-                margin-left: -180px;
             }
         }
-        
-        
-    }
-    &__content{
-        background-color: $modal_content_bg;
 
-        @include media($tablet) {
-            height: auto;
-            border-radius: $border-radius;
-        }
     }
     &__pre-header{
         padding: calc-em($vertical_padding) calc-em($horizontal_padding);
@@ -76,33 +93,29 @@
     }
 
     &__header{
-        padding: calc-em($vertical_padding) calc-em($horizontal_padding) * 2;
-
+        padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding) * 2;
         background-color: $modal_header_bg;
+        border-bottom: $modal_header_border;
 
         @include media($tablet) {
+            padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding) * 2;
             @include border-top-radius($border-radius);
         }
     }
     &__body{
         padding: 0 calc-em($horizontal_padding);
         @include media($tablet) {
-            padding: 0 calc-em($horizontal_padding * 2) calc-em($vertical_padding * 2) calc-em($horizontal_padding * 2);
+            padding: calc-em($vertical_padding) calc-em($horizontal_padding * 2) calc-em($vertical_padding) calc-em($horizontal_padding * 2);
         }
     }
     &__footer{
-        position: absolute;
-        bottom:0;
-
-        width: 100%;
-
-        padding: calc-em($vertical_padding) calc-em($horizontal_padding * 2);
-
+        padding: calc-em($vertical_padding) calc-em($horizontal_padding);
         background-color: $modal_footer_bg;
+        border-top: $modal_footer_border;
 
         @include media($tablet) {
             position: relative;
-
+            padding: calc-em($vertical_padding) calc-em($horizontal_padding * 2);
             @include border-bottom-radius($border-radius);
         }
     }
@@ -119,11 +132,9 @@
         height: calc-em($font_size * 3);
         display: block;
         position: absolute;
-        top: 0;
-        right: 0;//calc-em($horizontal_padding);
+        top: 0.85em;
+        right: 1.3em;
         z-index: 102;
-
-        // background-color: $grey--dark;
 
         @include transition(background-color 0.2s ease-in-out);
 
@@ -131,26 +142,64 @@
             content: "×";
             display: block;
             color: $grey;
-            font-size: calc-em($font_size * 2);
+            font-size: calc-em($font_size * 1.6);
             text-align: center;
             position: relative;
             top: 50%;
             margin-top: - calc-em($font_size / 2);
         }
         &:hover{
-            // background-color: ligthen($grey--dark, 5%);
             &:after{
-                color: $cyan;
+                color: $black;
             }
 
         }
 
         @include media($tablet) {
             &:after{
-                color: #fff;;
+                color: $grey--medium;
             }
         }
     }
+
+    &__back{
+        width: calc-em($font_size * 3);
+        height: calc-em($font_size * 3);
+        display: block;
+        position: absolute;
+        top: 0.85em;
+        left: 1.3em;
+        z-index: 102;
+        text-align: center;
+
+        span{
+            font-size: calc-em($font_size * 2);
+            color: $grey;
+            
+            position: relative;
+            top: 0.22em;
+
+            @include media($tablet) {
+                color: $grey--medium;
+            }
+        }
+        
+
+        @include transition(background-color 0.2s ease-in-out);
+
+        &:hover{
+            span{
+                color: $black;
+            }
+        }
+
+        @include media($tablet) {
+            &:after{
+                color: $grey--medium;
+            }
+        }
+    }
+
     &:after{
         content: '';
         position: fixed;
@@ -185,4 +234,15 @@
             background-color: #fff;
         }
     }
+}
+
+/**
+ * Body no scroll
+ * A class to prevent a the body from scolling while the modal is open
+ * Only assign when the modal is open.
+ */
+
+.no-scroll{
+    overflow: hidden;
+    height: 100%
 }

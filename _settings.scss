@@ -16,6 +16,7 @@ $grey--dark: #333333;
 $grey--medium: #aaaaaa;
 $grey--light: #eeeeee;
 $grey--lighter: #fafafa;
+$black: #000000;
 
 $background_color: #ffffff;
 $background_color--primary: $cyan;
@@ -81,6 +82,9 @@ $border-radius: 4px;
 $modal_content_bg: #ffffff;
 $modal_header_bg: #ffffff;
 $modal_footer_bg: #ffffff;
+
+$modal_header_border: none;
+$modal_footer_border: none;
 
 /**
  * Form

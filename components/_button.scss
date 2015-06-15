@@ -25,14 +25,13 @@
     background-color: $background_color;
     color: $text_color;
 
-    margin: 0 calc-em($horizontal_padding) 0 0;
     padding: calc-em($vertical_padding) calc-em($horizontal_padding);
-    min-height: calc-em(($vertical_padding * 2) + $font_size);
+    min-height: 3.1em;
 
     font-family: $font_family;
     font-size: calc-em($font_size);
     font-weight: $font_weight;
-    line-height: 1;
+    // line-height: 1;
     font-style: normal;
     text-align: center;
     text-decoration: none;
@@ -110,14 +109,50 @@
         }
     }
 
+    &--transparent{
+        background-color: transparent;
+        color: $grey;
+        border: 1px solid $grey--medium;
+        &:hover {
+            background-color: transparent;
+            color: $font_color--primary;
+            border-color: $font_color--primary;
+        }
+    }
+
     &--full-width{
         display: block;
         width:100%;
     }
 
+    &--round{
+        border-radius: 50%;
+        width: calc-em(($vertical_padding * 2) + $font_size);
+        height: calc-em(($vertical_padding * 2) + $font_size);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &--round-large{
+        border-radius: 50%;
+        width: calc-em(($vertical_padding * 1.4 * 2) + $font_size);
+        height: calc-em(($vertical_padding * 1.4 * 2) + $font_size);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     &--large{
         padding: calc-em($vertical_padding * 1.4) calc-em($horizontal_padding);
-        min-height: calc-em(($vertical_padding * 1.4 * 2) + $font_size);
+        min-height: 3.8em;
+
+        .btn--loading{
+            top: 1em;
+        }
+    }
+
+    &--small{
+        padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding);
+        min-height: 2.2em;
     }
 
     &--margin-bottom{
@@ -125,6 +160,7 @@
     }
 
     &--loading{
+
         .btn__text{
             display: none;
         }
@@ -135,7 +171,7 @@
             width: 24px;
 
             position: absolute;
-            top: 12px;
+            top: 0.7em;
             left: 50%;
             margin-left: -12px;
 
@@ -149,6 +185,15 @@
             
         }
         
+    }
+}
+
+.btn-group{
+    .btn{
+        margin-right: calc-em($horizontal_padding);
+        &:last-child{
+            margin-right: 0;
+        }
     }
 }
 
