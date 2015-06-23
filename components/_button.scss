@@ -31,10 +31,10 @@
     font-family: $font_family;
     font-size: calc-em($font_size);
     font-weight: $font_weight;
-    // line-height: 1;
     font-style: normal;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
 
     border-radius: $border_radius;
 
@@ -49,6 +49,11 @@
     
     &:active{
         background-color: darken($background-color, 3%);
+    }
+
+    &[disabled]{
+        opacity: 0.5;
+        cursor: auto;
     }
 }
 
@@ -67,6 +72,19 @@
         &:active{
             background-color: darken($background_color--primary, 3%);
         }
+        &[disabled]{
+            &:hover {
+                background-color: $background_color--primary;
+            }
+        }
+        &.btn--transparent{
+            border-color: $background_color--primary;
+            color: $background_color--primary;
+            &:hover {
+                border-color: lighten($background_color--primary, 3%);
+                color: lighten($background_color--primary, 3%);
+            }
+        }
     }
 
     &--create{
@@ -76,6 +94,19 @@
         }
         &:active{
             background-color: darken($background_color--create, 3%);
+        }
+        &[disabled]{
+            &:hover {
+                background-color: $background_color--create;
+            }
+        }
+        &.btn--transparent{
+            border-color: $background_color--create;
+            color: $background_color--create;
+            &:hover {
+                border-color: lighten($background_color--create, 3%);
+                color: lighten($background_color--create, 3%);
+            }
         }
     }
 
@@ -87,6 +118,19 @@
         &:active{
             background-color: darken($background_color--change, 3%);
         }
+        &[disabled]{
+            &:hover {
+                background-color: $background_color--change;
+            }
+        }
+        &.btn--transparent{
+            border-color: $background_color--change;
+            color: $background_color--change;
+            &:hover {
+                border-color: lighten($background_color--change, 3%);
+                color: lighten($background_color--change, 3%);
+            }
+        }
     }
 
     &--cancel{
@@ -96,6 +140,19 @@
         }
         &:active{
             background-color: darken($background_color--cancel, 3%);
+        }
+        &[disabled]{
+            &:hover {
+                background-color: $background_color--cancel;
+            }
+        }
+        &.btn--transparent{
+            border-color: $background_color--cancel;
+            color: $background_color--cancel;
+            &:hover {
+                border-color: lighten($background_color--cancel, 3%);
+                color: lighten($background_color--cancel, 3%);
+            }
         }
     }
 
@@ -107,16 +164,44 @@
         &:active{
             background-color: darken($background_color--delete, 3%);
         }
+        &[disabled]{
+            &:hover {
+                background-color: $background_color--delete;
+            }
+        }
+        &.btn--transparent{
+            border-color: $background_color--delete;
+            color: $background_color--delete;
+            &:hover {
+                border-color: lighten($background_color--delete, 3%);
+                color: lighten($background_color--delete, 3%);
+            }
+        }
     }
 
     &--transparent{
         background-color: transparent;
         color: $grey;
         border: 1px solid $grey--medium;
+        padding: calc-em($vertical_padding - 1) calc-em($horizontal_padding - 1);
         &:hover {
             background-color: transparent;
             color: $font_color--primary;
             border-color: $font_color--primary;
+        }
+        &.btn--small{
+            padding: calc-em(($vertical_padding / 4) - 1) calc-em(($horizontal_padding / 2) - 1);
+        }
+        &[disabled]{
+            cursor: auto;
+            background-color: transparent;
+            color: $grey;
+            border: 1px solid $grey--medium;
+            &:hover {
+                border-color: $grey--medium;
+                color: $grey;
+                background-color: transparent;
+            }
         }
     }
 
@@ -151,8 +236,8 @@
     }
 
     &--small{
-        padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding);
-        min-height: 2.2em;
+        padding: calc-em($vertical_padding / 4) calc-em($horizontal_padding / 2);
+        min-height: 1.8em;
     }
 
     &--margin-bottom{
@@ -194,6 +279,9 @@
         &:last-child{
             margin-right: 0;
         }
+    }
+    .btn--small{
+        margin-right: calc-em($horizontal_padding / 2);
     }
 }
 

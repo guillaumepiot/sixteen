@@ -44,11 +44,12 @@
     height: 100%;
 
     // Transition
-    opacity: 0;
-    @include transition(all 0.2s ease-in-out);
+    
 
     &--open{
-        opacity: 1;
+        .modal__content{
+            opacity: 1;
+        }
     }
 
     &__wrapper{
@@ -61,6 +62,8 @@
         position: relative;
         z-index: 102;  
 
+        
+
         @include media($mobile) {
             vertical-align: top;
         }
@@ -71,6 +74,9 @@
         background-color: $modal_content_bg;
         margin: 0 auto;
         position: relative;
+
+        opacity: 0;
+        @include transition(all 0.1s ease-in-out);
 
         @include media($tablet) {
             height: auto;
@@ -87,8 +93,15 @@
     }
     &__pre-header{
         padding: calc-em($vertical_padding) calc-em($horizontal_padding);
+        margin: 0 auto;
         @include media($tablet) {
             padding: calc-em($vertical_padding) 0;
+            width: 540px;
+        }
+        &--small{
+            @include media($tablet) {
+                width: 360px;
+            }
         }
     }
 
@@ -121,9 +134,16 @@
     }
     &__sub-footer{
         padding: 0 calc-em($horizontal_padding) calc-em($vertical_padding) calc-em($horizontal_padding);
+        margin: 0 auto;
         @include media($tablet) {
             position: relative;
             padding: calc-em($vertical_padding) 0;
+            width: 540px;
+        }
+        &--small{
+            @include media($tablet) {
+                width: 360px;
+            }
         }
     }
 
@@ -212,7 +232,7 @@
         z-index: 100;
 
         @include media($tablet) {
-            background-color: rgba(0,0,0,0.7);
+            background-color: rgba(0,0,0,0.6);
         }
         @include media($mobile) {
             background-color: #fff;

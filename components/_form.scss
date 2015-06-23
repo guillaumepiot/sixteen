@@ -7,7 +7,7 @@
 
     &__group{
         position:relative;
-        padding: calc-em($vertical_padding / 2) 0;
+        padding: calc-em($vertical_padding / 4) 0 calc-em($vertical_padding) 0;
 
         &--error{
             .form__text, .form__select{
@@ -30,37 +30,37 @@
 
         }
 
-        &--text-success{
-            &:before{
-                content: "\f00c";
-                color: $green;
-                font: normal normal normal #{$font_size}/1 FontAwesome;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                position:absolute;
-                right: calc-em($horizontal_padding);
-                top: calc-em($vertical_padding);
-            }
-        }
+        // &--text-success{
+        //     &:before{
+        //         content: "\f00c";
+        //         color: $green;
+        //         font: normal normal normal #{$font_size}/1 FontAwesome;
+        //         text-rendering: auto;
+        //         -webkit-font-smoothing: antialiased;
+        //         -moz-osx-font-smoothing: grayscale;
+        //         position:absolute;
+        //         right: calc-em($horizontal_padding);
+        //         top: calc-em($vertical_padding);
+        //     }
+        // }
 
-        &--text-error{
-            &:before{
-                content: "\f00d";
-                color: $red;
-                font: normal normal normal #{$font_size}/1 FontAwesome;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                position:absolute;
-                right: calc-em($horizontal_padding);
-                top: calc-em($vertical_padding);
+        // &--text-error{
+        //     &:before{
+        //         content: "\f00d";
+        //         color: $red;
+        //         font: normal normal normal #{$font_size}/1 FontAwesome;
+        //         text-rendering: auto;
+        //         -webkit-font-smoothing: antialiased;
+        //         -moz-osx-font-smoothing: grayscale;
+        //         position:absolute;
+        //         right: calc-em($horizontal_padding);
+        //         top: calc-em($vertical_padding);
 
-                @include media($mobile) {
-                    font: normal normal normal #{$font_size_mobile}/1 FontAwesome;
-                }
-            }
-        }
+        //         @include media($mobile) {
+        //             font: normal normal normal #{$font_size_mobile}/1 FontAwesome;
+        //         }
+        //     }
+        // }
 
         &--select{
             &:after{
@@ -76,7 +76,7 @@
 
     &__label{
         display: block;
-        padding: calc-em($vertical_padding / 2) 0;
+        padding: 0;
         text-align: left;
     }
 
@@ -98,7 +98,7 @@
         border-radius: $border-radius;
 
         @include placeholder {
-            color: $grey;
+            color: $grey--medium;
         }
 
         &:focus, *:focus {
@@ -143,13 +143,12 @@
 
     &__error{
         color: $red;
+        background-color: lighten($red, 50%);
+        border-radius: $border-radius;
         text-align: left;
 
-        padding: calc-em($vertical_padding/2) calc-em($horizontal_padding);
+        padding: calc-em($vertical_padding) calc-em($horizontal_padding);
 
-        background-color: lighten($red, 52%);
-        border:1px solid $red;
-        border-radius: $border-radius;
 
         &--tooltip{
             display: none;
