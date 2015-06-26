@@ -29,6 +29,16 @@
         .content{
             margin-right: 2.35%
         }
+
+        p code{
+            background-color: #f4f4f4;
+            border-radius: 4px;
+            font-family: "Lucida Console", Monaco, monospace;
+            font-size: 12px;
+            color: #D14;
+            line-height: 24px;
+        }
+
     </style>
 </head>
 <body>
@@ -269,7 +279,7 @@ Morbi egestas elementum sapien sed euismod.&lt;/p&gt;</code></pre>
                                 <div class="form__control form__control--text">
                                     <input class="form__text" type="text" name="total_annual_bookings" placeholder="1,000,000">
                                 </div>
-                                <div class="form__help form__help--tooltip form__help--tooltip-on" style="bottom: 54px;">
+                                <div class="form__help form__help--tooltip form__help--tooltip-on" style="bottom: 57px;">
                                     Information about the field
                                 </div>
                             </div>
@@ -284,6 +294,105 @@ Morbi egestas elementum sapien sed euismod.&lt;/p&gt;</code></pre>
 
                 <div id="button">
                     <h1>Button</h1>
+                    <h2>Default state and roles</h2>
+                    <div class="grid">
+                        <div class="grid__span-6">
+                            <pre class="prettyprint linenums"><code>&lt;button class="btn"&gt;Default button&lt;/button&gt;
+&lt;button class="btn btn--primary"&gt;Primary button&lt;/button&gt;
+&lt;button class="btn btn--create"&gt;Create button&lt;/button&gt;
+&lt;button class="btn btn--change"&gt;Change button&lt;/button&gt;
+&lt;button class="btn btn--delete"&gt;Delete button&lt;/button&gt;</code></pre>
+                        </div>
+                        <div class="grid__span-6">
+                            <button class="btn">Default button</button>
+                            <p><button class="btn btn--primary">Primary button</button></p>
+                            <p><button class="btn btn--create">Create button</button></p>
+                            <p><button class="btn btn--change">Change button</button></p>
+                            <p><button class="btn btn--delete">Delete button</button></p>
+                        </div> 
+                    </div>
+
+                    <h2>Large</h2>
+                    <div class="grid">
+                        <div class="grid__span-6">
+                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--primary btn--large"&gt;Primary button&lt;/button&gt;
+</code></pre>
+                        </div>
+                        <div class="grid__span-6">
+                            <button class="btn btn--primary btn--large">Primary button</button>
+                        </div> 
+                    </div>
+
+                    <h2>Small</h2>
+                    <div class="grid">
+                        <div class="grid__span-6">
+                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--small"&gt;Default button&lt;/button&gt;
+&lt;button class="btn btn--primary btn--small"&gt;Primary button&lt;/button&gt;
+&lt;button class="btn btn--create btn--small"&gt;Create button&lt;/button&gt;
+&lt;button class="btn btn--change btn--small"&gt;Change button&lt;/button&gt;
+&lt;button class="btn btn--delete btn--small"&gt;Delete button&lt;/button&gt;</code></pre>
+                        </div>
+                        <div class="grid__span-6">
+                            <button class="btn btn--small">Default button</button>
+                            <p><button class="btn btn--primary btn--small">Primary button</button></p>
+                            <p><button class="btn btn--create btn--small">Create button</button></p>
+                            <p><button class="btn btn--change btn--small">Change button</button></p>
+                            <p><button class="btn btn--delete btn--small">Delete button</button></p>
+                        </div> 
+                    </div>
+
+                    <h2>Transparent</h2>
+                    <div class="grid">
+                        <div class="grid__span-6">
+                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--transparent"&gt;Default button&lt;/button&gt;
+&lt;button class="btn btn--primary btn--transparent"&gt;Primary button&lt;/button&gt;
+&lt;button class="btn btn--create btn--transparent"&gt;Create button&lt;/button&gt;
+&lt;button class="btn btn--change btn--transparent"&gt;Change button&lt;/button&gt;
+&lt;button class="btn btn--delete btn--transparent"&gt;Delete button&lt;/button&gt;</code></pre>
+                        </div>
+                        <div class="grid__span-6">
+                            <button class="btn btn--transparent">Default button</button>
+                            <p><button class="btn btn--primary btn--transparent">Primary button</button></p>
+                            <p><button class="btn btn--create btn--transparent">Create button</button></p>
+                            <p><button class="btn btn--change btn--transparent">Change button</button></p>
+                            <p><button class="btn btn--delete btn--transparent">Delete button</button></p>
+                        </div> 
+                    </div>
+
+                    <h2>Full width (block)</h2>
+                    <div class="grid">
+                        <div class="grid__span-6">
+                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--primary btn--full-width"&gt;
+    &lt;span class="btn__text"&gt;Loading&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+                        </div>
+                        <div class="grid__span-6">
+                            <button class="btn btn--primary btn--full-width">
+                                <span class="btn__text">Full width button</span>
+                            </button>
+                        </div> 
+                    </div>
+
+                    <h2>Loading state</h2>
+                    <div class="grid">
+                        <div class="grid__span-6">
+                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--primary btn--full-width btn--loading"&gt;
+    &lt;span class="btn__text"&gt;Loading&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+                        </div>
+                        <div class="grid__span-6">
+                            <button class="btn btn--primary btn--full-width btn--loading">
+                                <span class="btn__text">Loading</span>
+                            </button>
+                            <p><button class="btn btn--primary btn--full-width btn--large btn--loading">
+                                <span class="btn__text">Loading</span>
+                            </button></p>
+                            <p><button class="btn btn--primary btn--full-width btn--small btn--loading">
+                                <span class="btn__text">Loading</span>
+                            </button></p>
+                        </div> 
+                    </div>
+
                 </div>
 
                 <div id="table">
@@ -292,6 +401,72 @@ Morbi egestas elementum sapien sed euismod.&lt;/p&gt;</code></pre>
 
                 <div id="modal">
                     <h1>Modal</h1>
+
+                    <h2>Normal modal</h2>
+
+
+                    <div class="grid">
+                        <div class="grid__span-6">
+                            <pre class="prettyprint linenums"><code>&lt;div class="modal" id="modal-normal"&gt;
+    &lt;div class="modal__wrapper"&gt;
+        &lt;div class="modal__pre-header"&gt;
+            &lt;button class="btn btn--primary btn--full-width"&gt;Pre-header&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="modal__content"&gt;
+            &lt;a href="#close" id="modal-close-normal" class="modal__close"&gt;&lt;/a&gt;
+            &lt;div class="modal__header"&gt;
+                &lt;h3&gt;Modal header&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class="modal__body"&gt;
+                Modal body
+            &lt;/div&gt;
+            &lt;div class="modal__footer"&gt;
+                &lt;button class="btn btn--primary"&gt;Save&lt;/button&gt;
+                &lt;button class="btn"&gt;Cancel&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="modal__sub-footer"&gt;
+            &lt;button class="btn btn--primary btn--full-width"&gt;Sub-footer&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                        <h3>Options</h3>
+                        <p>
+                            <code>.modal__content--small</code> Smaller modal content<br>
+                            <code>.modal__pre-header--small</code> Smaller modal pre-header<br>
+                            <code>.modal__sub-footer--small</code> Smaller modal sub-footer
+                        </p> 
+                        </div>
+                        <div class="grid__span-6">
+                            <button id="modal-open-normal" class="btn btn--primary">Open modal</button>
+                            <div class="modal" id="modal-normal">
+                                <div class="modal__wrapper">
+                                    <div class="modal__pre-header">
+                                        <button class="btn btn--primary btn--full-width">Pre-header</button>
+                                    </div>
+                                    <div class="modal__content">
+                                        <a href="#close" id="modal-close-normal" class="modal__close"></a>
+                                        <div class="modal__header">
+                                            <h3>Modal header</h3>
+                                        </div>
+                                        <div class="modal__body">
+                                            Modal body
+                                        </div>
+                                        <div class="modal__footer">
+                                            <button class="btn btn--primary">Save</button>
+                                            <button class="btn">Cancel</button>
+                                        </div>
+                                    </div>
+                                    <div class="modal__sub-footer">
+                                        <button class="btn btn--primary btn--full-width">Sub-footer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+
+
                 </div>
                 <hr>
                 <div id="grid">
@@ -683,6 +858,19 @@ $grid-columns: 12 !default;</code></pre>
     <script type="text/javascript">
         // make code pretty
         window.prettyPrint && prettyPrint()
+
+        // Modal scripts
+        // Open normal
+        document.getElementById('modal-open-normal').addEventListener('click', function(){
+            document.body.className = 'no-scroll'
+            document.getElementById('modal-normal').className = 'modal modal--open'
+        })
+
+        document.getElementById('modal-close-normal').addEventListener('click', function(){
+            document.body.className = ''
+            document.getElementById('modal-normal').className = 'modal'
+        })
+
     </script>
 </body>
 </html>

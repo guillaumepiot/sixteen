@@ -16,8 +16,9 @@
     
     cursor: pointer;
     display: inline-block;
+    position: relative;
 
-    min-height: 1em;
+    // min-height: 1em;
 
     outline: none;
     border: none;
@@ -26,7 +27,7 @@
     color: $text_color;
 
     padding: calc-em($vertical_padding) calc-em($horizontal_padding);
-    min-height: 3.1em;
+    // min-height: 3.1em;
 
     font-family: $font_family;
     font-size: calc-em($font_size);
@@ -228,16 +229,19 @@
 
     &--large{
         padding: calc-em($vertical_padding * 1.4) calc-em($horizontal_padding);
-        min-height: 3.8em;
-
-        .btn--loading{
-            top: 1em;
-        }
     }
 
     &--small{
         padding: calc-em($vertical_padding / 4) calc-em($horizontal_padding / 2);
-        min-height: 1.8em;
+
+        &.btn--loading{
+            &:before{
+                height: 12px;
+                width: 12px;
+                margin-top: - 12px / 2;
+                margin-left: - 12px / 2;
+            }   
+        }
     }
 
     &--margin-bottom{
@@ -247,18 +251,19 @@
     &--loading{
 
         .btn__text{
-            display: none;
+            opacity:0;
         }
         &:before{
-            content: "";
+            content: " ";
             display: inline-block;
-            height: 24px;
-            width: 24px;
+            height: $base_line_height;
+            width: $base_line_height;
 
             position: absolute;
-            top: 0.7em;
+            top: 50%;
             left: 50%;
-            margin-left: -12px;
+            margin-top: - $base_line_height / 2;
+            margin-left: - $base_line_height / 2;
 
             border-radius: 100%;
             border: 2px solid #fff;

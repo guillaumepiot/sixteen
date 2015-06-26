@@ -438,14 +438,13 @@ table {
 .btn {
   cursor: pointer;
   display: inline-block;
-  min-height: 1em;
+  position: relative;
   outline: none;
   border: none;
   vertical-align: middle;
   background-color: #666;
   color: #fff;
   padding: 0.92308em 1.23077em;
-  min-height: 3.1em;
   font-family: "Lucida Grande", sans-serif;
   font-size: 1em;
   font-weight: normal;
@@ -503,6 +502,12 @@ table {
       background-color: #f08200; }
     .btn--change[disabled]:hover {
       background-color: #ff8a00; }
+    .btn--change.btn--transparent {
+      border-color: #ff8a00;
+      color: #ff8a00; }
+      .btn--change.btn--transparent:hover {
+        border-color: #ff910f;
+        color: #ff910f; }
   .btn--cancel {
     background-color: #666666; }
     .btn--cancel:hover {
@@ -511,6 +516,12 @@ table {
       background-color: #5e5e5e; }
     .btn--cancel[disabled]:hover {
       background-color: #666666; }
+    .btn--cancel.btn--transparent {
+      border-color: #666666;
+      color: #666666; }
+      .btn--cancel.btn--transparent:hover {
+        border-color: #6e6e6e;
+        color: #6e6e6e; }
   .btn--delete {
     background-color: #d50000; }
     .btn--delete:hover {
@@ -519,6 +530,12 @@ table {
       background-color: #c60000; }
     .btn--delete[disabled]:hover {
       background-color: #d50000; }
+    .btn--delete.btn--transparent {
+      border-color: #d50000;
+      color: #d50000; }
+      .btn--delete.btn--transparent:hover {
+        border-color: #e40000;
+        color: #e40000; }
   .btn--transparent {
     background-color: transparent;
     color: #666666;
@@ -530,9 +547,15 @@ table {
       border-color: #00abd3; }
     .btn--transparent.btn--small {
       padding: 0.15385em 0.53846em; }
-    .btn--transparent[disabled]:hover {
-      border-color: #aaaaaa;
-      color: #666666; }
+    .btn--transparent[disabled] {
+      cursor: auto;
+      background-color: transparent;
+      color: #666666;
+      border: 1px solid #aaaaaa; }
+      .btn--transparent[disabled]:hover {
+        border-color: #aaaaaa;
+        color: #666666;
+        background-color: transparent; }
   .btn--full-width {
     display: block;
     width: 100%; }
@@ -549,26 +572,28 @@ table {
     padding-left: 0;
     padding-right: 0; }
   .btn--large {
-    padding: 1.29231em 1.23077em;
-    min-height: 3.8em; }
-    .btn--large .btn--loading {
-      top: 1em; }
+    padding: 1.29231em 1.23077em; }
   .btn--small {
-    padding: 0.23077em 0.61538em;
-    min-height: 1.8em; }
+    padding: 0.23077em 0.61538em; }
+    .btn--small.btn--loading:before {
+      height: 12px;
+      width: 12px;
+      margin-top: -6px;
+      margin-left: -6px; }
   .btn--margin-bottom {
     margin-bottom: 0.92308em; }
   .btn--loading .btn__text {
-    display: none; }
+    opacity: 0; }
   .btn--loading:before {
-    content: "";
+    content: " ";
     display: inline-block;
-    height: 24px;
-    width: 24px;
+    height: 1.5em;
+    width: 1.5em;
     position: absolute;
-    top: 0.7em;
+    top: 50%;
     left: 50%;
-    margin-left: -12px;
+    margin-top: -0.75em;
+    margin-left: -0.75em;
     border-radius: 100%;
     border: 2px solid #fff;
     border-bottom-color: transparent;
@@ -611,6 +636,7 @@ table {
  *
  */
 .modal {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -618,12 +644,31 @@ table {
   left: 0;
   overflow-y: auto;
   z-index: 101;
-  display: table;
   table-layout: fixed;
   width: 100%;
   height: 100%; }
-  .modal--open .modal__content {
-    opacity: 1; }
+  .modal--open {
+    display: table; }
+    .modal--open .modal__pre-header {
+      opacity: 1; }
+    .modal--open .modal__content {
+      opacity: 1; }
+    .modal--open .modal__sub-footer {
+      opacity: 1; }
+    .modal--open:after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100; }
+      @media screen and (min-width: 768px) {
+        .modal--open:after {
+          background-color: rgba(0, 0, 0, 0.6); } }
+      @media screen and (max-width: 767px) {
+        .modal--open:after {
+          background-color: #fff; } }
   .modal__wrapper {
     width: 100%;
     height: 100%;
@@ -652,7 +697,11 @@ table {
         width: 360px; } }
   .modal__pre-header {
     padding: 0.92308em 1.23077em;
-    margin: 0 auto; }
+    margin: 0 auto;
+    opacity: 0;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
     @media screen and (min-width: 768px) {
       .modal__pre-header {
         padding: 0.92308em 0;
@@ -662,7 +711,7 @@ table {
         width: 360px; } }
   .modal__header {
     padding: 0.46154em 2.46154em;
-    background-color: #ffffff;
+    background-color: #f4f4f4;
     border-bottom: none; }
     @media screen and (min-width: 768px) {
       .modal__header {
@@ -675,18 +724,22 @@ table {
       .modal__body {
         padding: 0.92308em 2.46154em 0.92308em 2.46154em; } }
   .modal__footer {
-    padding: 0.92308em 1.23077em;
+    padding: 0.92308em 1.23077em 1.84615em 1.23077em;
     background-color: #ffffff;
     border-top: none; }
     @media screen and (min-width: 768px) {
       .modal__footer {
         position: relative;
-        padding: 0.92308em 2.46154em;
+        padding: 0.92308em 2.46154em 1.84615em 2.46154em;
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px; } }
   .modal__sub-footer {
     padding: 0 1.23077em 0.92308em 1.23077em;
-    margin: 0 auto; }
+    margin: 0 auto;
+    opacity: 0;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
     @media screen and (min-width: 768px) {
       .modal__sub-footer {
         position: relative;
@@ -745,20 +798,6 @@ table {
     @media screen and (min-width: 768px) {
       .modal__back:after {
         color: #aaaaaa; } }
-  .modal:after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 100; }
-    @media screen and (min-width: 768px) {
-      .modal:after {
-        background-color: rgba(0, 0, 0, 0.6); } }
-    @media screen and (max-width: 767px) {
-      .modal:after {
-        background-color: #fff; } }
   .modal--full-screen .modal__content {
     background-color: transparent; }
   @media screen and (min-width: 768px) {
