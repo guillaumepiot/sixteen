@@ -587,8 +587,8 @@ table {
   .btn--loading:before {
     content: " ";
     display: inline-block;
-    height: 1.5em;
-    width: 1.5em;
+    height: 20px;
+    width: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -967,5 +967,87 @@ hr {
   .alert--success {
     background-color: #daffda;
     color: #007e00; }
+
+/**
+ *
+ * All animations must live in their own file
+ * in the animations directory and be included
+ * here.
+ *
+ */
+@-webkit-keyframes rotate {
+  /* line 150, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  /* line 154, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  /* line 158, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes rotate {
+  /* line 206, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  /* line 210, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  /* line 214, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+/**
+ * Tooltip
+ */
+.tooltip {
+  position: relative; }
+  .tooltip:hover:before {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 0.46154em 0.87912em;
+    border-radius: 4px;
+    white-space: nowrap;
+    content: attr(data-tooltip);
+    position: absolute;
+    color: #fff;
+    text-transform: none;
+    z-index: 99; }
+  .tooltip--top:hover:before {
+    top: -2.73077em;
+    left: 50%;
+    margin-left: -50%; }
+  .tooltip--top:hover:after {
+    content: '';
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(0, 0, 0, 0.75);
+    position: absolute;
+    left: 0.87912em;
+    top: -5px;
+    z-index: 100; }
+  .tooltip--bottom:hover:before {
+    bottom: -2.73077em;
+    left: 50%;
+    margin-left: -50%; }
+  .tooltip--bottom:hover:after {
+    content: '';
+    height: 0;
+    width: 0;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.75);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    position: absolute;
+    left: 0.87912em;
+    bottom: -5px; }
+  .tooltip--small:hover:before {
+    top: -2.26923em;
+    padding: 0.23077em 0.61538em;
+    font-size: 12px; }
 
 /*# sourceMappingURL=sixteen.css.map */

@@ -5,3 +5,7 @@
 @function calc-em($target, $context: $font_size) {
     @return em($target, $context);
 }
+
+@function calc-px($target, $context: $font_size) {
+    @return ($target/1em) * $context;
+}

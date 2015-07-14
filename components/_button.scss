@@ -18,8 +18,6 @@
     display: inline-block;
     position: relative;
 
-    // min-height: 1em;
-
     outline: none;
     border: none;
     vertical-align: middle;
@@ -27,7 +25,6 @@
     color: $text_color;
 
     padding: calc-em($vertical_padding) calc-em($horizontal_padding);
-    // min-height: 3.1em;
 
     font-family: $font_family;
     font-size: calc-em($font_size);
@@ -256,8 +253,8 @@
         &:before{
             content: " ";
             display: inline-block;
-            height: $base_line_height;
-            width: $base_line_height;
+            height: ceil(calc-px($base_line_height));
+            width: ceil(calc-px($base_line_height));
 
             position: absolute;
             top: 50%;
