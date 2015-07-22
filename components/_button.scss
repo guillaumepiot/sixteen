@@ -45,8 +45,9 @@
         color: $text_color;
     }
     
-    &:active{
+    &:active, &:focus{
         background-color: darken($background-color, 3%);
+        color: $text_color;
     }
 
     &[disabled]{
@@ -67,7 +68,7 @@
         &:hover {
             background-color: lighten($background_color--primary, 3%);
         }
-        &:active{
+        &:active, &:focus{
             background-color: darken($background_color--primary, 3%);
         }
         &[disabled]{
@@ -90,7 +91,7 @@
         &:hover {
             background-color: lighten($background_color--create, 3%);
         }
-        &:active{
+        &:active, &:focus{
             background-color: darken($background_color--create, 3%);
         }
         &[disabled]{
@@ -113,7 +114,7 @@
         &:hover {
             background-color: lighten($background_color--change, 3%);
         }
-        &:active{
+        &:active, &:focus{
             background-color: darken($background_color--change, 3%);
         }
         &[disabled]{
@@ -136,7 +137,7 @@
         &:hover {
             background-color: lighten($background_color--cancel, 3%);
         }
-        &:active{
+        &:active, &:focus{
             background-color: darken($background_color--cancel, 3%);
         }
         &[disabled]{
@@ -159,7 +160,7 @@
         &:hover {
             background-color: lighten($background_color--delete, 3%);
         }
-        &:active{
+        &:active, &:focus{
             background-color: darken($background_color--delete, 3%);
         }
         &[disabled]{
@@ -186,6 +187,9 @@
             background-color: transparent;
             color: $font_color--primary;
             border-color: $font_color--primary;
+        }
+        &:active, &:focus{
+            background-color: transparent;
         }
         &.btn--small{
             padding: calc-em(($vertical_padding / 4) - 1) calc-em(($horizontal_padding / 2) - 1);
@@ -272,6 +276,16 @@
             
         }
         
+    }
+
+    &--tab{
+        border-radius: $border_radius $border_radius 0 0;
+        border-bottom: none;
+        margin-right: 2px;
+        margin-bottom: 1px;
+        &.btn--transparent{
+            padding-bottom: calc-em($vertical_padding);
+        }
     }
 }
 

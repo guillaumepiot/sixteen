@@ -25,6 +25,12 @@
 
 	}
 
+	@for $i from 1 through $grid-columns {
+        td.span-#{$i}, th.span-#{$i}{
+            width: 100% / ($grid-columns/$i);
+        }
+    }
+
 	&--clickable{
 		td{
 			&:hover{
