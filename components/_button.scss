@@ -183,14 +183,18 @@
         color: $grey;
         border: 1px solid $grey--medium;
         padding: calc-em($vertical_padding - 1) calc-em($horizontal_padding - 1);
+        
+        &:active, &:focus{
+            background-color: transparent;
+            color: $grey;
+        }
+
         &:hover {
             background-color: transparent;
             color: $font_color--primary;
             border-color: $font_color--primary;
         }
-        &:active, &:focus{
-            background-color: transparent;
-        }
+        
         &.btn--small{
             padding: calc-em(($vertical_padding / 4) - 1) calc-em(($horizontal_padding / 2) - 1);
         }
