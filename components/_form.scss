@@ -255,3 +255,13 @@
         }
     }
 }
+
+.control-radio{
+    &__options{
+        list-style: none;
+        padding-left: 0;
+    }
+    &__label{
+        margin-left: calc-em($horizontal_padding / 2);
+    }
+}

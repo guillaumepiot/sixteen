@@ -408,6 +408,12 @@ table {
   border-bottom-left-radius: 0;
   border-bottom-color: #eaeaea; }
 
+.control-radio__options {
+  list-style: none;
+  padding-left: 0; }
+.control-radio__label {
+  margin-left: 0.61538em; }
+
 /**
  *
  * All animations must live in their own file
