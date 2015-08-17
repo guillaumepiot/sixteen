@@ -10,6 +10,24 @@ module.exports = (grunt) ->
                 files:
                     'docs/sixteen.css': 'sixteen.scss'
 
+        cssmin:
+            options:
+                shorthandCompacting: false,
+                roundingPrecision: -1
+
+            target:
+                files:
+                    'docs/sixteen.min.css': ['docs/sixteen.css']
+
+        copy: {
+            main: {
+                files: [
+                        {expand: true, cwd: 'docs/', src: ['sixteen.min.css'], dest: '../react-ui/site/', filter: 'isFile'},
+                    ]
+                }
+            }
+
+
         watch:
             frontend:
                 files: [
@@ -21,11 +39,15 @@ module.exports = (grunt) ->
     })
 
     grunt.loadNpmTasks 'grunt-contrib-sass'
+    grunt.loadNpmTasks 'grunt-contrib-cssmin'
+    grunt.loadNpmTasks 'grunt-contrib-copy'
     grunt.loadNpmTasks 'grunt-contrib-watch'
 
     # Tasks
     grunt.registerTask 'frontend', [
         'sass'
+        'cssmin'
+        'copy'
     ]
 
     grunt.registerTask 'watch-frontend', [

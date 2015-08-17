@@ -1,0 +1,90 @@
+.datepicker{
+
+    border: 1px solid darken($grey--light, 5%);
+    border-radius: $border-radius;
+    background-color: #fff;
+
+    table{
+        tr{
+            td, th{
+                vertical-align: middle;
+            }
+        }
+    }
+
+    &__day{
+        display: block;
+        color: #333;
+        text-decoration: none;
+        text-align: center;
+        padding: 4px 8px;
+        font-size: 0.9em;
+        &:hover{
+            background-color: #eee;
+        }
+        &--muted{
+            color: #999;
+        }
+        &--selected{
+            background-color: #666;
+            color: #fff;
+            &:hover{
+                background-color: #999;
+                color: #fff;
+            }
+        }
+        &--today{
+            background-color: $cyan;
+            color: #fff;
+            &:hover{
+                background-color: #666;
+                color: #fff;
+            }
+        }
+
+    }
+
+    &__weekday{
+        text-align: center;
+        padding: 4px 6px;
+        font-size: 0.9em;
+        border-bottom: 1px solid #f4f4f4;
+        color: $grey--medium;
+    }
+    
+    &__selected-date{
+        display: block;
+        text-align: center;
+    }
+
+    &__nav{
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: #333;
+        padding: 8px 0 4px 0;
+
+        &--previous{
+            &:after{
+                content: '';
+                display: inline-block;
+                @include triangle(12px, #ccc, left);
+                
+            }
+            &:hover:after{
+                @include triangle(12px, #666, left);
+            }
+        }
+        &--next{
+            &:after{
+                content: '';
+                display: inline-block;
+                @include triangle(12px, #ccc, right);
+            }
+            &:hover:after{
+                @include triangle(12px, #666, right);
+            }
+        }
+    }
+    
+}

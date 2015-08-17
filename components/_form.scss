@@ -16,6 +16,21 @@
                     border: 1px solid $red;
                 }
             }
+
+            .form__control{
+                &:after{
+                    content: "×";
+                    font-family: Helvetica, sans-serif;
+                    font-size: 1.4em;
+                    text-align: center;
+                    color: $red;
+
+                    display: inline-block;
+                    position: absolute;
+                    right: 0.7em;
+                    top: 0.5em;
+                }
+            }
         }
 
         .form__error{
@@ -30,38 +45,6 @@
 
         }
 
-        // &--text-success{
-        //     &:before{
-        //         content: "\f00c";
-        //         color: $green;
-        //         font: normal normal normal #{$font_size}/1 FontAwesome;
-        //         text-rendering: auto;
-        //         -webkit-font-smoothing: antialiased;
-        //         -moz-osx-font-smoothing: grayscale;
-        //         position:absolute;
-        //         right: calc-em($horizontal_padding);
-        //         top: calc-em($vertical_padding);
-        //     }
-        // }
-
-        // &--text-error{
-        //     &:before{
-        //         content: "\f00d";
-        //         color: $red;
-        //         font: normal normal normal #{$font_size}/1 FontAwesome;
-        //         text-rendering: auto;
-        //         -webkit-font-smoothing: antialiased;
-        //         -moz-osx-font-smoothing: grayscale;
-        //         position:absolute;
-        //         right: calc-em($horizontal_padding);
-        //         top: calc-em($vertical_padding);
-
-        //         @include media($mobile) {
-        //             font: normal normal normal #{$font_size_mobile}/1 FontAwesome;
-        //         }
-        //     }
-        // }
-
         &--select{
             &:after{
                 content: "";
@@ -71,6 +54,7 @@
                 @include triangle(10px, $grey, down);
             }
         }
+        
         
     }
 
@@ -90,6 +74,7 @@
         font-family: $font_family--primary;
         font-size: calc-em($font_size);
 
+        position: relative;
         width:100%;
         margin: 0;
         padding: calc-em($vertical_padding - 1) calc-em($horizontal_padding * 0.9) calc-em($vertical_padding - 1) calc-em($horizontal_padding * 0.9);
@@ -106,7 +91,6 @@
             box-shadow: none;
             border: 1px solid $input_focus_color;
         }
-        
     }
 
     &__select{
@@ -119,6 +103,7 @@
         font-family: $font_family--primary;
         font-size: calc-em($font_size);
 
+        position: relative;
         width:100%;
         margin: 0;
 
@@ -149,13 +134,12 @@
 
         padding: calc-em($vertical_padding) calc-em($horizontal_padding);
 
-
         &--tooltip{
             display: none;
             opacity: 0;
             position: absolute;
             bottom: 0;
-            width: 100%;
+            padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding);
 
             color: #fff;
             background-color: $error_background;
@@ -179,7 +163,7 @@
             }
         }
         &--tooltip-on{
-            display: block;
+            display: inline-block;
             opacity: 1;
         }
     }
