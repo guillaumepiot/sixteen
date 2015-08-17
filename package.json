@@ -26,12 +26,15 @@
     "node-neat": "^1.7.1-beta1"
   },
   "homepage": "https://github.com/Cotidia/sixteen",
-  "readme": "# sixteen\n\nSixteen uses Font Awesome icon set (v4.3).\n\n\t$ npm install font-awesome",
+  "readme": "# sixteen\n\nMinimal SASS framework written following the BEM method.",
   "readmeFilename": "README.md",
   "_id": "sixteen@0.0.7",
   "_shasum": "4ef5e0a7fb929672f2ff98a40465c672ec29b25b",
   "_from": "sixteen@*",
   "devDependencies": {
-    "grunt-contrib-sass": "^0.9.2"
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.13.0",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1"
   }
 }
