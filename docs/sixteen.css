@@ -81,6 +81,70 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/**
+ *
+ * All animations must live in their own file
+ * in the animations directory and be included
+ * here.
+ *
+ */
+@-webkit-keyframes rotate {
+  /* line 150, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  /* line 154, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  /* line 158, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes rotate {
+  /* line 206, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  /* line 210, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  /* line 214, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+/**
+ * Create a loading animation.
+ * 
+ */
+.loader {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  border: 2px solid #666666;
+  border-bottom-color: transparent;
+  background: transparent !important;
+  -webkit-animation: rotate 1s 0s linear infinite;
+  -moz-animation: rotate 1s 0s linear infinite;
+  animation: rotate 1s 0s linear infinite; }
+  .loader--primary {
+    border-color: #00abd3;
+    border-bottom-color: transparent; }
+  .loader--create {
+    border-color: #00b100;
+    border-bottom-color: transparent; }
+  .loader--change {
+    border-color: #ff8a00;
+    border-bottom-color: transparent; }
+  .loader--large {
+    height: 32px;
+    width: 32px; }
+  .loader--small {
+    height: 12px;
+    width: 12px; }
+
 /** ---- GRID ----
  * CSS styles used to format grid layouts.
  */
@@ -230,7 +294,7 @@ table {
     border-color: #d50000; }
     .form__group--error .form__text:focus, .form__group--error .form__text *:focus, .form__group--error .form__select:focus, .form__group--error .form__select *:focus {
       border: 1px solid #d50000; }
-  .form__group--error .form__control:after {
+  .form__group--error .form__control:before {
     content: "×";
     font-family: Helvetica, sans-serif;
     font-size: 1.4em;
@@ -239,7 +303,10 @@ table {
     display: inline-block;
     position: absolute;
     right: 0.7em;
-    top: 0.5em; }
+    top: 50%;
+    margin-top: -0.7em;
+    line-height: 1.4em;
+    z-index: 1; }
   .form__group .form__error {
     margin-bottom: 0.92308em; }
 .form__control {
@@ -414,39 +481,6 @@ table {
 .control-radio__label {
   margin-left: 0.61538em; }
 
-/**
- *
- * All animations must live in their own file
- * in the animations directory and be included
- * here.
- *
- */
-@-webkit-keyframes rotate {
-  /* line 150, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  /* line 154, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  50% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg); }
-  /* line 158, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-@keyframes rotate {
-  /* line 206, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  /* line 210, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  50% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg); }
-  /* line 214, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
 /**
  * Btn - Standard button mixin.
  */
@@ -1025,39 +1059,6 @@ hr {
     background-color: #daffda;
     color: #007e00; }
 
-/**
- *
- * All animations must live in their own file
- * in the animations directory and be included
- * here.
- *
- */
-@-webkit-keyframes rotate {
-  /* line 150, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  /* line 154, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  50% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg); }
-  /* line 158, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-@keyframes rotate {
-  /* line 206, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  /* line 210, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  50% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg); }
-  /* line 214, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
 /**
  * Tooltip
  */

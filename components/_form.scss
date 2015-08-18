@@ -18,7 +18,7 @@
             }
 
             .form__control{
-                &:after{
+                &:before{
                     content: "×";
                     font-family: Helvetica, sans-serif;
                     font-size: 1.4em;
@@ -28,7 +28,11 @@
                     display: inline-block;
                     position: absolute;
                     right: 0.7em;
-                    top: 0.5em;
+                    top: 50%;
+                    margin-top: -0.7em;
+                    line-height: 1.4em;
+
+                    z-index: 1;
                 }
             }
         }
