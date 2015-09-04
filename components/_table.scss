@@ -7,7 +7,7 @@
 	width: 100%;
 	border-collapse:collapse;
 	border-spacing: 0;
-	border: 1px solid $grey--light;
+	border: 1px solid $table-border-color;
 
 	tr{
 		background-color: #fff;
@@ -20,7 +20,7 @@
 	}
 	
 	th{
-		background-color: $grey--light;
+		background-color: $table-header-background-color;
 		padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
 		font-weight: 700;
 		text-align: left;
@@ -28,7 +28,7 @@
 
 	td{
 		padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
-		border-bottom: 1px solid $grey--light;
+		border-bottom: 1px solid $table-row-border-color;
 	}
 
 	@for $i from 1 through $grid-columns {
