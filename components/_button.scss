@@ -77,6 +77,11 @@
         &.btn--transparent{
             border-color: $background_color--primary;
             color: $background_color--primary;
+
+            &:active, &:focus{
+                color: $background_color--primary;
+            }
+
             &:hover {
                 border-color: lighten($background_color--primary, 3%);
                 color: lighten($background_color--primary, 3%);
@@ -100,6 +105,11 @@
         &.btn--transparent{
             border-color: $background_color--create;
             color: $background_color--create;
+
+            &:active, &:focus{
+                color: $background_color--create;
+            }
+
             &:hover {
                 border-color: lighten($background_color--create, 3%);
                 color: lighten($background_color--create, 3%);
@@ -123,6 +133,11 @@
         &.btn--transparent{
             border-color: $background_color--change;
             color: $background_color--change;
+
+            &:active, &:focus{
+                color: $background_color--change;
+            }
+
             &:hover {
                 border-color: lighten($background_color--change, 3%);
                 color: lighten($background_color--change, 3%);
@@ -146,6 +161,11 @@
         &.btn--transparent{
             border-color: $background_color--cancel;
             color: $background_color--cancel;
+
+            &:active, &:focus{
+                color: $background_color--cancel;
+            }
+
             &:hover {
                 border-color: lighten($background_color--cancel, 3%);
                 color: lighten($background_color--cancel, 3%);
@@ -169,6 +189,11 @@
         &.btn--transparent{
             border-color: $background_color--delete;
             color: $background_color--delete;
+
+            &:active, &:focus{
+                color: $background_color--delete;
+            }
+
             &:hover {
                 border-color: lighten($background_color--delete, 3%);
                 color: lighten($background_color--delete, 3%);
