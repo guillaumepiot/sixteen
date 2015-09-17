@@ -243,40 +243,40 @@ table {
     width: 100%; }
     .grid__span-12:last-child {
       margin-right: 0; }
-  .grid--collapse .grid__span-1 {
+  .grid--collapse > .grid__span-1 {
     width: 8.33333%;
     margin-right: 0; }
-  .grid--collapse .grid__span-2 {
+  .grid--collapse > .grid__span-2 {
     width: 16.66667%;
     margin-right: 0; }
-  .grid--collapse .grid__span-3 {
+  .grid--collapse > .grid__span-3 {
     width: 25%;
     margin-right: 0; }
-  .grid--collapse .grid__span-4 {
+  .grid--collapse > .grid__span-4 {
     width: 33.33333%;
     margin-right: 0; }
-  .grid--collapse .grid__span-5 {
+  .grid--collapse > .grid__span-5 {
     width: 41.66667%;
     margin-right: 0; }
-  .grid--collapse .grid__span-6 {
+  .grid--collapse > .grid__span-6 {
     width: 50%;
     margin-right: 0; }
-  .grid--collapse .grid__span-7 {
+  .grid--collapse > .grid__span-7 {
     width: 58.33333%;
     margin-right: 0; }
-  .grid--collapse .grid__span-8 {
+  .grid--collapse > .grid__span-8 {
     width: 66.66667%;
     margin-right: 0; }
-  .grid--collapse .grid__span-9 {
+  .grid--collapse > .grid__span-9 {
     width: 75%;
     margin-right: 0; }
-  .grid--collapse .grid__span-10 {
+  .grid--collapse > .grid__span-10 {
     width: 83.33333%;
     margin-right: 0; }
-  .grid--collapse .grid__span-11 {
+  .grid--collapse > .grid__span-11 {
     width: 91.66667%;
     margin-right: 0; }
-  .grid--collapse .grid__span-12 {
+  .grid--collapse > .grid__span-12 {
     width: 100%;
     margin-right: 0; }
 
@@ -537,6 +537,8 @@ table {
     .btn--primary.btn--transparent {
       border-color: #00abd3;
       color: #00abd3; }
+      .btn--primary.btn--transparent:active, .btn--primary.btn--transparent:focus {
+        color: #00abd3; }
       .btn--primary.btn--transparent:hover {
         border-color: #00b7e2;
         color: #00b7e2; }
@@ -551,6 +553,8 @@ table {
     .btn--create.btn--transparent {
       border-color: #00b100;
       color: #00b100; }
+      .btn--create.btn--transparent:active, .btn--create.btn--transparent:focus {
+        color: #00b100; }
       .btn--create.btn--transparent:hover {
         border-color: #00c000;
         color: #00c000; }
@@ -565,6 +569,8 @@ table {
     .btn--change.btn--transparent {
       border-color: #ff8a00;
       color: #ff8a00; }
+      .btn--change.btn--transparent:active, .btn--change.btn--transparent:focus {
+        color: #ff8a00; }
       .btn--change.btn--transparent:hover {
         border-color: #ff910f;
         color: #ff910f; }
@@ -579,6 +585,8 @@ table {
     .btn--cancel.btn--transparent {
       border-color: #666666;
       color: #666666; }
+      .btn--cancel.btn--transparent:active, .btn--cancel.btn--transparent:focus {
+        color: #666666; }
       .btn--cancel.btn--transparent:hover {
         border-color: #6e6e6e;
         color: #6e6e6e; }
@@ -593,6 +601,8 @@ table {
     .btn--delete.btn--transparent {
       border-color: #d50000;
       color: #d50000; }
+      .btn--delete.btn--transparent:active, .btn--delete.btn--transparent:focus {
+        color: #d50000; }
       .btn--delete.btn--transparent:hover {
         border-color: #e40000;
         color: #e40000; }
@@ -1012,20 +1022,6 @@ hr {
   border-collapse: collapse;
   border-spacing: 0;
   border: 1px solid #eeeeee; }
-  .table tr {
-    background-color: #fff; }
-    .table tr:hover, .table tr:active, .table tr:focus {
-      background-color: #fafafa; }
-    .table tr:last-child td {
-      border-bottom: none; }
-  .table th {
-    background-color: #eeeeee;
-    padding: 0.65934em 1.23077em;
-    font-weight: 700;
-    text-align: left; }
-  .table td {
-    padding: 0.65934em 1.23077em;
-    border-bottom: 1px solid #eeeeee; }
   .table td.span-1, .table th.span-1 {
     width: 8.33333%; }
   .table td.span-2, .table th.span-2 {
@@ -1050,8 +1046,25 @@ hr {
     width: 91.66667%; }
   .table td.span-12, .table th.span-12 {
     width: 100%; }
-  .table--clickable td:hover {
+  .table--clickable .table-cell:hover {
     cursor: pointer; }
+
+.table-row {
+  background-color: #fff; }
+  .table-row:hover, .table-row:active, .table-row:focus {
+    background-color: #fafafa; }
+  .table-row:last-child td {
+    border-bottom: none; }
+
+.table-head-cell {
+  background-color: #eeeeee;
+  padding: 0.65934em 1.23077em;
+  font-weight: 700;
+  text-align: left; }
+
+.table-cell {
+  padding: 0.65934em 1.23077em;
+  border-bottom: 1px solid #eeeeee; }
 
 /** ---- FORM ----
  * CSS styles for alerts.

@@ -14,7 +14,7 @@
     &--collapse{
 
         @for $i from 1 through $grid-columns {
-            .grid__span-#{$i}{
+            > .grid__span-#{$i}{
                 width: (100 * ($i / $grid-columns)) * 1%;
                 @include omega;
             }
