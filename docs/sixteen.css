@@ -502,6 +502,7 @@ table {
   border: none;
   vertical-align: middle;
   background-color: #666;
+  border: 1px solid #666;
   color: #fff;
   padding: 0.92308em 1.23077em;
   font-family: "Lucida Grande", sans-serif;
@@ -527,82 +528,92 @@ table {
     opacity: 0.5;
     cursor: auto; }
   .btn--primary {
-    background-color: #00abd3; }
+    background-color: #00abd3;
+    border-color: #00abd3; }
     .btn--primary:hover {
-      background-color: #00b7e2; }
+      background-color: #00b7e2;
+      border-color: #00b7e2; }
     .btn--primary:active, .btn--primary:focus {
-      background-color: #009fc4; }
+      background-color: #009fc4;
+      border-color: #009fc4; }
     .btn--primary[disabled]:hover {
-      background-color: #00abd3; }
+      background-color: #00abd3;
+      border-color: #00abd3; }
     .btn--primary.btn--transparent {
       border-color: #00abd3;
       color: #00abd3; }
-      .btn--primary.btn--transparent:active, .btn--primary.btn--transparent:focus {
-        color: #00abd3; }
       .btn--primary.btn--transparent:hover {
         border-color: #00b7e2;
         color: #00b7e2; }
   .btn--create {
-    background-color: #00b100; }
+    background-color: #00b100;
+    border-color: #00b100; }
     .btn--create:hover {
-      background-color: #00c000; }
+      background-color: #00c000;
+      border-color: #00c000; }
     .btn--create:active, .btn--create:focus {
-      background-color: #00a200; }
+      background-color: #00a200;
+      border-color: #00a200; }
     .btn--create[disabled]:hover {
-      background-color: #00b100; }
+      background-color: #00b100;
+      border-color: #00b100; }
     .btn--create.btn--transparent {
       border-color: #00b100;
       color: #00b100; }
-      .btn--create.btn--transparent:active, .btn--create.btn--transparent:focus {
-        color: #00b100; }
       .btn--create.btn--transparent:hover {
         border-color: #00c000;
         color: #00c000; }
   .btn--change {
-    background-color: #ff8a00; }
+    background-color: #ff8a00;
+    border-color: #ff8a00; }
     .btn--change:hover {
-      background-color: #ff910f; }
+      background-color: #ff910f;
+      border-color: #ff910f; }
     .btn--change:active, .btn--change:focus {
-      background-color: #f08200; }
+      background-color: #f08200;
+      border-color: #f08200; }
     .btn--change[disabled]:hover {
-      background-color: #ff8a00; }
+      background-color: #ff8a00;
+      border-color: #ff8a00; }
     .btn--change.btn--transparent {
       border-color: #ff8a00;
       color: #ff8a00; }
-      .btn--change.btn--transparent:active, .btn--change.btn--transparent:focus {
-        color: #ff8a00; }
       .btn--change.btn--transparent:hover {
         border-color: #ff910f;
         color: #ff910f; }
   .btn--cancel {
-    background-color: #666666; }
+    background-color: #666666;
+    border-color: #666666; }
     .btn--cancel:hover {
-      background-color: #6e6e6e; }
+      background-color: #6e6e6e;
+      border-color: #6e6e6e; }
     .btn--cancel:active, .btn--cancel:focus {
-      background-color: #5e5e5e; }
+      background-color: #5e5e5e;
+      border-color: #5e5e5e; }
     .btn--cancel[disabled]:hover {
-      background-color: #666666; }
+      background-color: #666666;
+      border-color: #666666; }
     .btn--cancel.btn--transparent {
       border-color: #666666;
       color: #666666; }
-      .btn--cancel.btn--transparent:active, .btn--cancel.btn--transparent:focus {
-        color: #666666; }
       .btn--cancel.btn--transparent:hover {
         border-color: #6e6e6e;
         color: #6e6e6e; }
   .btn--delete {
-    background-color: #d50000; }
+    background-color: #d50000;
+    border-color: #d50000; }
     .btn--delete:hover {
-      background-color: #e40000; }
+      background-color: #e40000;
+      border-color: #e40000; }
     .btn--delete:active, .btn--delete:focus {
-      background-color: #c60000; }
+      background-color: #c60000;
+      border-color: #c60000; }
     .btn--delete[disabled]:hover {
-      background-color: #d50000; }
+      background-color: #d50000;
+      border-color: #d50000; }
     .btn--delete.btn--transparent {
       border-color: #d50000;
       color: #d50000; }
-      .btn--delete.btn--transparent:active, .btn--delete.btn--transparent:focus {
-        color: #d50000; }
       .btn--delete.btn--transparent:hover {
         border-color: #e40000;
         color: #e40000; }
@@ -1082,6 +1093,9 @@ hr {
   .alert--success {
     background-color: #daffda;
     color: #007e00; }
+  .alert--warning {
+    background-color: #ffecd6;
+    color: #cc6e00; }
 
 /**
  * Tooltip
