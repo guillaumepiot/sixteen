@@ -34,7 +34,15 @@
 
                     z-index: 1;
                 }
+
             }
+
+            .form__control--select{
+                &:after{
+                    right: calc-em($horizontal_padding) + 0.7em;
+                }
+            }
+
         }
 
         .form__error{
@@ -54,7 +62,7 @@
                 content: "";
                 position: absolute;
                 right: calc-em($horizontal_padding);
-                top: calc-em($vertical_padding + 6);
+                top: calc-em($vertical_padding + 7);
                 @include triangle(10px, $grey, down);
             }
         }
