@@ -2,204 +2,269 @@
 <html>
 <head>
     <title>Sixteen - BEM Style Minimal Framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0" />
+    <meta charset="UTF-8"> 
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <link rel="stylesheet" type="text/css" href="sixteen.css">
-    <link href="prettify.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="highlight/styles/github.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript">
-        function htmlEntities(str) {
-            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-        }
-    </script>
     <style type="text/css">
         body{
-            min-width: 768px;
+            font-family: "Open Sans", helvetica, sans-serif;
+            background-color: #fff;
         }
-        .menu{
-            background-color: #00abd3;
-            position: fixed;
-            height:100%;
-            padding: 0 16px;
-
+        h1, h2, h3{
+            font-family: "Open Sans", helvetica, sans-serif;
+            font-weight: 300;
         }
-        .menu h1, .menu p, .menu a{
-            color:#fff;
+        .inner h3{
+            color: #aaa;
         }
-
-        .content{
-            margin-right: 2.35%
-        }
-
-        p code{
-            background-color: #f4f4f4;
+        pre{
+            font-family: "Lucida Console", Courier;
+            /*background-color: #f9f9f9;*/
+            border: 1px solid #eee;
+            padding: 1em;
             border-radius: 4px;
-            font-family: "Lucida Console", Monaco, monospace;
-            font-size: 12px;
-            color: #D14;
-            line-height: 24px;
+        }
+        code.prettyprint{
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul li{
+            padding: 4px 0;
+        }
+        .inner{
+            padding:0 20px;
+        }
+        .section{
+            margin: 60px 0;
+        }
+        /*.inner:nth-child(2){
+            background-color: #F9F9F9;
+        }*/
+        .sidebar{
+            background-color: #00abd3;
+            color: #fff;
+            position: fixed;
+            height: 100%;
+        }
+        .content{
+            margin-left: 25%;
+            /*max-width: 800px;*/
         }
 
+        .menu{
+
+        }
+        .menu__item{
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+        }
+        .menu__item:hover{
+            background-color: #12BCE4;
+        }
+        .menu__section{
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: 500;
+            color: #52DFFF;
+        }
+
+        .demo{
+            background-color: #f4f4f4;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        /* Code highlighter */
+
+        .hljs{
+            background-color: transparent;
+        }
+        .hljs-attribute{
+            color: #0091DC;
+        }
+        .hljs-string{
+            color: #FF6200;
+        }
+        .hljs-keyword {
+            color: #0091DC;
+            font-weight: normal;
+        }
     </style>
 </head>
 <body>
-    <div class="grid">
-        <div class="[ menu ] [ grid__span-2 ]">
+    <div class="grid grid--collapse">
+        <div class="grid__span-3 sidebar">
+            <div class="inner">
+                <h1>Sixteen</h1>
+                <p>BEM Style Minimal Framework</p>
+            </div>
 
-            <h1>Sixteen</h1>
-            <p>BEM Style Minimal Framework</p>
-
-            <p>STYLE REFERENCE</p>
-            <ul>
-                <li><a href="#typography">Typography</a></li>
-                <li><a href="#form">Form</a></li>
-                <li><a href="#button">Button</a></li>
-                <li><a href="#button">Table</a></li>
-                <li><a href="#modal">Modal</a></li>
-                <li><a href="#grid">Grid</a></li>
-                <li><a href="#alert">Alert</a></li>
-            </ul>
+            <div class="menu">
+                <span class="menu__section">STYLE REFERENCE</span>
+                <a href="#typography" class="menu__item">Typography</a>
+                <a href="#form" class="menu__item">Form</a>
+                <a href="#button" class="menu__item">Button</a>
+                <a href="#button" class="menu__item">Table</a>
+                <a href="#modal" class="menu__item">Modal</a>
+                <a href="#grid" class="menu__item">Grid</a>
+                <a href="#alert" class="menu__item">Alert</a>
+            </div>
         </div>
+        <div class="grid__span-9 content">
 
-        <div class="grid__span-2 ">
-            &nbsp;
-        </div>
-
-        <div class="grid__span-10">
-
-            <div class="content">
-
-                <div id="typography">
-                    <hr>
+            <div id="typography" class="">
+                <div class="inner">
                     <h1>Typography</h1>
-                    <h2>Headers</h2>
+                </div>
 
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;h1&gt;Heading 1&lt;/h1&gt;
+                <div class="inner">
+                    <h2>Headers</h2>
+                </div>
+
+                <div class="demo inner">
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                    <h5>Heading 5</h5>
+                    <h6>Heading 6</h6>
+                </div>
+
+
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
 &lt;h2&gt;Heading 2&lt;/h2&gt;
 &lt;h3&gt;Heading 3&lt;/h3&gt;
 &lt;h4&gt;Heading 4&lt;/h4&gt;
 &lt;h5&gt;Heading 5&lt;/h5&gt;
 &lt;h6&gt;Heading 6&lt;/h6&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <h1>Heading 1</h1>
-                            <h2>Heading 2</h2>
-                            <h3>Heading 3</h3>
-                            <h4>Heading 4</h4>
-                            <h5>Heading 5</h5>
-                            <h6>Heading 6</h6>
-                        </div>
-                    </div>
+                </div>
 
-                    
+                <div class="inner">
                     <h2>Paragraph</h2>
+                </div>
+                <div class="demo inner">
                     <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis. 
-Curabitur nec faucibus sem, ut feugiat nisi. Vestibulum vel porta justo. 
-Morbi egestas elementum sapien sed euismod.&lt;/p&gt;</code></pre>
-                        </div>
                         <div class="grid__span-6">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis. 
                     Curabitur nec faucibus sem, ut feugiat nisi. Vestibulum vel porta justo. 
                     Morbi egestas elementum sapien sed euismod.</p>
-
+                        <small>Some small text</small>
+                            
+                        </div>
+                        <div class="grid__span-6">
+                            
                         </div>
                     </div>
-                    <br>
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;small&gt;Some small text&lt;/small&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <small>Some small text</small>
-                        </div>
-                    </div>
+                </div>
 
-                    <h2>Unordered list</h2>
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis. 
+Curabitur nec faucibus sem, ut feugiat nisi. Vestibulum vel porta justo. 
+Morbi egestas elementum sapien sed euismod.&lt;/p&gt;
 
+&lt;small&gt;Some small text&lt;/small&gt;</code></pre>
+                </div>
+                
+
+                <div class="inner">
+                    <h2>Lists</h2>
+                </div>
+                <div class="demo">
                     <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;ul&gt;
-    &lt;li&gt;Item 1&lt;/li&gt;
-    &lt;li&gt;Item 2&lt;/li&gt;
-    &lt;li&gt;Item 3&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-                        </div>
                         <div class="grid__span-6">
                             <ul>
                                 <li>Item 1</li>
                                 <li>Item 2</li>
                                 <li>Item 3</li>
                             </ul>
-                        </div> 
-                    </div>
-                    
-                    
-                    
-                    
-
-                    <h2>Ordered list</h2>
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;ol&gt;
-    &lt;li&gt;Item 1&lt;/li&gt;
-    &lt;li&gt;Item 2&lt;/li&gt;
-    &lt;li&gt;Item 3&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
+                            <br>
                             <ol>
                                 <li>Item 1</li>
                                 <li>Item 2</li>
                                 <li>Item 3</li>
                             </ol>
                         </div> 
-                    </div>
-
-                    <h2>Blockquote</h2>
-                    <div class="grid">
                         <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;blockquote&gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis.
-&lt;/blockquote&gt;</code></pre>
+                            
                         </div>
-                        <div class="grid__span-6">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis.
-                            </blockquote>
-                        </div> 
                     </div>
-
-                    <h2>Thematic break</h2>
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;hr&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <hr>
-                        </div> 
-                    </div>
-                    
                 </div>
-                <hr>
-                <div id="form">
-                    <h1>Form</h1>
 
-                    <h2>Static state</h2>
-
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;ol&gt;
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre class="prettyprint linenums"><code>&lt;ul&gt;
     &lt;li&gt;Item 1&lt;/li&gt;
     &lt;li&gt;Item 2&lt;/li&gt;
     &lt;li&gt;Item 3&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+                </div>
+
+                
+            
+                <div class="inner">
+                    <h2>Blockquote</h2>
+                </div>
+                <div class="demo inner">
+                    <div class="grid">
+                        <div class="grid__span-6">
+                           <blockquote>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis.
+                            </blockquote>
                         </div>
+                        <div class="grid__span-6">
+                            
+                        </div> 
+                    </div>
+                </div>
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;blockquote&gt;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis.
+&lt;/blockquote&gt;</code></pre>
+                </div>
+
+                <div class="inner">
+                    <h2>Thematic break</h2>
+                </div>
+                <div class="demo inner">
+                    <hr>
+                </div>
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;hr&gt;</code></pre>
+                </div>
+                
+                
+            </div>
+            <hr>
+            <div id="form" class="section">
+
+                <div class="inner">
+                    <h1>Form</h1>
+                </div>
+
+                <div class="demo inner">
+                    <div class="grid">
                         <div class="grid__span-6">
                             <div class="form__group">
                                 <label class="form__label">Field label</label>
@@ -209,19 +274,32 @@ Morbi egestas elementum sapien sed euismod.&lt;/p&gt;</code></pre>
                                 <div class="form__help">Information about the field</div>
                             </div>
                             <button class="btn btn--primary">Submit button</button>
-                        </div> 
-                    </div>
-
-                    <h2>Error state</h2>
-
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;ol&gt;
-    &lt;li&gt;Item 1&lt;/li&gt;
-    &lt;li&gt;Item 2&lt;/li&gt;
-    &lt;li&gt;Item 3&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
                         </div>
+                        <div className="grid__span-6">
+                    
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;div class="form__group"&gt;
+    &lt;label class="form__label"&gt;Field label&lt;/label&gt;
+    &lt;div class="form__control form__control--text"&gt;
+        &lt;input class="form__text" type="text" name="total_annual_bookings" placeholder="1,000,000"&gt;
+    &lt;/div&gt;
+    &lt;div class="form__help"&gt;Information about the field&lt;/div&gt;
+&lt;/div&gt;
+&lt;button class="btn btn--primary"&gt;Submit button&lt;/button&gt;</code></pre>
+                </div>
+
+                <div class="inner">
+                    <h2>Error state</h2>
+                </div>
+
+                <div class="demo inner">
+                    <div class="grid">
                         <div class="grid__span-6">
                             <div class="form__group form__group--error">
                                 <label class="form__label">Field label</label>
@@ -232,49 +310,37 @@ Morbi egestas elementum sapien sed euismod.&lt;/p&gt;</code></pre>
                                 <div class="form__help">Information about the field</div>
                             </div>
                             <button class="btn btn--primary">Submit button</button>
-                        </div> 
+                        </div>
+                        <div className="grid__span-6">
+                    
+                        </div>
                     </div>
-
-                    <h2>Help text</h2>
-
-                    <h3>Default</h3>    
-
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;div class="form__group"&gt;
+                    
+                </div>
+                
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;div class="form__group form__group--error"&gt;
+    &lt;label class="form__label"&gt;Field label&lt;/label&gt;
+    &lt;div class="form__error"&gt;Error message&lt;/div&gt;
     &lt;div class="form__control form__control--text"&gt;
-        &lt;input class="form__text" type="text" placeholder="1,000,000"&gt;
+        &lt;input class="form__text" type="text" name="total_annual_bookings" placeholder="1,000,000"&gt;
     &lt;/div&gt;
     &lt;div class="form__help"&gt;Information about the field&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <div class="form__group">
-                                <div class="form__control form__control--text">
-                                    <input class="form__text" type="text" name="total_annual_bookings" placeholder="1,000,000">
-                                </div>
-                                <div class="form__help">Information about the field</div>
-                            </div>
-                        </div> 
-                    </div>
+&lt;/div&gt;
+&lt;button class="btn btn--primary"&gt;Submit button&lt;/button&gt;</code></pre>
+                </div>
 
-                    <h3>Tooltip</h3>    
 
+                <div class="inner">
+                    <h2>Help Tooltip</h2>
+                </div>
+  
+                <div class="demo inner">
                     <div class="grid">
                         <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;div class="form__group"&gt;
-    &lt;div class="form__control form__control--text"&gt;
-        &lt;input class="form__text" type="text" placeholder="1,000,000"&gt;
-    &lt;/div&gt;
-    &lt;div class="form__help form__help--tooltip form__help--tooltip-on"  style="bottom: 54px;"&gt;
-        Information about the field
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        <blockquote>
-                            Please note that you will need to calculate dynamically the bottom position of the tooltip using JavaScript. This type of tooltip is best used for web apps.
-                        </blockquote>
-                        </div>
-                        <div class="grid__span-6">
+                            <br>
+                            <br>
                             <div class="form__group">
                                 <div class="form__control form__control--text">
                                     <input class="form__text" type="text" name="total_annual_bookings" placeholder="1,000,000">
@@ -283,107 +349,126 @@ Morbi egestas elementum sapien sed euismod.&lt;/p&gt;</code></pre>
                                     Information about the field
                                 </div>
                             </div>
+                        </div>
+                        <div class="grid__span-6">
+                            
                         </div> 
                     </div>
-
-
-                    
-
-
                 </div>
 
-                <div id="button">
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;div class="form__group"&gt;
+    &lt;div class="form__control form__control--text"&gt;
+        &lt;input class="form__text" type="text" placeholder="1,000,000"&gt;
+    &lt;/div&gt;
+    &lt;div class="form__help form__help--tooltip form__help--tooltip-on"  style="bottom: 54px;"&gt;
+        Information about the field
+    &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+                <p>Please note that the bottom position must be calculated and assigned programmatically.</p>
+                </div>
+                
+
+
+                
+
+
+            </div>
+            <hr>
+            <div id="button" class="section">
+                <div class="inner">
                     <h1>Button</h1>
-                    <h2>Default state and roles</h2>
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;button class="btn"&gt;Default button&lt;/button&gt;
+                </div>
+                <div class="demo inner">
+                    <p><button class="btn">Default button</button></p>
+                    <p><button class="btn btn--primary">Primary button</button></p>
+                    <p><button class="btn btn--create">Create button</button></p>
+                    <p><button class="btn btn--change">Change button</button></p>
+                    <p><button class="btn btn--delete">Delete button</button></p>
+                </div>
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;button class="btn"&gt;Default button&lt;/button&gt;
 &lt;button class="btn btn--primary"&gt;Primary button&lt;/button&gt;
 &lt;button class="btn btn--create"&gt;Create button&lt;/button&gt;
 &lt;button class="btn btn--change"&gt;Change button&lt;/button&gt;
 &lt;button class="btn btn--delete"&gt;Delete button&lt;/button&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <button class="btn">Default button</button>
-                            <p><button class="btn btn--primary">Primary button</button></p>
-                            <p><button class="btn btn--create">Create button</button></p>
-                            <p><button class="btn btn--change">Change button</button></p>
-                            <p><button class="btn btn--delete">Delete button</button></p>
-                        </div> 
-                    </div>
+                </div>
+                
+                <div class="inner">
+                    <h2>Size variations</h2>
+                </div>
+                <div class="demo inner">
+                    <p><button class="btn btn--primary btn--large">Large button</button></p>
+                    <p><button class="btn btn--primary btn--small">Small button</button></p>
+                </div>
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;button class="btn btn--primary btn--large"&gt;Large button&lt;/button&gt;
+&lt;button class="btn btn--small"&gt;Small button&lt;/button&gt;</code></pre>
+                </div>
 
-                    <h2>Large</h2>
+               
+                <div class="inner">
+                    <h2>Transparency</h2>
+                </div>
+                <div class="demo inner">
                     <div class="grid">
                         <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--primary btn--large"&gt;Primary button&lt;/button&gt;
-</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <button class="btn btn--primary btn--large">Primary button</button>
-                        </div> 
-                    </div>
-
-                    <h2>Small</h2>
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--small"&gt;Default button&lt;/button&gt;
-&lt;button class="btn btn--primary btn--small"&gt;Primary button&lt;/button&gt;
-&lt;button class="btn btn--create btn--small"&gt;Create button&lt;/button&gt;
-&lt;button class="btn btn--change btn--small"&gt;Change button&lt;/button&gt;
-&lt;button class="btn btn--delete btn--small"&gt;Delete button&lt;/button&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <button class="btn btn--small">Default button</button>
-                            <p><button class="btn btn--primary btn--small">Primary button</button></p>
-                            <p><button class="btn btn--create btn--small">Create button</button></p>
-                            <p><button class="btn btn--change btn--small">Change button</button></p>
-                            <p><button class="btn btn--delete btn--small">Delete button</button></p>
-                        </div> 
-                    </div>
-
-                    <h2>Transparent</h2>
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--transparent"&gt;Default button&lt;/button&gt;
-&lt;button class="btn btn--primary btn--transparent"&gt;Primary button&lt;/button&gt;
-&lt;button class="btn btn--create btn--transparent"&gt;Create button&lt;/button&gt;
-&lt;button class="btn btn--change btn--transparent"&gt;Change button&lt;/button&gt;
-&lt;button class="btn btn--delete btn--transparent"&gt;Delete button&lt;/button&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <button class="btn btn--transparent">Default button</button>
+                            <p><button class="btn btn--transparent">Default button</button></p>
                             <p><button class="btn btn--primary btn--transparent">Primary button</button></p>
                             <p><button class="btn btn--create btn--transparent">Create button</button></p>
                             <p><button class="btn btn--change btn--transparent">Change button</button></p>
                             <p><button class="btn btn--delete btn--transparent">Delete button</button></p>
                         </div> 
-                    </div>
-
-                    <h2>Full width (block)</h2>
-                    <div class="grid">
                         <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--primary btn--full-width"&gt;
-    &lt;span class="btn__text"&gt;Loading&lt;/span&gt;
-&lt;/button&gt;</code></pre>
                         </div>
+                    </div>
+                </div>
+
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;button class="btn btn--transparent"&gt;Default button&lt;/button&gt;
+&lt;button class="btn btn--primary btn--transparent"&gt;Primary button&lt;/button&gt;
+&lt;button class="btn btn--create btn--transparent"&gt;Create button&lt;/button&gt;
+&lt;button class="btn btn--change btn--transparent"&gt;Change button&lt;/button&gt;
+&lt;button class="btn btn--delete btn--transparent"&gt;Delete button&lt;/button&gt;</code></pre>
+                </div>
+                
+
+                <div class="inner">
+                    <h2>Full width</h2>
+                </div>
+                <div class="demo inner">
+                    <div class="grid">
                         <div class="grid__span-6">
                             <button class="btn btn--primary btn--full-width">
                                 <span class="btn__text">Full width button</span>
                             </button>
                         </div> 
+                        <div class="grid__span-6">
+                        </div>
                     </div>
+                </div>
 
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;button class="btn btn--primary btn--full-width"&gt;
+    Full width button
+&lt;/button&gt;</code></pre>
+                </div>
+
+                <div class="inner">
                     <h2>Loading state</h2>
+                </div>
+
+                <div class="demo inner">
                     <div class="grid">
                         <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--primary btn--full-width btn--loading"&gt;
-    &lt;span class="btn__text"&gt;Loading&lt;/span&gt;
-&lt;/button&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <button class="btn btn--primary btn--full-width btn--loading">
+                            <p><button class="btn btn--primary btn--full-width btn--loading">
                                 <span class="btn__text">Loading</span>
-                            </button>
+                            </button></p>
                             <p><button class="btn btn--primary btn--full-width btn--large btn--loading">
                                 <span class="btn__text">Loading</span>
                             </button></p>
@@ -391,65 +476,132 @@ Morbi egestas elementum sapien sed euismod.&lt;/p&gt;</code></pre>
                                 <span class="btn__text">Loading</span>
                             </button></p>
                         </div> 
+                        <div class="grid__span-6">
+                        </div>
                     </div>
-
                 </div>
 
-                <div id="table">
-                    <h1>Table</h1>
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;button class="btn btn--primary btn--full-width btn--loading"&gt;
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;button class="btn btn--primary btn--full-width btn--loading"&gt;
     &lt;span class="btn__text"&gt;Loading&lt;/span&gt;
 &lt;/button&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <table class="table">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Example</th>
-                                </tr>
-                                <tr>
-                                    <td>type</td>
-                                    <td>The input field type (text, number, email...)</td>
-                                    <td>"text"</td>
-                                </tr>
-                                <tr>
-                                    <td>type</td>
-                                    <td>The input field type (text, number, email...)</td>
-                                    <td>"text"</td>
-                                </tr>
-                                <tr>
-                                    <td>type</td>
-                                    <td>The input field type (text, number, email...)</td>
-                                    <td>"text"</td>
-                                </tr>
-                            </table>
-                        </div> 
-                    </div>
-
-                    
-
-
                 </div>
 
-                <div id="modal">
-                    <h1>Modal</h1>
-
-                    <h2>Normal modal</h2>
-
-
+            </div>
+            <hr>
+            <div id="table" class="section">
+                <div class="inner">
+                    <h1>Table</h1>
+                </div>
+                <div class="demo inner">
                     <div class="grid">
                         <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;div class="modal" id="modal-normal"&gt;
+                            <table class="table">
+                                <tr class="table-row">
+                                    <th class="table-head-cell">Name</th>
+                                    <th class="table-head-cell">Description</th>
+                                    <th class="table-head-cell">Example</th>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="table-cell">type</td>
+                                    <td class="table-cell">The input field type (text, number, email...)</td>
+                                    <td class="table-cell">"text"</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="table-cell">type</td>
+                                    <td class="table-cell">The input field type (text, number, email...)</td>
+                                    <td class="table-cell">"text"</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="table-cell">type</td>
+                                    <td class="table-cell">The input field type (text, number, email...)</td>
+                                    <td class="table-cell">"text"</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="grid__span-6">
+                            
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre class="prettyprint linenums"><code>&lt;table class="table"&gt;
+&lt;tr class="table-row"&gt;
+    &lt;th class="table-head-cell"&gt;Name&lt;/th&gt;
+    &lt;th class="table-head-cell"&gt;Description&lt;/th&gt;
+    &lt;th class="table-head-cell"&gt;Example&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr class="table-row"&gt;
+    &lt;td class="table-cell"&gt;type&lt;/td&gt;
+    &lt;td class="table-cell"&gt;The input field type (text, number, email...)&lt;/td&gt;
+    &lt;td class="table-cell"&gt;"text"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="table-row"&gt;
+    &lt;td class="table-cell"&gt;type&lt;/td&gt;
+    &lt;td class="table-cell"&gt;The input field type (text, number, email...)&lt;/td&gt;
+    &lt;td class="table-cell"&gt;"text"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="table-row"&gt;
+    &lt;td class="table-cell"&gt;type&lt;/td&gt;
+    &lt;td class="table-cell"&gt;The input field type (text, number, email...)&lt;/td&gt;
+    &lt;td class="table-cell"&gt;"text"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                </div>
+
+                
+
+
+            </div>
+            <hr>
+            <div id="modal" class="section">
+                <div class="inner">
+                    <h1>Modal</h1>
+                </div>
+                
+
+                <div class="demo inner">
+                    <button id="modal-open-normal" class="btn btn--primary">Open modal</button>
+                </div>
+
+                <div class="modal" id="modal-normal">
+                    <div class="modal__wrapper">
+                        <div class="modal__pre-header">
+                            <button class="btn btn--primary btn--full-width">Pre-header</button>
+                        </div>
+                        <div class="modal__content">
+                            
+                            <div class="modal__header">
+                                <a href="#close" id="modal-close-normal" class="modal__close"></a>
+                                <h3>Modal header</h3>
+                            </div>
+                            <div class="modal__body">
+                                Modal body
+                            </div>
+                            <div class="modal__footer">
+                                <button class="btn btn--primary">Save</button>
+                                <button class="btn">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="modal__sub-footer">
+                            <button class="btn btn--primary btn--full-width">Sub-footer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre class="prettyprint linenums"><code>&lt;div class="modal" id="modal-normal"&gt;
     &lt;div class="modal__wrapper"&gt;
         &lt;div class="modal__pre-header"&gt;
             &lt;button class="btn btn--primary btn--full-width"&gt;Pre-header&lt;/button&gt;
         &lt;/div&gt;
         &lt;div class="modal__content"&gt;
-            &lt;a href="#close" id="modal-close-normal" class="modal__close"&gt;&lt;/a&gt;
             &lt;div class="modal__header"&gt;
+                &lt;a href="#close" id="modal-close-normal" class="modal__close"&gt;&lt;/a&gt;
                 &lt;h3&gt;Modal header&lt;/h3&gt;
             &lt;/div&gt;
             &lt;div class="modal__body"&gt;
@@ -465,324 +617,270 @@ Morbi egestas elementum sapien sed euismod.&lt;/p&gt;</code></pre>
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-
-                        <h3>Options</h3>
-                        <p>
-                            <code>.modal__content--small</code> Smaller modal content<br>
-                            <code>.modal__pre-header--small</code> Smaller modal pre-header<br>
-                            <code>.modal__sub-footer--small</code> Smaller modal sub-footer
-                        </p> 
-                        </div>
-                        <div class="grid__span-6">
-                            <button id="modal-open-normal" class="btn btn--primary">Open modal</button>
-                            <div class="modal" id="modal-normal">
-                                <div class="modal__wrapper">
-                                    <div class="modal__pre-header">
-                                        <button class="btn btn--primary btn--full-width">Pre-header</button>
-                                    </div>
-                                    <div class="modal__content">
-                                        <a href="#close" id="modal-close-normal" class="modal__close"></a>
-                                        <div class="modal__header">
-                                            <h3>Modal header</h3>
-                                        </div>
-                                        <div class="modal__body">
-                                            Modal body
-                                        </div>
-                                        <div class="modal__footer">
-                                            <button class="btn btn--primary">Save</button>
-                                            <button class="btn">Cancel</button>
-                                        </div>
-                                    </div>
-                                    <div class="modal__sub-footer">
-                                        <button class="btn btn--primary btn--full-width">Sub-footer</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-
-
                 </div>
-                <hr>
-                <div id="grid">
+
+            
+
+
+            </div>
+            <hr>
+            <div id="grid" class="section">
+                <div class="inner">
                     <h1>Grid</h1>
-
-
-                    <h2>Default grid (with gutter)</h2>
-
+                </div>
+                <div class="demo inner">
                     <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;div class="grid"&gt;
-    &lt;div class="grid__span-1"&gt;1&lt;/div&gt;
-    &lt;div class="grid__span-1"&gt;2&lt;/div&gt; 
-    ...
-&lt;/div&gt;
-
-&lt;div class="grid"&gt;
-    &lt;div class="grid__span-2"&gt;1&lt;/div&gt;
-    &lt;div class="grid__span-2"&gt;2&lt;/div&gt;
-    ...
-&lt;/div&gt;
-
-&lt;div class="grid"&gt;
-    &lt;div class="grid__span-4"&gt;
-        grid__span-4
-    &lt;/div&gt;
-    &lt;div class="grid__span-4"&gt;
-        grid__span-4
-    &lt;/div&gt; 
-    ...
-&lt;/div&gt;</code></pre>
-                        <p>Settings:</p>
-                        <pre class="prettyprint linenums"><code>$grid-columns: 12 !default;</code></pre>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            1
                         </div>
-                        <div class="grid__span-6">
-                            <div class="grid">
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    1
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    2
-                                </div> 
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    3
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    4
-                                </div> 
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    5
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    6
-                                </div> 
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    7
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    8
-                                </div> 
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    9
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    10
-                                </div> 
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    11
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    12
-                                </div> 
-                            </div>
-                            <br>
-                            <div class="grid">
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    1
-                                </div>
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    2
-                                </div> 
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    3
-                                </div>
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    4
-                                </div> 
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    5
-                                </div>
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    6
-                                </div> 
-                            </div>
-                            <br>
-                            <div class="grid">
-                                <div class="grid__span-4" style="background-color: #BBEAF5;">
-                                    grid__span-4
-                                </div>
-                                <div class="grid__span-4" style="background-color: #BBEAF5;">
-                                    grid__span-4
-                                </div> 
-                                <div class="grid__span-4" style="background-color: #BBEAF5;">
-                                    grid__span-4
-                                </div>
-                            </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            2
+                        </div> 
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            3
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            4
+                        </div> 
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            5
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            6
+                        </div> 
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            7
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            8
+                        </div> 
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            9
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            10
+                        </div> 
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            11
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            12
                         </div> 
                     </div>
-
-                    <h2>Collapsed grid (no gutter)</h2>
-
+                    <br>
                     <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;div class="grid grid--collapse"&gt;
-    &lt;div class="grid__span-1"&gt;1&lt;/div&gt;
-    &lt;div class="grid__span-1"&gt;2&lt;/div&gt; 
-    ...
-&lt;/div&gt;
-
-&lt;div class="grid grid--collapse"&gt;
-    &lt;div class="grid__span-2"&gt;1&lt;/div&gt;
-    &lt;div class="grid__span-2"&gt;2&lt;/div&gt;
-    ...
-&lt;/div&gt;
-
-&lt;div class="grid grid--collapse"&gt;
-    &lt;div class="grid__span-4"&gt;
-        grid__span-4
-    &lt;/div&gt;
-    &lt;div class="grid__span-4"&gt;
-        grid__span-4
-    &lt;/div&gt; 
-    ...
-&lt;/div&gt;</code></pre>
-                        
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            1
                         </div>
-                        <div class="grid__span-6">
-                            <div class="grid grid--collapse">
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    1
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    2
-                                </div> 
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    3
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    4
-                                </div> 
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    5
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    6
-                                </div> 
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    7
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    8
-                                </div> 
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    9
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    10
-                                </div> 
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    11
-                                </div>
-                                <div class="grid__span-1" style="background-color: #BBEAF5;">
-                                    12
-                                </div> 
-                            </div>
-                            <br>
-                            <div class="grid grid--collapse">
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    1
-                                </div>
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    2
-                                </div> 
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    3
-                                </div>
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    4
-                                </div> 
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    5
-                                </div>
-                                <div class="grid__span-2" style="background-color: #BBEAF5;">
-                                    6
-                                </div> 
-                            </div>
-                            <br>
-                            <div class="grid grid--collapse">
-                                <div class="grid__span-4" style="background-color: #BBEAF5;">
-                                    grid__span-4
-                                </div>
-                                <div class="grid__span-4" style="background-color: #BBEAF5;">
-                                    grid__span-4
-                                </div> 
-                                <div class="grid__span-4" style="background-color: #BBEAF5;">
-                                    grid__span-4
-                                </div>
-                            </div>
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            2
                         </div> 
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            3
+                        </div>
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            4
+                        </div> 
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            5
+                        </div>
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            6
+                        </div> 
+                    </div>
+                    <br>
+                    <div class="grid">
+                        <div class="grid__span-4" style="background-color: #BBEAF5;">
+                            grid__span-4
+                        </div>
+                        <div class="grid__span-4" style="background-color: #BBEAF5;">
+                            grid__span-4
+                        </div> 
+                        <div class="grid__span-4" style="background-color: #BBEAF5;">
+                            grid__span-4
+                        </div>
                     </div>
                 </div>
-                <hr>
 
-                <div id="alert">
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;div class="grid"&gt;
+    &lt;div class="grid__span-1"&gt;1&lt;/div&gt;
+    &lt;div class="grid__span-1"&gt;2&lt;/div&gt; 
+...
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+    &lt;div class="grid__span-2"&gt;1&lt;/div&gt;
+    &lt;div class="grid__span-2"&gt;2&lt;/div&gt;
+...
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+    &lt;div class="grid__span-4"&gt;
+        grid__span-4
+    &lt;/div&gt;
+    &lt;div class="grid__span-4"&gt;
+        grid__span-4
+    &lt;/div&gt; 
+...
+&lt;/div&gt;</code></pre>
+                </div>
+
+                
+                <div class="inner">
+                    <h2>Collapsed grid</h2>
+                </div>
+                
+                <div class="demo inner">
+                    <div class="grid grid--collapse">
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            1
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            2
+                        </div> 
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            3
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            4
+                        </div> 
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            5
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            6
+                        </div> 
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            7
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            8
+                        </div> 
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            9
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            10
+                        </div> 
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            11
+                        </div>
+                        <div class="grid__span-1" style="background-color: #BBEAF5;">
+                            12
+                        </div> 
+                    </div>
+                    <br>
+                    <div class="grid grid--collapse">
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            1
+                        </div>
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            2
+                        </div> 
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            3
+                        </div>
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            4
+                        </div> 
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            5
+                        </div>
+                        <div class="grid__span-2" style="background-color: #BBEAF5;">
+                            6
+                        </div> 
+                    </div>
+                    <br>
+                    <div class="grid grid--collapse">
+                        <div class="grid__span-4" style="background-color: #BBEAF5;">
+                            grid__span-4
+                        </div>
+                        <div class="grid__span-4" style="background-color: #BBEAF5;">
+                            grid__span-4
+                        </div> 
+                        <div class="grid__span-4" style="background-color: #BBEAF5;">
+                            grid__span-4
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;div class="grid grid--collapse"&gt;
+&lt;div class="grid__span-1"&gt;1&lt;/div&gt;
+&lt;div class="grid__span-1"&gt;2&lt;/div&gt; 
+...
+&lt;/div&gt;
+
+&lt;div class="grid grid--collapse"&gt;
+&lt;div class="grid__span-2"&gt;1&lt;/div&gt;
+&lt;div class="grid__span-2"&gt;2&lt;/div&gt;
+...
+&lt;/div&gt;
+
+&lt;div class="grid grid--collapse"&gt;
+&lt;div class="grid__span-4"&gt;
+    grid__span-4
+&lt;/div&gt;
+&lt;div class="grid__span-4"&gt;
+    grid__span-4
+&lt;/div&gt; 
+...
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+
+            <hr>
+            <div id="alert" class="section">
+                <div class="inner">
                     <h1>Alert</h1>
-
-                    <h3>Normal</h3>
-
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;div class="alert"&gt;
-    This is the alert message.
-&lt;/div&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <div class="alert">
-                                This is the alert message.
-                            </div>
-                        </div> 
-                    </div>
-
-                    <h3>Error</h3>
-
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;div class="[ alert alert--error ]"&gt;
-    This is the error alert message.
-&lt;/div&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <div class="[ alert alert--error ]">
-                                This is the error alert message.
-                            </div>
-                        </div> 
-                    </div>
-
-                    <h3>Success</h3>
-
-                    <div class="grid">
-                        <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;div class="[ alert alert--success ]"&gt;
-    This is the success alert message.
-&lt;/div&gt;</code></pre>
-                        </div>
-                        <div class="grid__span-6">
-                            <div class="[ alert alert--success ]">
-                                This is the success alert message.
-                            </div>
-                        </div> 
-                    </div>
-
                 </div>
-                <hr>
 
-                <div id="tooltip">
+                <div class="demo inner">
+                    <div class="alert">
+                        This is the alert message.
+                    </div>
+                    <div class="[ alert alert--error ]">
+                        This is the error alert message.
+                    </div>
+                    <div class="[ alert alert--success ]">
+                        This is the success alert message.
+                    </div>
+                    <div class="[ alert alert--warning ]">
+                        This is the warning alert message.
+                    </div>
+                </div>
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;div class="alert"&gt;
+    This is the alert message.
+&lt;/div&gt;
+
+&lt;div class="[ alert alert--error ]"&gt;
+    This is the error alert message.
+&lt;/div&gt;
+
+&lt;div class="[ alert alert--success ]"&gt;
+    This is the success alert message.
+&lt;/div&gt;
+
+&lt;div class="[ alert alert--warning ]"&gt;
+    This is the warning alert message.
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+            <hr>
+            <div id="tooltip" class="section">
+                <div class="inner">
                     <h1>Tooltip</h1>
-
-                    <h3>Normal</h3>
-
+                </div>
+                
+                <div class="demo inner">
                     <div class="grid">
                         <div class="grid__span-6">
-                            <pre class="prettyprint linenums"><code>&lt;div 
-    class="[ btn btn--primary ] [ tooltip tooltip--top ]" 
-    data-tooltip="Some tooltip text"&gt;
-    Button with top tooltip
-&lt;/div&gt;
-&lt;div 
-    class="[ btn btn--primary ] [ tooltip tooltip--bottom ]" 
-    data-tooltip="Some tooltip text"&gt;
-    Button with bottom tooltip
-&lt;/div>&gt;</code></pre>
+                            
                         </div>
                         <div class="grid__span-6">
                             <div class="[ btn btn--primary ] [ tooltip tooltip--top ]" data-tooltip="Some tooltip text">
@@ -795,150 +893,47 @@ Morbi egestas elementum sapien sed euismod.&lt;/p&gt;</code></pre>
                             </p>
                         </div> 
                     </div>
-
                 </div>
-                <hr>
 
-                <div id="settings">
+                <div class="inner">
+                    <h3>Source code</h3>
+                    <pre><code class="html">&lt;div 
+    class="[ btn btn--primary ] [ tooltip tooltip--top ]" 
+    data-tooltip="Some tooltip text"&gt;
+    Button with top tooltip
+&lt;/div&gt;
+
+&lt;div 
+    class="[ btn btn--primary ] [ tooltip tooltip--bottom ]" 
+    data-tooltip="Some tooltip text"&gt;
+    Button with bottom tooltip
+&lt;/div&gt;</code></pre>
+                </div>
+
+            </div>
+            <hr>
+            <div id="settings" class="section">
+                <div class="inner">
                     <h1>Settings</h1>
                 </div>
-
-                    <pre class="prettyprint linenums"><code>/**
- * Base settings
- */
-
-
-/**
- * Colors
- */
-
-$cyan: #00abd3;
-$red: #d50000;
-$green: #00b100;
-$orange: #ff8a00;
-$grey: #666666;
-$grey--dark: #333333;
-$grey--medium: #aaaaaa;
-$grey--light: #eeeeee;
-$grey--lighter: #fafafa;
-
-$background_color: #ffffff;
-$background_color--primary: $cyan;
-$background_color--create: $green;
-$background_color--change: $orange;
-$background_color--cancel: $grey;
-$background_color--delete: $red;
-
-
-/**
- * Typography
- */
-
-$font_family--primary: "Lucida Grande", sans-serif !default;
-$font_family--heading: "Helvetica Neue", sans-serif !default;
-$font_family--serif: Georgia, serif !default;
-$font_family--monospace: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
-
-$font_color: #444444;
-$font_color--primary: $cyan;
-$font_color--light: $grey--light;
-
-$font_size: 13px;
-$font_size--small: 12px;
-$font_size--large: 18px;
-
-$font_size_mobile: 15px;
-$font_size_mobile--small: 13px;
-
-$font_weight: 400;
-$font_weight--bold: 700;
-
-$base-line-height: 1.5em;
-
-$h1-ratio: 2.441;
-$h2-ratio: 1.953;
-$h3-ratio: 1.563;
-$h4-ratio: 1.25;
-$h5-ratio: 1;
-$h6-ratio: 1;
-
-$h1-weight: 400;
-$h2-weight: 400;
-$h3-weight: 400;
-$h4-weight: 400;
-$h5-weight: 400;
-$h6-weight: 400;
-
-
-/**
- * Layout
- */
-
-$vertical_padding: 12px;
-$horizontal_padding: 16px;
-
-$border-radius: 4px;
-
-/**
- * Modal
- */
-
-$modal_content_bg: #ffffff;
-$modal_header_bg: #ffffff;
-$modal_footer_bg: #ffffff;
-
-/**
- * Form
- */
-
-$input_border_color: #dddddd;
-$input_focus_color: #666666;
-$error_background: rgba(213, 0, 0, 0.8);
-
-/**
- * Breakpoints
- */
-
-/* Mobile */
-$mobile-width: 767px;
-$mobile: new-breakpoint(max-width $mobile-width);
-
-/* Tablet */
-$tablet-width: 768px;
-$tablet: new-breakpoint(min-width $tablet-width);
-
-/* Desktop */
-$desktop-width: 1024px;
-$desktop: new-breakpoint(min-width $desktop-width + 1);
-
-/**
- * Grid
- */
-
-$grid-columns: 12 !default;</code></pre>
-
-                </div>
-                <hr>
             </div>
         </div>
     </div>
-    <script src="prettify.js"></script>
-    <script type="text/javascript">
+<script type="text/javascript" src="highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
         // make code pretty
         window.prettyPrint && prettyPrint()
-
         // Modal scripts
         // Open normal
         document.getElementById('modal-open-normal').addEventListener('click', function(){
             document.body.className = 'no-scroll'
             document.getElementById('modal-normal').className = 'modal modal--open'
         })
-
         document.getElementById('modal-close-normal').addEventListener('click', function(){
             document.body.className = ''
             document.getElementById('modal-normal').className = 'modal'
         })
-
     </script>
 </body>
 </html>

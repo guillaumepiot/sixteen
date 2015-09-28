@@ -115,3 +115,11 @@ $desktop: new-breakpoint(min-width $desktop-width + 1);
  */
 
 $grid-columns: 12 !default;
+
+/**
+ * Table
+ */
+
+$table-border-color: $grey--light;
+$table-header-background-color: $grey--light;
+$table-row-border-color: $grey--light;
