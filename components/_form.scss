@@ -70,6 +70,7 @@
         &--checkbox{
             .form__label{
                 display: inline-block;
+                margin-left: calc-em($horizontal_padding / 2);
             }
         }
         
