@@ -74,32 +74,13 @@ small {
     color: $grey--medium;
 }
 
-// pre {
-//     font-size: calc-em($font_size - 2);
-//     border: 1px solid $grey--light;
-//     background: $grey--lighter;
-//     display: block;
-//     border-radius: $border-radius;
-//     font-family: $font_family--monospace;
-//     padding: 0 calc-em($horizontal_padding);
-//     word-break: break-all;
-//     word-wrap: break-word;
-// }
+b, strong{
+    font-weight: bold;
+}
 
-// code {
-//     font-size: calc-em($font_size - 2);
-//     background: $grey--lighter;
-//     font-family: $font_family--monospace;
-//     word-break: break-all;
-//     word-wrap: break-word;
-// }
-
-// p code{
-//     display: inline-block;
-//     border: 1px solid $grey--light;
-//     border-radius: $border-radius;
-// }
-
+i, em{
+    font-style: italic;
+}
 
 a {
     color: $font_color--primary;
