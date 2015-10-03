@@ -544,6 +544,8 @@ table {
     .btn--primary.btn--transparent {
       border-color: #00abd3;
       color: #00abd3; }
+      .btn--primary.btn--transparent:active, .btn--primary.btn--transparent:focus {
+        color: #00abd3; }
       .btn--primary.btn--transparent:hover {
         border-color: #00b7e2;
         color: #00b7e2; }
@@ -562,6 +564,8 @@ table {
     .btn--create.btn--transparent {
       border-color: #00b100;
       color: #00b100; }
+      .btn--create.btn--transparent:active, .btn--create.btn--transparent:focus {
+        color: #00b100; }
       .btn--create.btn--transparent:hover {
         border-color: #00c000;
         color: #00c000; }
@@ -580,6 +584,8 @@ table {
     .btn--change.btn--transparent {
       border-color: #ff8a00;
       color: #ff8a00; }
+      .btn--change.btn--transparent:active, .btn--change.btn--transparent:focus {
+        color: #ff8a00; }
       .btn--change.btn--transparent:hover {
         border-color: #ff910f;
         color: #ff910f; }
@@ -598,6 +604,8 @@ table {
     .btn--cancel.btn--transparent {
       border-color: #666666;
       color: #666666; }
+      .btn--cancel.btn--transparent:active, .btn--cancel.btn--transparent:focus {
+        color: #666666; }
       .btn--cancel.btn--transparent:hover {
         border-color: #6e6e6e;
         color: #6e6e6e; }
@@ -616,6 +624,8 @@ table {
     .btn--delete.btn--transparent {
       border-color: #d50000;
       color: #d50000; }
+      .btn--delete.btn--transparent:active, .btn--delete.btn--transparent:focus {
+        color: #d50000; }
       .btn--delete.btn--transparent:hover {
         border-color: #e40000;
         color: #e40000; }
@@ -934,7 +944,6 @@ h4,
 h5,
 h6 {
   font-family: "Helvetica Neue", sans-serif;
-  padding: 0.46154em 0;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5em; }
@@ -970,6 +979,12 @@ h6 {
 small {
   font-size: 12px;
   color: #aaaaaa; }
+
+b, strong {
+  font-weight: bold; }
+
+i, em {
+  font-style: italic; }
 
 a {
   color: #00abd3;
