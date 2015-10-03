@@ -27,6 +27,7 @@ h4,
 h5,
 h6 {
     font-family: $font_family--heading;
+    // padding: calc-em($vertical_padding / 2) 0;
     font-style: normal;
     font-weight: normal;
     line-height: $base-line-height;
@@ -39,33 +40,45 @@ h6 {
 
 
 h1 {
-    font-size: calc-em($font_size * $h1-ratio);
+    font-size: $h1-ratio;
     font-weight: $h1-weight;
+    padding: ($base-line-height / $h1-ratio) * 1em 0;
+    line-height: ($base-line-height / $h1-ratio) * 2.5em;
 }
 
 h2 {
-    font-size: calc-em($font_size * $h2-ratio);
+    font-size: $h2-ratio;
     font-weight: $h2-weight;
+    padding: ($base-line-height / $h2-ratio) * 1em 0;
+    line-height: ($base-line-height / $h2-ratio) * 2em;
 }
 
 h3 {
-    font-size: calc-em($font_size * $h3-ratio);
+    font-size: $h3-ratio;
     font-weight: $h3-weight;
+    padding: ($base-line-height / $h3-ratio) * 1em 0;
+    line-height: ($base-line-height / $h3-ratio) * 1.5em;
 }
 
 h4 {
-    font-size: calc-em($font_size * $h4-ratio);
+    font-size: $h4-ratio;
     font-weight: $h4-weight;
+    padding: ($base-line-height / $h4-ratio) * 0.5em 0;
+    line-height: ($base-line-height / $h4-ratio) * 1em;
 }
 
 h5 {
-    font-size: calc-em($font_size * $h5-ratio);
+    font-size: $h5-ratio;
     font-weight: $h5-weight;
+    padding: ($base-line-height / $h5-ratio) * 0.5em 0;
+    line-height: ($base-line-height / $h5-ratio) * 1em;
 }
 
 h6 {
-    font-size: calc-em($font_size * $h6-ratio);
+    font-size: $h6-ratio;
     font-weight: $h6-weight;
+    padding: ($base-line-height / $h6-ratio) * 0.5em 0;
+    line-height: ($base-line-height / $h6-ratio) * 1em;
 }
 
 small {
@@ -80,6 +93,33 @@ b, strong{
 i, em{
     font-style: italic;
 }
+
+// pre {
+//     font-size: calc-em($font_size - 2);
+//     border: 1px solid $grey--light;
+//     background: $grey--lighter;
+//     display: block;
+//     border-radius: $border-radius;
+//     font-family: $font_family--monospace;
+//     padding: 0 calc-em($horizontal_padding);
+//     word-break: break-all;
+//     word-wrap: break-word;
+// }
+
+// code {
+//     font-size: calc-em($font_size - 2);
+//     background: $grey--lighter;
+//     font-family: $font_family--monospace;
+//     word-break: break-all;
+//     word-wrap: break-word;
+// }
+
+// p code{
+//     display: inline-block;
+//     border: 1px solid $grey--light;
+//     border-radius: $border-radius;
+// }
+
 
 a {
     color: $font_color--primary;
