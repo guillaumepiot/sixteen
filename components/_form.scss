@@ -70,6 +70,7 @@
         &--checkbox{
             .form__label{
                 display: inline-block;
+                margin-left: calc-em($horizontal_padding / 2);
             }
         }
         
@@ -156,6 +157,7 @@
             opacity: 0;
             position: absolute;
             bottom: 0;
+            left: 0;
             padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding);
 
             color: #fff;

@@ -118,6 +118,7 @@
 
     }
     &__pre-header{
+        position: relative;
         padding: calc-em($vertical_padding) calc-em($horizontal_padding);
         margin: 0 auto;
 
@@ -136,6 +137,7 @@
     }
 
     &__header{
+        position: relative;
         padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding) * 2;
         background-color: $modal_header_bg;
         border-bottom: $modal_header_border;
@@ -146,12 +148,14 @@
         }
     }
     &__body{
+        position: relative;
         padding: 0 calc-em($horizontal_padding);
         @include media($tablet) {
             padding: calc-em($vertical_padding) calc-em($horizontal_padding * 2) calc-em($vertical_padding) calc-em($horizontal_padding * 2);
         }
     }
     &__footer{
+        position: relative;
         padding: calc-em($vertical_padding) calc-em($horizontal_padding) calc-em($vertical_padding * 2) calc-em($horizontal_padding);
         background-color: $modal_footer_bg;
         border-top: $modal_footer_border;
@@ -163,6 +167,7 @@
         }
     }
     &__sub-footer{
+        position: relative;
         padding: 0 calc-em($horizontal_padding) calc-em($vertical_padding) calc-em($horizontal_padding);
         margin: 0 auto;
 
@@ -182,12 +187,10 @@
     }
 
     &__close{
-        width: calc-em($font_size * 3);
-        height: calc-em($font_size * 3);
         display: block;
         position: absolute;
-        top: 0.85em;
-        right: 1.3em;
+        top: 50%;
+        right: calc-em($horizontal_padding);
         z-index: 102;
 
         @include transition(background-color 0.2s ease-in-out);
@@ -217,12 +220,10 @@
     }
 
     &__back{
-        width: calc-em($font_size * 3);
-        height: calc-em($font_size * 3);
         display: block;
         position: absolute;
-        top: 0.85em;
-        left: 1.3em;
+        top: 50%;
+        left: calc-em($horizontal_padding);
         z-index: 102;
         text-align: center;
 
