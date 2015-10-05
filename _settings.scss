@@ -43,20 +43,17 @@ $font_size: 13px;
 $font_size--small: 12px;
 $font_size--large: 18px;
 
-$font_size_mobile: 15px;
-$font_size_mobile--small: 13px;
-
 $font_weight: 400;
 $font_weight--bold: 700;
 
 $base-line-height: 1.5em;
 
-$h1-ratio: 2.441;
-$h2-ratio: 1.953;
-$h3-ratio: 1.563;
-$h4-ratio: 1.25;
-$h5-ratio: 1;
-$h6-ratio: 1;
+$h1-ratio: 2.441em;
+$h2-ratio: 1.953em;
+$h3-ratio: 1.563em;
+$h4-ratio: 1.25em;
+$h5-ratio: 1em;
+$h6-ratio: 1em;
 
 $h1-weight: 400;
 $h2-weight: 400;
@@ -115,3 +112,11 @@ $desktop: new-breakpoint(min-width $desktop-width + 1);
  */
 
 $grid-columns: 12 !default;
+
+/**
+ * Table
+ */
+
+$table-border-color: $grey--light;
+$table-header-background-color: $grey--light;
+$table-row-border-color: $grey--light;

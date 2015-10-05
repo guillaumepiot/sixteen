@@ -21,4 +21,9 @@
 		background-color: lighten($green, 58%);
 		color: darken($green, 10%);
 	}
+
+	&--warning{
+		background-color: lighten($orange, 42%);
+		color: darken($orange, 10%);
+	}
 }
