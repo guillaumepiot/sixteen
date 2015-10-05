@@ -1,0 +1,94 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.1.14
+3 info using node@v0.10.35
+4 verbose node symlink /usr/local/bin/node
+5 verbose publish [ '.' ]
+6 silly cache add args [ '.', null ]
+7 verbose cache add spec .
+8 silly cache add parsed spec { raw: '.',
+8 silly cache add   scope: null,
+8 silly cache add   name: null,
+8 silly cache add   rawSpec: '.',
+8 silly cache add   spec: '/Users/guillaumepiot/Documents/Projects/libraries/sixteen',
+8 silly cache add   type: 'directory' }
+9 verbose tar pack [ '/Users/guillaumepiot/.npm/sixteen/0.1.1/package.tgz',
+9 verbose tar pack   '/Users/guillaumepiot/Documents/Projects/libraries/sixteen' ]
+10 verbose tarball /Users/guillaumepiot/.npm/sixteen/0.1.1/package.tgz
+11 verbose folder /Users/guillaumepiot/Documents/Projects/libraries/sixteen
+12 info prepublish sixteen@0.1.1
+13 verbose addLocalTarball adding from inside cache /Users/guillaumepiot/.npm/sixteen/0.1.1/package.tgz
+14 silly cache afterAdd sixteen@0.1.1
+15 verbose afterAdd /Users/guillaumepiot/.npm/sixteen/0.1.1/package/package.json not in flight; writing
+16 verbose afterAdd /Users/guillaumepiot/.npm/sixteen/0.1.1/package/package.json written
+17 silly publish { name: 'sixteen',
+17 silly publish   version: '0.1.1',
+17 silly publish   description: 'SASS foundation for web projects following the BEM method.',
+17 silly publish   main: 'index.js',
+17 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+17 silly publish   repository: { type: 'git', url: 'https://github.com/Cotidia/sixteen.git' },
+17 silly publish   keywords: [ 'sass', 'bem' ],
+17 silly publish   author: { name: 'Guillaume Piot', email: 'guillaume@cotidia.com' },
+17 silly publish   license: 'ISC',
+17 silly publish   bugs: { url: 'https://github.com/Cotidia/sixteen/issues' },
+17 silly publish   dependencies: { 'node-neat': '^1.7.1-beta1' },
+17 silly publish   homepage: 'https://github.com/Cotidia/sixteen',
+17 silly publish   readme: '# sixteen\n\nMinimal SASS framework written following the BEM method.',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   _id: 'sixteen@0.1.1',
+17 silly publish   _shasum: 'f84a4ff14eb5dbae8a1240474b9cf2b3948b55b0',
+17 silly publish   _from: '.',
+17 silly publish   devDependencies:
+17 silly publish    { 'grunt-contrib-copy': '^0.8.0',
+17 silly publish      'grunt-contrib-cssmin': '^0.13.0',
+17 silly publish      'grunt-contrib-sass': '^0.9.2',
+17 silly publish      'grunt-contrib-watch': '^0.6.1' },
+17 silly publish   gitHead: '501c59aa9bb2ecc247ff9d09d85b02a2e74f7660' }
+18 silly mapToRegistry name sixteen
+19 silly mapToRegistry using default registry
+20 silly mapToRegistry registry https://registry.npmjs.org/
+21 silly mapToRegistry uri https://registry.npmjs.org/sixteen
+22 verbose publish registryBase https://registry.npmjs.org/
+23 silly publish uploading /Users/guillaumepiot/.npm/sixteen/0.1.1/package.tgz
+24 verbose request uri https://registry.npmjs.org/sixteen
+25 verbose request sending authorization for write operation
+26 info attempt registry request try #1 at 16:58:53
+27 verbose request id 58dfdb2e4013dfdb
+28 http request PUT https://registry.npmjs.org/sixteen
+29 http 403 https://registry.npmjs.org/sixteen
+30 verbose headers { 'content-type': 'application/json',
+30 verbose headers   'cache-control': 'max-age=60',
+30 verbose headers   'content-length': '95',
+30 verbose headers   'accept-ranges': 'bytes',
+30 verbose headers   date: 'Mon, 05 Oct 2015 15:58:55 GMT',
+30 verbose headers   via: '1.1 varnish',
+30 verbose headers   connection: 'keep-alive',
+30 verbose headers   'x-served-by': 'cache-lhr6320-LHR',
+30 verbose headers   'x-cache': 'MISS',
+30 verbose headers   'x-cache-hits': '0',
+30 verbose headers   'x-timer': 'S1444060733.721246,VS0,VE1427' }
+31 verbose request invalidating /Users/guillaumepiot/.npm/registry.npmjs.org/sixteen on PUT
+32 error publish Failed PUT 403
+33 verbose stack Error: "You cannot publish over the previously published version 0.1.1." : sixteen
+33 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:244:14)
+33 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+33 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:373:22)
+33 verbose stack     at Request.emit (events.js:98:17)
+33 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1318:14)
+33 verbose stack     at Request.emit (events.js:117:20)
+33 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1266:12)
+33 verbose stack     at IncomingMessage.emit (events.js:117:20)
+33 verbose stack     at _stream_readable.js:944:16
+33 verbose stack     at process._tickCallback (node.js:442:13)
+34 verbose statusCode 403
+35 verbose pkgid sixteen
+36 verbose cwd /Users/guillaumepiot/Documents/Projects/libraries/sixteen
+37 error Darwin 14.5.0
+38 error argv "node" "/usr/local/bin/npm" "publish"
+39 error node v0.10.35
+40 error npm  v2.1.14
+41 error code E403
+42 error "You cannot publish over the previously published version 0.1.1." : sixteen
+43 error If you need help, you may report this error at:
+43 error     <http://github.com/npm/npm/issues>
+44 verbose exit [ 1, true ]
