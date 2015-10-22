@@ -10,10 +10,6 @@ body {
     font-style: normal;
     font-weight: $font_weight;
     line-height: $base-line-height;
-
-    @include media($mobile) {
-        font-size: $font_size_mobile;
-    }
 }
 
 p {
