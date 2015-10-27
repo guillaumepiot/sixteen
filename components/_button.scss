@@ -226,7 +226,6 @@
         background-color: transparent;
         color: $grey;
         border: 1px solid $grey--medium;
-        padding: calc-em($vertical_padding - 1) calc-em($horizontal_padding - 1);
         
         &:active, &:focus{
             background-color: transparent;
