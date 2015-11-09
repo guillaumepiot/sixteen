@@ -17,7 +17,6 @@
     position: relative;
 
     outline: none;
-    border: none;
     vertical-align: middle;
     background-color: $background_color;
     border: 1px solid $background_color;
@@ -32,6 +31,7 @@
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    line-height: 1em;
 
     border-radius: $border_radius;
 
@@ -280,7 +280,7 @@
     }
 
     &--small{
-        padding: calc-em($vertical_padding / 4) calc-em($horizontal_padding / 2);
+        padding: calc-em($vertical_padding / 3) calc-em($horizontal_padding / 2);
 
         &.btn--loading{
             &:before{

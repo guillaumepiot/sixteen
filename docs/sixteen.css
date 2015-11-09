@@ -501,7 +501,6 @@ table {
   display: inline-block;
   position: relative;
   outline: none;
-  border: none;
   vertical-align: middle;
   background-color: #666;
   border: 1px solid #666;
@@ -514,6 +513,7 @@ table {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  line-height: 1em;
   border-radius: 4px;
   user-select: none;
   -webkit-transition: background-color 0.2s ease-in-out;
@@ -632,8 +632,7 @@ table {
   .btn--transparent {
     background-color: transparent;
     color: #666666;
-    border: 1px solid #aaaaaa;
-    padding: 0.84615em 1.15385em; }
+    border: 1px solid #aaaaaa; }
     .btn--transparent:active, .btn--transparent:focus {
       background-color: transparent;
       color: #666666; }
@@ -670,7 +669,7 @@ table {
   .btn--large {
     padding: 1.29231em 1.23077em; }
   .btn--small {
-    padding: 0.23077em 0.61538em; }
+    padding: 0.30769em 0.61538em; }
     .btn--small.btn--loading:before {
       height: 12px;
       width: 12px;
@@ -930,9 +929,6 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5em; }
-  @media screen and (max-width: 767px) {
-    body {
-      font-size: 15px; } }
 
 p {
   margin: 0.92308em 0; }
@@ -1130,7 +1126,10 @@ hr {
  * Tooltip
  */
 .tooltip {
-  position: relative; }
+  position: relative;
+  /**
+   * Tooltip
+   */ }
   .tooltip:hover:before {
     background-color: rgba(0, 0, 0, 0.75);
     padding: 0.46154em 0.87912em;
@@ -1170,6 +1169,65 @@ hr {
     position: absolute;
     left: 0.87912em;
     bottom: -5px; }
+  .tooltip .tooltip {
+    position: relative; }
+    .tooltip .tooltip:hover:before {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 0.46154em 0.87912em;
+      border-radius: 4px;
+      white-space: nowrap;
+      content: attr(data-tooltip);
+      position: absolute;
+      color: #fff;
+      text-transform: none;
+      z-index: 99; }
+    .tooltip .tooltip--top:hover:before {
+      top: -2.73077em;
+      left: 50%;
+      margin-left: -50%; }
+    .tooltip .tooltip--top:hover:after {
+      content: '';
+      height: 0;
+      width: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid rgba(0, 0, 0, 0.75);
+      position: absolute;
+      left: 0.87912em;
+      top: -5px;
+      z-index: 100; }
+    .tooltip .tooltip--bottom:hover:before {
+      bottom: -2.73077em;
+      left: 50%;
+      margin-left: -50%; }
+    .tooltip .tooltip--bottom:hover:after {
+      content: '';
+      height: 0;
+      width: 0;
+      border-bottom: 5px solid rgba(0, 0, 0, 0.75);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      position: absolute;
+      left: 0.87912em;
+      bottom: -5px; }
+    .tooltip .tooltip--bottom-right:hover:before {
+      bottom: -2.73077em;
+      right: 50%;
+      margin-right: -50%; }
+    .tooltip .tooltip--bottom-right:hover:after {
+      content: '';
+      height: 0;
+      width: 0;
+      border-bottom: 5px solid rgba(0, 0, 0, 0.75);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      position: absolute;
+      left: 0.87912em;
+      bottom: -5px; }
+    .tooltip .tooltip--small:hover:before {
+      top: -2.26923em;
+      padding: 0.23077em 0.61538em;
+      font-size: 12px; }
   .tooltip--small:hover:before {
     top: -2.26923em;
     padding: 0.23077em 0.61538em;
@@ -1247,5 +1305,28 @@ hr {
       border-bottom: 6px solid transparent;
       border-left: 6px solid #666;
       border-top: 6px solid transparent; }
+
+/**
+ * Label - Standard label mixin.
+ */
+.label {
+  color: #fff;
+  background-color: #aaaaaa;
+  display: inline-block;
+  border-radius: 4px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-transform: uppercase;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: ellipsis; }
+  .label--primary {
+    background-color: #00abd3; }
+  .label--success {
+    background-color: #00b100; }
+  .label--warning {
+    background-color: #ff8a00; }
+  .label--danger {
+    background-color: #d50000; }
 
 /*# sourceMappingURL=sixteen.css.map */
