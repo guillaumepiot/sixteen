@@ -1,6 +1,6 @@
 {
   "name": "sixteen",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "SASS foundation for web projects following the BEM method.",
   "main": "index.js",
   "scripts": {
@@ -28,8 +28,8 @@
   "homepage": "https://github.com/Cotidia/sixteen",
   "readme": "# sixteen\n\nMinimal SASS framework written following the BEM method.",
   "readmeFilename": "README.md",
-  "_id": "sixteen@0.1.4",
-  "_shasum": "a631b442acff3115e7f407c0e4fd99ea00387f66",
+  "_id": "sixteen@0.1.5",
+  "_shasum": "40b8b7ec73ec40966a1881153ec269fb261307df",
   "_from": "sixteen@*",
   "devDependencies": {
     "grunt-contrib-copy": "^0.8.0",
