@@ -126,7 +126,7 @@
         margin: 0;
 
         /* -1 on vertical padding to account for border thickness */
-        padding: calc-em($vertical_padding - 1) calc-em($horizontal_padding * 1.4) calc-em($vertical_padding - 1) calc-em($horizontal_padding * 0.9);
+        padding: calc-em($vertical_padding - 1) calc-em($horizontal_padding * 2) calc-em($vertical_padding - 1) calc-em($horizontal_padding * 0.9);
 
         background-color: #fff;
         border:1px solid $input_border_color;
