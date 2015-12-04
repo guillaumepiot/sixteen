@@ -2,7 +2,7 @@
 
 Install sixteen with npm
 
-    $ npm install font-awesome
+    $ npm install sixteen
 
 On your project level, import the required Sixteen components:
 
