@@ -238,9 +238,6 @@
             border-color: $font_color--primary;
         }
         
-        &.btn--small{
-            padding: calc-em(($vertical_padding / 4) - 1) calc-em(($horizontal_padding / 2) - 1);
-        }
         &[disabled]{
             cursor: auto;
             background-color: transparent;
