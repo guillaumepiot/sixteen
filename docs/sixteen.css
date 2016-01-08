@@ -279,6 +279,55 @@ table {
   .grid--collapse > .grid__span-12 {
     width: 100%;
     margin-right: 0; }
+  @media screen and (max-width: 767px) {
+    .grid--break-mobile > .grid__span-1 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-2 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-3 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-4 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-5 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-6 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-7 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-8 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-9 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-10 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-11 {
+      float: none;
+      margin-right: auto;
+      width: auto; }
+    .grid--break-mobile > .grid__span-12 {
+      float: none;
+      margin-right: auto;
+      width: auto; } }
 
 .pull-right {
   float: right; }
@@ -369,7 +418,7 @@ table {
   width: 100%;
   margin: 0;
   /* -1 on vertical padding to account for border thickness */
-  padding: 0.84615em 1.10769em 0.84615em 1.10769em;
+  padding: 0.84615em 2.46154em 0.84615em 1.10769em;
   background-color: #fff;
   border: 1px solid #dddddd;
   border-radius: 4px; }
@@ -640,8 +689,6 @@ table {
       background-color: transparent;
       color: #00abd3;
       border-color: #00abd3; }
-    .btn--transparent.btn--small {
-      padding: 0.15385em 0.53846em; }
     .btn--transparent[disabled] {
       cursor: auto;
       background-color: transparent;

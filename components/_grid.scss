@@ -20,6 +20,17 @@
             }
         }
     }
+    &--break-mobile{
+        @include media($mobile) {
+            @for $i from 1 through $grid-columns {
+                > .grid__span-#{$i}{
+                    float: none;
+                    margin-right: auto;
+                    width: auto;
+                }
+            }
+        }
+    }
 }
 
 .pull-right{
