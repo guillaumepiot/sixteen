@@ -29,7 +29,7 @@
   "readme": "# sixteen\n\nMinimal SASS framework written following the BEM method.",
   "readmeFilename": "README.md",
   "_id": "sixteen@0.1.7",
-  "_shasum": "b9f41e6a3b6d9377beaaa4aacf5110326bc5eda6",
+  "_shasum": "12caf05dbdf83840421f79a4eeca99d17ceae0ff",
   "_from": "sixteen@*",
   "devDependencies": {
     "grunt-contrib-copy": "^0.8.0",

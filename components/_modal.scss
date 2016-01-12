@@ -149,7 +149,7 @@
     }
     &__body{
         position: relative;
-        padding: 0 calc-em($horizontal_padding);
+        padding: calc-em($vertical_padding) calc-em($horizontal_padding);
         @include media($tablet) {
             padding: calc-em($vertical_padding) calc-em($horizontal_padding * 2) calc-em($vertical_padding) calc-em($horizontal_padding * 2);
         }
