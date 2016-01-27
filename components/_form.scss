@@ -64,6 +64,7 @@
                 right: calc-em($horizontal_padding);
                 top: calc-em($vertical_padding + 7);
                 @include triangle(10px, $grey, down);
+                pointer-events: none;
             }
         }
 

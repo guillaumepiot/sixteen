@@ -273,6 +273,15 @@ Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis.
                                 </div>
                                 <div class="form__help">Information about the field</div>
                             </div>
+                            <div class="form__group">
+                                <div class="form__control form__control--select">
+                                    <select name="options" class="form__select">
+                                        <option value="">Select</option>
+                                        <option value="1">Option one</option>
+                                        <option value="2">Option two</option>
+                                    </select>
+                                </div>
+                            </div>
                             <button class="btn btn--primary">Submit button</button>
                         </div>
                         <div className="grid__span-6">
@@ -809,25 +818,25 @@ Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis.
                 <div class="inner">
                     <h3>Source code</h3>
                     <pre><code class="html">&lt;div class="grid grid--collapse"&gt;
-&lt;div class="grid__span-1"&gt;1&lt;/div&gt;
-&lt;div class="grid__span-1"&gt;2&lt;/div&gt; 
-...
+    &lt;div class="grid__span-1"&gt;1&lt;/div&gt;
+    &lt;div class="grid__span-1"&gt;2&lt;/div&gt; 
+    [...]
 &lt;/div&gt;
 
 &lt;div class="grid grid--collapse"&gt;
-&lt;div class="grid__span-2"&gt;1&lt;/div&gt;
-&lt;div class="grid__span-2"&gt;2&lt;/div&gt;
-...
+    &lt;div class="grid__span-2"&gt;1&lt;/div&gt;
+    &lt;div class="grid__span-2"&gt;2&lt;/div&gt;
+    [...]
 &lt;/div&gt;
 
 &lt;div class="grid grid--collapse"&gt;
-&lt;div class="grid__span-4"&gt;
-    grid__span-4
-&lt;/div&gt;
-&lt;div class="grid__span-4"&gt;
-    grid__span-4
-&lt;/div&gt; 
-...
+    &lt;div class="grid__span-4"&gt;
+        grid__span-4
+    &lt;/div&gt;
+    &lt;div class="grid__span-4"&gt;
+        grid__span-4
+    &lt;/div&gt; 
+    [...]
 &lt;/div&gt;</code></pre>
                 </div>
 
@@ -899,16 +908,39 @@ Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis.
                 
                 <div class="demo inner">
                     <div class="grid">
-                        <div class="grid__span-6">
-                            
-                        </div>
-                        <div class="grid__span-6">
-                            <div class="[ btn btn--primary ] [ tooltip tooltip--top ]" data-tooltip="Some tooltip text">
-                                Button with top tooltip
-                            </div>
+                        <div class="grid__span-3">
                             <p>
-                            <div class="[ btn btn--primary ] [ tooltip tooltip--bottom ]" data-tooltip="Some tooltip text">
-                                Button with bottom tooltip
+                            <div class="[ btn btn--primary btn--full-width ] [ tooltip tooltip--top-left ]" data-tooltip="Some tooltip text">
+                                Top left
+                            </div>
+                            </p>
+                            <p>
+                            <div class="[ btn btn--primary btn--full-width ] [ tooltip tooltip--bottom-left ]" data-tooltip="Some tooltip text">
+                                Bottom left
+                            </div>
+                            </p>
+                        </div>
+                        <div class="grid__span-3">
+                            <p>
+                            <div class="[ btn btn--primary btn--full-width ] [ tooltip tooltip--top-center ]" data-tooltip="Some tooltip text">
+                                Top center
+                            </div>
+                            </p>
+                            <p>
+                            <div class="[ btn btn--primary btn--full-width ] [ tooltip tooltip--bottom-center ]" data-tooltip="Some tooltip text">
+                                Bottom center
+                            </div>
+                            </p>
+                        </div> 
+                        <div class="grid__span-3">
+                            <p>
+                            <div class="[ btn btn--primary btn--full-width ] [ tooltip tooltip--top-right ]" data-tooltip="Some tooltip text">
+                                Top right
+                            </div>
+                            </p>
+                            <p>
+                            <div class="[ btn btn--primary btn--full-width ] [ tooltip tooltip--bottom-right ]" data-tooltip="Some tooltip text">
+                                Bottom right
                             </div>
                             </p>
                         </div> 
@@ -918,15 +950,39 @@ Nullam sollicitudin massa non odio condimentum, quis fringilla justo convallis.
                 <div class="inner">
                     <h3>Source code</h3>
                     <pre><code class="html">&lt;div 
-    class="[ btn btn--primary ] [ tooltip tooltip--top ]" 
+    class="[ btn btn--primary ] [ tooltip tooltip--top-left ]" 
     data-tooltip="Some tooltip text"&gt;
-    Button with top tooltip
+    Top left
 &lt;/div&gt;
 
 &lt;div 
-    class="[ btn btn--primary ] [ tooltip tooltip--bottom ]" 
+    class="[ btn btn--primary ] [ tooltip tooltip--bottom-left ]" 
     data-tooltip="Some tooltip text"&gt;
-    Button with bottom tooltip
+    Bottom left
+&lt;/div&gt;
+
+&lt;div 
+    class="[ btn btn--primary ] [ tooltip tooltip--top-center ]" 
+    data-tooltip="Some tooltip text"&gt;
+    Top center
+&lt;/div&gt;
+
+&lt;div 
+    class="[ btn btn--primary ] [ tooltip tooltip--bottom-center ]" 
+    data-tooltip="Some tooltip text"&gt;
+    Bottom center
+&lt;/div&gt;
+
+&lt;div 
+    class="[ btn btn--primary ] [ tooltip tooltip--top-right ]" 
+    data-tooltip="Some tooltip text"&gt;
+    Top right
+&lt;/div&gt;
+
+&lt;div 
+    class="[ btn btn--primary ] [ tooltip tooltip--bottom-right ]" 
+    data-tooltip="Some tooltip text"&gt;
+    Bottom right
 &lt;/div&gt;</code></pre>
                 </div>
 

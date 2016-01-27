@@ -10,7 +10,6 @@
     border-radius: $border-radius;
     white-space: nowrap;
     content: attr(data-tooltip);
-    position: absolute;
     color: #fff;
     text-transform: none;
 }
@@ -18,178 +17,146 @@
 @mixin tooltip-arrow-left{
 	content: '';
 	@include triangle(10px, rgba(0,0,0,0.75), right);
-	position: absolute;
-	left: -5px;
-	top: 50%;
-	margin-top: -5px;
 }
 
 @mixin tooltip-arrow-right{
 	content: '';
 	@include triangle(10px, rgba(0,0,0,0.75), left);
-	position: absolute;
-	right: -5px;
-	top: 50%;
-	margin-top: -5px;
 }
 
 @mixin tooltip-arrow-top{
 	content: '';
 	@include triangle(10px, rgba(0,0,0,0.75), down);
-	position: absolute;
-	left: calc-em($horizontal_padding / 1.4);
-	top: -5px;
-	z-index: 100;
 }
 
 @mixin tooltip-arrow-bottom{
 	content: '';
 	@include triangle(10px, rgba(0,0,0,0.75), up);
-	position: absolute;
-	left: calc-em($horizontal_padding / 1.4);
-	bottom: -5px;
 }
 
 .tooltip{
 	position: relative;
+	&:before{
+		@include tooltip();
+		z-index: 99;
+	}
+	&:after{
+		z-index: 99;
+	}
+	&:before, &:after{
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		@include transform(translate3d(0,0,0));
+		@include transition(all 0.3s ease-in-out);
+	}
 	&:hover{
+		&:before, &:after{
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	&--top-left{
 		&:before{
-			@include tooltip();
-			z-index: 99;
+			bottom: 100%;
+			left: 0;
 		}
-	}
-
-	&--top{
+		&:after{
+			top: 0;
+			left: calc-em($horizontal_padding);
+			@include tooltip-arrow-top;
+		}
 		&:hover{
-			&:before{
-				top: - $base-line-height - calc-em($vertical_padding + 4px);
-				left: 50%;
-				margin-left: -50%;
-			}
-			&:after{
-				@include tooltip-arrow-top;
+			&:before, &:after{
+				@include transform(translateY(-6px));
 			}
 		}
 	}
-	&--bottom{
-		&:hover{
-			&:before{
-				bottom: - $base-line-height - calc-em($vertical_padding + 4px);
-				left: 50%;
-				margin-left: -50%;
-			}
-			&:after{
-				@include tooltip-arrow-bottom;
-			}
-		}
-	}
-	@import "mixin";
-
-/**
- * Tooltip
- */
-
-@mixin tooltip(){
-	background-color: rgba(0,0,0,0.75);
-    padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding / 1.4);
-    border-radius: $border-radius;
-    white-space: nowrap;
-    content: attr(data-tooltip);
-    position: absolute;
-    color: #fff;
-    text-transform: none;
-}
-
-@mixin tooltip-arrow-left{
-	content: '';
-	@include triangle(10px, rgba(0,0,0,0.75), right);
-	position: absolute;
-	left: -5px;
-	top: 50%;
-	margin-top: -5px;
-}
-
-@mixin tooltip-arrow-right{
-	content: '';
-	@include triangle(10px, rgba(0,0,0,0.75), left);
-	position: absolute;
-	right: -5px;
-	top: 50%;
-	margin-top: -5px;
-}
-
-@mixin tooltip-arrow-top{
-	content: '';
-	@include triangle(10px, rgba(0,0,0,0.75), down);
-	position: absolute;
-	left: calc-em($horizontal_padding / 1.4);
-	top: -5px;
-	z-index: 100;
-}
-
-@mixin tooltip-arrow-bottom{
-	content: '';
-	@include triangle(10px, rgba(0,0,0,0.75), up);
-	position: absolute;
-	left: calc-em($horizontal_padding / 1.4);
-	bottom: -5px;
-}
-
-.tooltip{
-	position: relative;
-	&:hover{
+	&--bottom-left{
 		&:before{
-			@include tooltip();
-			z-index: 99;
+			top: 100%;
+			left: 0;
 		}
-	}
-
-	&--top{
+		&:after{
+			bottom: 0;
+			left: calc-em($horizontal_padding);
+			@include tooltip-arrow-bottom;
+		}
 		&:hover{
-			&:before{
-				top: - $base-line-height - calc-em($vertical_padding + 4px);
-				left: 50%;
-				margin-left: -50%;
-			}
-			&:after{
-				@include tooltip-arrow-top;
+			&:before, &:after{
+				@include transform(translateY(6px));
 			}
 		}
 	}
-	&--bottom{
+	&--top-right{
+		&:before{
+			bottom: 100%;
+			right: 0;
+		}
+		&:after{
+			top: 0;
+			right: calc-em($horizontal_padding);
+			@include tooltip-arrow-top;
+		}
 		&:hover{
-			&:before{
-				bottom: - $base-line-height - calc-em($vertical_padding + 4px);
-				left: 50%;
-				margin-left: -50%;
-			}
-			&:after{
-				@include tooltip-arrow-bottom;
+			&:before, &:after{
+				@include transform(translateY(-6px));
 			}
 		}
 	}
 	&--bottom-right{
+		&:before{
+			top: 100%;
+			right: 0;
+		}
+		&:after{
+			bottom: 0;
+			right: calc-em($horizontal_padding);
+			@include tooltip-arrow-bottom;
+		}
 		&:hover{
-			&:before{
-				bottom: - $base-line-height - calc-em($vertical_padding + 4px);
-				right: 50%;
-				margin-right: -50%;
-			}
-			&:after{
-				@include tooltip-arrow-bottom;
+			&:before, &:after{
+				@include transform(translateY(6px));
 			}
 		}
 	}
-	&--small{
+	&--top-center{
+		&:before{
+			bottom: 100%;
+			left: 50%;
+			@include transform(translateX(-50%));
+		}
+		&:after{
+			top: 0;
+			left: 50%;
+			@include transform(translateX(-50%));
+			@include tooltip-arrow-top;
+		}
 		&:hover{
-			&:before{
-				top: - $base-line-height - calc-em($vertical_padding / 2 + 4px);
-				padding: calc-em($vertical_padding / 4) calc-em($horizontal_padding / 2);
-				font-size: $font_size--small;
+			&:before, &:after{
+				@include transform(translate3d(-50%,-6px,0));
 			}
 		}
 	}
-}
+	&--bottom-center{
+		&:before{
+			top: 100%;
+			left: 50%;
+			@include transform(translateX(-50%));
+		}
+		&:after{
+			bottom: 0;
+			left: 50%;
+			@include transform(translateX(-50%));
+			@include tooltip-arrow-bottom;
+		}
+		&:hover{
+			&:before, &:after{
+				@include transform(translate3d(-50%,6px,0));
+			}
+		}
+	}
 	&--small{
 		&:hover{
 			&:before{
