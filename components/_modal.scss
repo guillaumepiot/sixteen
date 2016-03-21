@@ -137,12 +137,12 @@
 
     &__header{
         position: relative;
-        padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding);
+        padding: 0 calc-em($horizontal_padding);
         background-color: $modal_header_bg;
         border-bottom: $modal_header_border;
 
         @include media($tablet) {
-            padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding) * 2;
+            padding: 0 calc-em($horizontal_padding) * 2;
             @include border-top-radius($border-radius);
         }
     }
