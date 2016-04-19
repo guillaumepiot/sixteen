@@ -39,7 +39,7 @@
 
             .form__control--select{
                 &:after{
-                    right: calc-em($horizontal_padding) + 0.7em;
+                    right: calc-em($horizontal_padding) + 1em;
                 }
             }
 

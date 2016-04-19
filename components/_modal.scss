@@ -67,7 +67,7 @@
             z-index: 100;
 
             @include media($tablet) {
-                background-color: rgba(0,0,0,0.6);
+                background-color: rgba(0,0,0,0.1);
             }
             @include media($mobile) {
                 background-color: #fff;
