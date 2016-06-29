@@ -1,0 +1,22 @@
+/*
+ * Tag label with close button
+ */
+
+.tag{
+    @include label();
+    margin-right: 0.5em;
+    padding-right: 0;
+    &__clear{
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+        display: inline-block;
+        width: 1.5em;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #fff;
+        text-align: center;
+        margin-left: 0.5em;
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+}
