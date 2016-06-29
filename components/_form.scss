@@ -258,6 +258,11 @@
             color: $grey--dark;
             cursor: pointer;
         }
+        &--selected, &--selected:hover, &--selected:focus{
+            background-color: $cyan;
+            color: #fff;
+            cursor: pointer;
+        }
         &--highlighted{
             text-decoration: underline;
             color: $grey--dark;
