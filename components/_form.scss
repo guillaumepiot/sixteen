@@ -47,6 +47,9 @@
 
         .form__error{
             margin-bottom: calc-em($vertical_padding);
+            &--tooltip{
+                margin-bottom: 0;
+            }
         }
     }
 
