@@ -24,6 +24,7 @@ On your project level, import the required Sixteen components:
     @import "/path/to/node_modules/sixteen/components/tooltip";
     @import "/path/to/node_modules/sixteen/components/datepicker";
     @import "/path/to/node_modules/sixteen/components/label";
+    @import "/path/to/node_modules/sixteen/components/tag";
 
 Save the settings file as `_site.scss`
 
