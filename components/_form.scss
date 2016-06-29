@@ -94,7 +94,7 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-    
+
         font-family: $font_family--primary;
         font-size: calc-em($font_size);
 
@@ -141,7 +141,7 @@
         @include placeholder {
             color: $grey;
         }
-        
+
         &:focus, *:focus {
             outline: none;
             box-shadow: none;
@@ -176,14 +176,14 @@
 
             &:after{
                 content: '';
-                width: 0; 
-                height: 0; 
+                width: 0;
+                height: 0;
                 position: absolute;
                 bottom: -6px;
                 left: calc-em($vertical_padding);
                 @include triangle(12px, $error_background, down);
 
-                
+
 
             }
         }
@@ -195,7 +195,7 @@
 
     &__help{
 
-        
+
 
         color: $grey--medium;
         font-size: calc-em($font_size--small);
@@ -203,7 +203,7 @@
 
         padding: calc-em($vertical_padding/2) 0;
 
-        
+
         &--tooltip{
             display: none;
             opacity: 0;
@@ -219,8 +219,8 @@
 
             &:after{
                 content: '';
-                width: 0; 
-                height: 0; 
+                width: 0;
+                height: 0;
                 position: absolute;
                 bottom: -6px;
                 left: calc-em($vertical_padding);
@@ -233,7 +233,7 @@
             opacity: 1;
         }
 
-        
+
     }
 
 }
