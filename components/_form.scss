@@ -68,19 +68,21 @@
             }
         }
 
-        &--checkbox{
-            .form__label{
-                display: inline-block;
-                margin-left: calc-em($horizontal_padding / 2);
-            }
-        }
-        
     }
 
     &__label{
         display: block;
         padding: 0;
         text-align: left;
+        &--inline{
+            padding-top: calc-em($vertical_padding);
+        }
+    }
+
+    &__checkbox{
+        margin-right: calc-em($horizontal_padding);
+        position:relative;
+        top: -1px;
     }
 
     &__text{
