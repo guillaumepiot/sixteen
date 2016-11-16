@@ -284,6 +284,24 @@
             border-bottom-color: lighten($input_border_color, 5%);
         }
     }
+    &__group{
+        &:first-child{
+            .control-select__group-heading{
+                border-top: none;
+            }
+        }
+    }
+    &__group-heading {
+        background-color: $grey--lighter;
+        border-top: 1px solid $grey--light;
+        border-bottom: 1px solid $grey--light;
+        color: $grey;
+        text-transform: uppercase;
+        font-size: $font_size--small;
+        font-weight: bold;
+        padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding);
+        text-align: left;
+    }
 }
 
 .control-radio{
