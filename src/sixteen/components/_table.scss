@@ -4,44 +4,74 @@
  */
 
 .table{
-	width: 100%;
-	border-collapse:collapse;
-	border-spacing: 0;
-	border: 1px solid $table-border-color;
+    width: 100%;
+    border-collapse:collapse;
+    border-spacing: 0;
+    border: 1px solid $table-border-color;
 
-	@for $i from 1 through $grid-columns {
+    @for $i from 1 through $grid-columns {
         td.span-#{$i}, th.span-#{$i}{
             width: 100% / ($grid-columns/$i);
         }
     }
 
-	&--clickable{
-		.table-cell{
-			&:hover{
-				cursor: pointer;
-			}
-		}
-	}
+    &--clickable{
+        .table-cell{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 .table-row{
-	background-color: #fff;
-	&:hover, &:active, &:focus{
-		background-color: darken(#fff, 2%);
-	}
-	&:last-child td{
-		border-bottom: none;
-	}
+    background-color: #fff;
+    &:hover, &:active, &:focus{
+        background-color: darken(#fff, 2%);
+    }
+    @include media($tablet) {
+        &:last-child td{
+            border-bottom: none;
+        }
+    }
 }
 
 .table-head-cell{
-	background-color: $table-header-background-color;
-	padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
-	font-weight: 700;
-	text-align: left;
+    background-color: $table-header-background-color;
+    padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
+    font-weight: 700;
+    text-align: left;
 }
 
 .table-cell{
-	padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
-	border-bottom: 1px solid $table-row-border-color;
+    padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
+    border-bottom: 1px solid $table-row-border-color;
+}
+
+@include media($mobile) {
+    thead{
+        display: none;
+    }
+    .table-row{
+        display: block;
+        margin-bottom: calc-em($vertical_padding);
+        margin-left: calc-em($horizontal_padding);
+        margin-right: calc-em($horizontal_padding);
+        border: 1px solid $table-row-border-color;
+        border-bottom: none;
+        border-radius: $border-radius;
+    }
+    .table-head-cell{
+        display: none;
+    }
+    .table-cell{
+        display: block;
+        text-align: right;
+        &:before{
+            display: block;
+            float: left;
+            font-weight: bold;
+            content: attr(data-header);
+        }
+    }
 }
