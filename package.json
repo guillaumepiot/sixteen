@@ -28,9 +28,6 @@
   "homepage": "https://github.com/Cotidia/sixteen",
   "readme": "# sixteen\n\nMinimal SASS framework written following the BEM method.",
   "readmeFilename": "README.md",
-  "_id": "sixteen@0.1.10",
-  "_shasum": "ae38c789c35657edf2371800613356f4857568c8",
-  "_from": "sixteen@*",
   "devDependencies": {
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-cssmin": "^0.13.0",
