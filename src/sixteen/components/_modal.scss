@@ -28,86 +28,78 @@
  */
 
 .modal{
-    display: none;
+    display: block;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-
-    overflow-y: auto;
     z-index: 101;
 
-    // Give table behaviour, use to center content
-    table-layout: fixed;
-    width: 100%;
-    height: 100%;
-
-    // Transition
-    
+    transform: translateY(-100%);
+    @include transition(transform 0.2s ease-in-out 0s);
 
     &--open{
-        display: block;
-        .modal__pre-header{
-            opacity: 1;
-        }
-        .modal__content{
-            opacity: 1;
-        }
-        .modal__sub-footer{
-            opacity: 1;
-        }
-        &:after{
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            z-index: 100;
+        transform: translateY(0px);
+        @include transition(transform 0.3s ease-in-out 0.2s);
 
-            @include media($tablet) {
-                background-color: rgba(0,0,0,0.1);
-            }
-            @include media($mobile) {
-                background-color: #fff;
-            }
+        .modal__background{
+            bottom: -100%;
+            opacity: 1;
+            @include transition(
+                opacity 0.3s ease-in-out 0s,
+                bottom 1ms linear 0s
+            );
         }
     }
 
-    &__wrapper{
+    &__background{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 102;
 
-        // width: 100%;
-        // height: 100%;
-        // vertical-align: middle;
-        margin: calc-em($vertical_padding * 4) auto;
+        opacity: 0;
 
-        // display: table-cell;
-        position: relative;
-        z-index: 102;  
+        background-color: rgba(0,0,0,0.35);
 
-        
-
-        @include media($mobile) {
-            vertical-align: top;
-            margin: 0 auto;
-        }
- 
+        @include transition(
+            opacity 0.15s ease-in-out 0.2s,
+            bottom 1ms linear 0.6s
+        );
     }
 
     &__content{
-        background-color: $modal_content_bg;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
         margin: 0 auto;
         position: relative;
+        z-index: 103;
+        max-height: 100%;
 
-        opacity: 0;
-        @include transition(all 0.1s ease-in-out);
+        @include transition(opacity 0.3s ease-in-out);
+
+        @include media($mobile){
+            height: 100%;
+        }
 
         @include media($tablet) {
             height: auto;
             border-radius: $border-radius;
             width: 540px;
+            padding-top: calc-em($vertical_padding * 2);
+            padding-bottom: calc-em($vertical_padding * 2);
         }
+
+
 
         &--small{
             @include media($tablet) {
@@ -121,7 +113,6 @@
         padding: calc-em($vertical_padding) calc-em($horizontal_padding);
         margin: 0 auto;
 
-        opacity: 0;
         @include transition(all 0.1s ease-in-out);
 
         @include media($tablet) {
@@ -137,31 +128,31 @@
 
     &__header{
         position: relative;
-        padding: 0 calc-em($horizontal_padding);
         background-color: $modal_header_bg;
         border-bottom: $modal_header_border;
 
         @include media($tablet) {
-            padding: 0 calc-em($horizontal_padding) * 2;
             @include border-top-radius($border-radius);
         }
     }
     &__body{
-        position: relative;
-        padding: calc-em($vertical_padding) calc-em($horizontal_padding);
-        @include media($tablet) {
-            padding: calc-em($vertical_padding) calc-em($horizontal_padding * 2) calc-em($vertical_padding) calc-em($horizontal_padding * 2);
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        overflow-y: auto;
+        background-color: $modal_content_bg;
+        &--padded{
+            padding: calc-em($vertical_padding) calc-em($horizontal_padding);
         }
     }
     &__footer{
         position: relative;
-        padding: calc-em($vertical_padding) calc-em($horizontal_padding) calc-em($vertical_padding * 2) calc-em($horizontal_padding);
+        padding: calc-em($vertical_padding) calc-em($horizontal_padding) calc-em($vertical_padding) calc-em($horizontal_padding);
         background-color: $modal_footer_bg;
         border-top: $modal_footer_border;
 
         @include media($tablet) {
             position: relative;
-            padding: calc-em($vertical_padding) calc-em($horizontal_padding * 2) calc-em($vertical_padding * 2) calc-em($horizontal_padding * 2);
             @include border-bottom-radius($border-radius);
         }
     }
@@ -169,8 +160,6 @@
         position: relative;
         padding: 0 calc-em($horizontal_padding) calc-em($vertical_padding) calc-em($horizontal_padding);
         margin: 0 auto;
-
-        opacity: 0;
         @include transition(all 0.1s ease-in-out);
 
         @include media($tablet) {
@@ -229,7 +218,7 @@
         span{
             font-size: calc-em($font_size * 2);
             color: $grey;
-            
+
             position: relative;
             top: 0.22em;
 
@@ -237,7 +226,7 @@
                 color: $grey--medium;
             }
         }
-        
+
 
         @include transition(background-color 0.2s ease-in-out);
 
@@ -267,6 +256,40 @@
         }
         &:after{
             background-color: #fff;
+        }
+    }
+}
+
+.modal-header{
+    &__title{
+        text-align: center;
+    }
+    &__action{
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        &--left{
+            left: 0;
+        }
+        &--right{
+            right: 0;
+        }
+    }
+    &__action-btn{
+        -webkit-appearance: value;
+        -moz-appearance:    value;
+        appearance:         value;
+        color: $font_color--primary;
+        padding: calc-em($horizontal_padding) calc-em($vertical_padding);
+        background: transparent;
+        border: none;
+        &:hover{
+            cursor: pointer;
+            color: darken($font_color--primary, 10%);
         }
     }
 }
