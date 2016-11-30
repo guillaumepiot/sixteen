@@ -5,7 +5,6 @@
  *
 
 <div class="modal modal--open">
-    <div class="modal__background"></div>
     <div class="modal__content">
         <div class="modal__header modal-header">
             <div class="modal-header__action modal-header__action--left">
@@ -44,51 +43,52 @@
     display: none;
     position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 101;
 
     &--open{
-        display: block;
+        padding-top: calc-em($vertical_padding * 3);
+        padding-bottom: calc-em($horizontal_padding / 2);
+        padding-left: calc-em($horizontal_padding / 2);
+        padding-right: calc-em($horizontal_padding / 2);
+        @include display(flex);
+        @include justify-content(center);
+        @include align-items(flex-start);
         @include media($tablet) {
             overflow-y: auto;
+            padding-top: calc-em($vertical_padding * 2);
+            padding-bottom: calc-em($vertical_padding * 2);
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &:after{
+            content: "";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.35);
+            z-index: -1;
         }
     }
 
-    &__background{
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.35);
-    }
-
     &__content{
-        margin: 0 auto;
+        border-radius: $border-radius;
         position: relative;
-        z-index: 103;
-        max-height: 100%;
-
-        @include transition(opacity 0.3s ease-in-out);
 
         @include media($mobile){
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
+            @include display(flex);
+            @include flex-direction(column);
             height: 100%;
         }
 
         @include media($tablet) {
-            height: auto;
-            border-radius: $border-radius;
             width: 540px;
-            padding-top: calc-em($vertical_padding * 2);
-            padding-bottom: calc-em($vertical_padding * 2);
+
         }
 
         &--small{
@@ -120,10 +120,7 @@
         position: relative;
         background-color: $modal_header_bg;
         border-bottom: $modal_header_border;
-
-        @include media($tablet) {
-            @include border-top-radius($border-radius);
-        }
+        @include border-top-radius($border-radius);
     }
     &__body{
         background-color: $modal_content_bg;
@@ -139,11 +136,7 @@
         padding: calc-em($vertical_padding) calc-em($horizontal_padding) calc-em($vertical_padding) calc-em($horizontal_padding);
         background-color: $modal_footer_bg;
         border-top: $modal_footer_border;
-
-        @include media($tablet) {
-            position: relative;
-            @include border-bottom-radius($border-radius);
-        }
+        @include border-bottom-radius($border-radius);
     }
     &__sub-footer{
         position: relative;
