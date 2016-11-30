@@ -1,4 +1,6 @@
-# sixteen
+# Sixteen
+
+Docs: [https://cotidia.github.io/UI](https://cotidia.github.io/UI)
 
 Install sixteen with npm
 
