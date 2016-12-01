@@ -10,6 +10,7 @@ body {
     font-style: normal;
     font-weight: $font_weight;
     line-height: $base-line-height;
+    -webkit-font-smoothing: antialiased;
 }
 
 p {
@@ -145,7 +146,7 @@ figure{
 }
 
 blockquote {
-    
+
     color: $grey;
     font-family: $font_family--serif;
     font-style: italic;

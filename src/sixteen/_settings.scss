@@ -30,7 +30,7 @@ $background_color--delete: $red;
  * Typography
  */
 
-$font_family--primary: "Lucida Grande", sans-serif !default;
+$font_family--primary: "Helvetica Neue", sans-serif !default;
 $font_family--heading: "Helvetica Neue", sans-serif !default;
 $font_family--serif: Georgia, serif !default;
 $font_family--monospace: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
@@ -39,12 +39,12 @@ $font_color: #444444;
 $font_color--primary: $cyan;
 $font_color--light: $grey--light;
 
-$font_size: 13px;
+$font_size: 14px;
 $font_size--small: 12px;
 $font_size--large: 18px;
 
-$font_weight: 400;
-$font_weight--bold: 700;
+$font_weight: normal;
+$font_weight--bold: bold;
 
 $base-line-height: 1.5em;
 
@@ -73,15 +73,31 @@ $horizontal_padding: 16px;
 $border-radius: 4px;
 
 /**
+ * Dialog
+ */
+
+$dialog_content_border: 1px solid $grey--light;
+$dialog_header_bg: $grey--lighter;
+$dialog_header_color: $grey--dark;
+$dialog_header_border: 1px solid $grey--light;
+$dialog_header_action_color: $font_color--primary;
+$dialog_body_bg: #fff;
+$dialog_footer_bg: #fff;
+$dialog_footer_border: none;
+
+
+/**
  * Modal
  */
 
-$modal_content_bg: #ffffff;
-$modal_header_bg: #f4f4f4;
-$modal_footer_bg: #ffffff;
-
+$modal_content_border: none;
+$modal_header_bg: $cyan;
+$modal_header_color: #fff;
 $modal_header_border: none;
-$modal_footer_border: 1px solid $grey--light;
+$modal_header_action_color: #fff;
+$modal_body_bg: #fff;
+$modal_footer_bg: #fff;
+$modal_footer_border: none;
 
 /**
  * Form
