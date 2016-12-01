@@ -92,6 +92,7 @@
         }
         &--pre{
             border: none;
+            background-color: transparent;
             @include media($mobile) {
                 border-bottom: $dialog_content_border;
                 padding: 0 calc-em($horizontal_padding);
@@ -99,6 +100,7 @@
         }
         &--post{
             border: none;
+            background-color: transparent;
         }
         &--shadow{
             box-shadow: 0px 5px 22px rgba(0,0,0,0.1);

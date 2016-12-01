@@ -1,6 +1,6 @@
 {
   "name": "sixteen",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "SASS foundation for web projects following the BEM method.",
   "main": "index.js",
   "scripts": {
