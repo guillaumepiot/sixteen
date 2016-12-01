@@ -137,6 +137,9 @@
             background-color: $background_color--delete;
             color: #fff;
             font-weight: bold;
+            .dialog-header__action-btn{
+                color: #fff;
+            }
         }
         .dialog__footer{
             // border-top: none;
