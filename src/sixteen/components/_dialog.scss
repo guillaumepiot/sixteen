@@ -84,6 +84,9 @@
     &__content{
         border-bottom: $dialog_content_border;
         background-color: $dialog_content_bg;
+        @include media($mobile) {
+            width: 100%;
+        }
         @include media($tablet) {
             border: $dialog_content_border;
             border-radius: $border-radius;
