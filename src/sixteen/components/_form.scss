@@ -42,6 +42,9 @@
                     right: calc-em($horizontal_padding) + 1em;
                 }
             }
+            .control-select__options{
+                border-color: $red;
+            }
 
         }
 
@@ -252,7 +255,7 @@
         max-height: 300px;
         overflow-y: auto;
         display: none;
-        z-index: 1;
+        z-index: 2;
     }
     &__option{
         color: $grey;
