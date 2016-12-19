@@ -8,7 +8,7 @@
     $text_color: #fff,
     $font_family: $font_family--primary,
     $font_size: $font_size,
-    $font_weight: normal,
+    $font_weight: $font_weight,
     $height: 2em,
     $border_radius: $border-radius) {
 
@@ -25,10 +25,10 @@
     padding: calc-em($vertical_padding) calc-em($horizontal_padding);
 
     font-family: $font_family;
-    font-size: calc-em($font_size);
-    font-weight: $font_weight--bold;
+    font-size: calc-em($font_size + 1); // Needs to appear larger than text
     font-style: normal;
     text-align: center;
+    font-weight: $font_weight;
     text-decoration: none;
     line-height: 1em;
 
