@@ -35,12 +35,12 @@
     border-radius: $border_radius;
 
     user-select: none;
-    @include transition(all 0.2s ease-in-out);
 
     &:hover {
         background-color: lighten($background-color, 3%);
         text-decoration: none;
         color: $text_color;
+        @include transition(all 0.2s ease-in-out);
     }
 
     &:active, &:focus{
