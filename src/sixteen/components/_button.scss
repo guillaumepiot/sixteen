@@ -25,7 +25,7 @@
     padding: calc-em($vertical_padding) calc-em($horizontal_padding);
 
     font-family: $font_family;
-    font-size: calc-em($font_size + 1); // Needs to appear larger than text
+    font-size: $font_size;
     font-style: normal;
     text-align: center;
     font-weight: $font_weight;
