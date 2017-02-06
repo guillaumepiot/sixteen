@@ -7,7 +7,6 @@
 
     &__group{
         position:relative;
-        padding: calc-em($vertical_padding / 4) 0 calc-em($vertical_padding) 0;
 
         &--error{
             .form__text, .form__select{

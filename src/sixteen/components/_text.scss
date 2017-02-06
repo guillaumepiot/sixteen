@@ -110,12 +110,12 @@ i, em{
 //     word-wrap: break-word;
 // }
 
-// p code{
+// code{
+//     font-family: $font_family--monospace;
 //     display: inline-block;
 //     border: 1px solid $grey--light;
 //     border-radius: $border-radius;
 // }
-
 
 a {
     color: $font_color--primary;
