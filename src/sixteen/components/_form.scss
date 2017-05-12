@@ -1,7 +1,6 @@
-/** ---- FORM ----
- * CSS styles used to format standard forms.
- *
- */
+@import "mixin";
+@import "button";
+@import "util";
 
  .form{
 
@@ -72,6 +71,32 @@
                 @include triangle(10px, $grey, down);
                 pointer-events: none;
             }
+        }
+
+        &--radio-btn{
+            @include display(flex);
+            label{
+                @include btn();
+                border-radius: 0;
+                border-right-width: 0;
+            }
+            label:first-of-type, input[type="radio"]:not(:checked) + label:first-of-type{
+                border-top-left-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
+            }
+            label:last-of-type, input[type="radio"]:not(:checked) + label:last-of-type{
+                border-top-right-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+                border-right-width: 1px;
+            }
+            input[type="radio"]{
+                @include hidden();
+            }
+            input[type="radio"]:not(:checked) + label{
+                @include transparent();
+                border-right-width: 0;
+            }
+
         }
 
     }

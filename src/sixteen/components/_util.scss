@@ -1,0 +1,21 @@
+/*
+ * Util mixins and classes
+ *
+ */
+
+/*
+ * Hide the content of the page but still allow screen readers to see it.
+ */
+
+@mixin hidden(){
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+.hidden{
+    @include hidden();
+}

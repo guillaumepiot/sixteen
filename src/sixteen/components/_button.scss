@@ -54,6 +54,35 @@
     }
 }
 
+@mixin transparent($border_color: $grey--medium, $color: $grey, $color_hover: $font_color--primary){
+    background-color: transparent;
+    color: $color;
+    border: 1px solid $border_color;
+
+    &:active, &:focus{
+        background-color: transparent;
+        color: $color;
+    }
+
+    &:hover {
+        background-color: transparent;
+        color: $color_hover;
+        border-color: $color_hover;
+    }
+
+    &[disabled]{
+        cursor: auto;
+        background-color: transparent;
+        color: $color;
+        border: 1px solid $border_color;
+        &:hover {
+            border-color: $border_color;
+            color: $color;
+            background-color: transparent;
+        }
+    }
+}
+
 /**
  * Btn - Standard button component style.
  */
@@ -222,32 +251,7 @@
     }
 
     &--transparent{
-        background-color: transparent;
-        color: $grey;
-        border: 1px solid $grey--medium;
-
-        &:active, &:focus{
-            background-color: transparent;
-            color: $grey;
-        }
-
-        &:hover {
-            background-color: transparent;
-            color: $font_color--primary;
-            border-color: $font_color--primary;
-        }
-
-        &[disabled]{
-            cursor: auto;
-            background-color: transparent;
-            color: $grey;
-            border: 1px solid $grey--medium;
-            &:hover {
-                border-color: $grey--medium;
-                color: $grey;
-                background-color: transparent;
-            }
-        }
+        @include transparent();
     }
 
     &--full-width{
