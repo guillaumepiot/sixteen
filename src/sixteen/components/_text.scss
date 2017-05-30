@@ -3,17 +3,21 @@
  *
  */
 
+html{
+    font-size: $font_size;
+}
+
 body {
     color: $font_color;
     font-family: $font_family--primary;
-    font-size: $font_size;
+    font-size: 100%;
     font-style: normal;
     font-weight: $font_weight;
     line-height: $base-line-height;
 }
 
 p {
-    margin: calc-em($vertical_padding) 0;
+    margin: 1em 0;
 }
 
 h1,
@@ -23,10 +27,8 @@ h4,
 h5,
 h6 {
     font-family: $font_family--heading;
-    // padding: calc-em($vertical_padding / 2) 0;
-    font-style: normal;
-    font-weight: normal;
     line-height: $base-line-height;
+    margin: 0.5em 0;
 }
 
 /**
@@ -38,43 +40,37 @@ h6 {
 h1 {
     font-size: $h1-ratio;
     font-weight: $h1-weight;
-    padding: ($base-line-height / $h1-ratio) * 1em 0;
-    line-height: ($base-line-height / $h1-ratio) * 2.5em;
+    line-height: $h1-line-height;
 }
 
 h2 {
     font-size: $h2-ratio;
     font-weight: $h2-weight;
-    padding: ($base-line-height / $h2-ratio) * 1em 0;
-    line-height: ($base-line-height / $h2-ratio) * 2em;
+    line-height: $h2-line-height;
 }
 
 h3 {
     font-size: $h3-ratio;
     font-weight: $h3-weight;
-    padding: ($base-line-height / $h3-ratio) * 1em 0;
-    line-height: ($base-line-height / $h3-ratio) * 1.5em;
+    line-height: $h3-line-height;
 }
 
 h4 {
     font-size: $h4-ratio;
     font-weight: $h4-weight;
-    padding: ($base-line-height / $h4-ratio) * 0.5em 0;
-    line-height: ($base-line-height / $h4-ratio) * 1em;
+    line-height: $h4-line-height;
 }
 
 h5 {
     font-size: $h5-ratio;
     font-weight: $h5-weight;
-    padding: ($base-line-height / $h5-ratio) * 0.5em 0;
-    line-height: ($base-line-height / $h5-ratio) * 1em;
+    line-height: $h5-line-height;
 }
 
 h6 {
     font-size: $h6-ratio;
     font-weight: $h6-weight;
-    padding: ($base-line-height / $h6-ratio) * 0.5em 0;
-    line-height: ($base-line-height / $h6-ratio) * 1em;
+    line-height: $h6-line-height;
 }
 
 small {
@@ -89,33 +85,6 @@ b, strong{
 i, em{
     font-style: italic;
 }
-
-// pre {
-//     font-size: calc-em($font_size - 2);
-//     border: 1px solid $grey--light;
-//     background: $grey--lighter;
-//     display: block;
-//     border-radius: $border-radius;
-//     font-family: $font_family--monospace;
-//     padding: 0 calc-em($horizontal_padding);
-//     word-break: break-all;
-//     word-wrap: break-word;
-// }
-
-// code {
-//     font-size: calc-em($font_size - 2);
-//     background: $grey--lighter;
-//     font-family: $font_family--monospace;
-//     word-break: break-all;
-//     word-wrap: break-word;
-// }
-
-// code{
-//     font-family: $font_family--monospace;
-//     display: inline-block;
-//     border: 1px solid $grey--light;
-//     border-radius: $border-radius;
-// }
 
 a {
     color: $font_color--primary;
