@@ -4,11 +4,9 @@ module.exports = (grunt) ->
         sass:
             dist:
                 options:
-                    # includePaths: require('node-neat').with('other/path', 'another/path') 
-                    # - or - 
-                    loadPath: require('node-neat').includePaths
+                    loadPath: require('node-neat').includePaths.concat(require('node-bourbon').includePaths)
                 files:
-                    'docs/sixteen.css': 'sixteen.scss'
+                    'docs/sixteen.css': 'src/sixteen.scss'
 
         cssmin:
             options:

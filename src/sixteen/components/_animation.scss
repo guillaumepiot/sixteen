@@ -42,7 +42,7 @@
 
 /**
  * Create a loading animation.
- * 
+ *
  */
 
 .loader{
@@ -53,10 +53,10 @@
     border-radius: 100%;
     border: 2px solid $grey;
     border-bottom-color: transparent;
-    
+
     background: transparent !important;
 
-    @include animation(rotate 1s 0s linear infinite);
+    animation: rotate 1s 0s linear infinite;
 
     &--primary{
         border-color: $cyan;

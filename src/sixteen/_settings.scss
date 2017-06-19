@@ -16,7 +16,6 @@ $grey: #666666;
 $grey--medium: #aaaaaa;
 $grey--light: #eeeeee;
 $grey--lighter: #fafafa;
-$black: #000000;
 
 $background_color: #ffffff;
 $background_color--primary: $cyan;
@@ -39,19 +38,27 @@ $font_color: #444444;
 $font_color--primary: $cyan;
 $font_color--light: $grey--light;
 
-$font_size: 14px;
-$font_size--small: 12px;
-$font_size--large: 18px;
-
-$font_weight: normal;
-$font_weight--bold: bold;
+$font_weight: 400;
+$font_weight--bold: 700;
 
 $base-line-height: 1.5em;
 
-$h1-ratio: 2.441em;
-$h2-ratio: 1.953em;
-$h3-ratio: 1.563em;
-$h4-ratio: 1.25em;
+$font_size: 16px;
+$font_size--hero: 2.441em;
+$font_size--large: 1.953em;
+$font_size--medium: 1.563em;
+$font_size--emphasis: 1.25em;
+$font_size--small: 0.80em;
+
+
+/**
+ * Headers
+ */
+
+$h1-ratio: $font_size--hero;
+$h2-ratio: $font_size--large;
+$h3-ratio: $font_size--medium;
+$h4-ratio: $font_size--emphasis;
 $h5-ratio: 1em;
 $h6-ratio: 1em;
 
@@ -74,9 +81,8 @@ $h6-line-height: 1.3em;
  * Layout
  */
 
-$vertical_padding: 12px;
-$horizontal_padding: 16px;
-
+$vertical_padding: 0.75rem;
+$horizontal_padding: 1rem;
 $border-radius: 4px;
 
 /**
@@ -120,15 +126,18 @@ $error_background: rgba(213, 0, 0, 0.8);
 
 /* Mobile */
 $mobile-width: 767px;
-$mobile: new-breakpoint(max-width $mobile-width);
+$mobile: screen and (max-width: $mobile-width);
+
 
 /* Tablet */
 $tablet-width: 768px;
-$tablet: new-breakpoint(min-width $tablet-width);
+$tablet: screen and (min-width: $tablet-width);
+
 
 /* Desktop */
 $desktop-width: 1024px;
-$desktop: new-breakpoint(min-width $desktop-width + 1);
+$desktop: screen and (min-width: $desktop-width + 1);
+
 
 /**
  * Grid

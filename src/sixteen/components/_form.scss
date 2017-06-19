@@ -1,4 +1,3 @@
-@import "mixin";
 @import "button";
 @import "util";
 
@@ -6,7 +5,7 @@
 
     &__group{
         position:relative;
-        margin-bottom: calc-em($vertical_padding);
+        margin-bottom: $vertical_padding;
 
         &--error{
             .form__text, .form__select{
@@ -38,7 +37,7 @@
 
             .form__control--select{
                 &:after{
-                    right: calc-em($horizontal_padding) + 1em;
+                    right: 2em;
                 }
             }
             .control-select__options{
@@ -48,7 +47,7 @@
         }
 
         .form__error{
-            margin-bottom: calc-em($vertical_padding);
+            margin-bottom: $vertical_padding;
             &--tooltip{
                 margin-bottom: 0;
             }
@@ -66,15 +65,15 @@
             &:after{
                 content: "";
                 position: absolute;
-                right: calc-em($horizontal_padding);
-                top: calc-em($vertical_padding + 7);
+                right: $horizontal_padding;
+                top: $vertical_padding + 0.5rem;
                 @include triangle(10px, $grey, down);
                 pointer-events: none;
             }
         }
 
         &--radio-btn{
-            @include display(flex);
+            display: flex;
             label{
                 @include btn();
                 border-radius: 0;
@@ -106,12 +105,12 @@
         padding: 0;
         text-align: left;
         &--inline{
-            padding-top: calc-em($vertical_padding);
+            padding-top: $vertical_padding;
         }
     }
 
     &__checkbox{
-        margin-right: calc-em($horizontal_padding);
+        margin-right: $horizontal_padding;
         position:relative;
         top: -1px;
     }
@@ -124,17 +123,17 @@
         appearance: none;
 
         font-family: $font_family--primary;
-        font-size: calc-em($font_size);
+        font-size: $font_size;
 
         position: relative;
         width:100%;
         margin: 0;
-        padding: calc-em($vertical_padding - 1) calc-em($horizontal_padding * 0.9);
+        padding: $vertical_padding - 1 $horizontal_padding * 0.9;
 
         border:1px solid $input_border_color;
         border-radius: $border-radius;
 
-        @include placeholder {
+        :placeholder {
             color: $grey--medium;
         }
 
@@ -153,20 +152,20 @@
         appearance: none;
 
         font-family: $font_family--primary;
-        font-size: calc-em($font_size);
+        font-size: $font_size;
 
         position: relative;
         width:100%;
         margin: 0;
 
         /* -1 on vertical padding to account for border thickness */
-        padding: calc-em($vertical_padding - 1) calc-em($horizontal_padding * 2) calc-em($vertical_padding - 1) calc-em($horizontal_padding * 0.9);
+        padding: $vertical_padding - 1 $horizontal_padding * 2 $vertical_padding - 1 $horizontal_padding * 0.9;
 
         background-color: #fff;
         border:1px solid $input_border_color;
         border-radius: $border-radius;
 
-        @include placeholder {
+        :placeholder {
             color: $grey;
         }
 
@@ -184,7 +183,7 @@
         border-radius: $border-radius;
         text-align: left;
 
-        padding: calc-em($vertical_padding) calc-em($horizontal_padding);
+        padding: $vertical_padding $horizontal_padding;
 
         &--tooltip{
             display: none;
@@ -192,7 +191,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding);
+            padding: $vertical_padding / 2 $horizontal_padding;
 
             color: #fff;
             background-color: $error_background;
@@ -200,7 +199,7 @@
 
             border-radius: $border-radius;
 
-            @include transition(opacity 0.2s ease-in-out);
+            transition: opacity 0.2s ease-in-out;
 
             &:after{
                 content: '';
@@ -208,8 +207,8 @@
                 height: 0;
                 position: absolute;
                 bottom: -6px;
-                left: calc-em($vertical_padding);
-                @include triangle(12px, $error_background, down);
+                left: $vertical_padding;
+                // @include triangle(12px, $error_background, down);
 
 
 
@@ -222,15 +221,10 @@
     }
 
     &__help{
-
-
-
         color: $grey--medium;
-        font-size: calc-em($font_size--small);
+        font-size: $font_size--small;
         text-align: left;
-
-        padding: calc-em($vertical_padding/2) 0;
-
+        padding: $vertical_padding / 2 0;
 
         &--tooltip{
             display: none;
@@ -239,11 +233,9 @@
             bottom: 0;
             color: #fff;
             background-color: rgba(0,0,0,0.8);
-
             border-radius: $border-radius;
-            padding: calc-em($vertical_padding/2) calc-em($horizontal_padding);
-
-            @include transition(opacity 0.2s ease-in-out);
+            padding: $vertical_padding / 2 $horizontal_padding;
+            transition: opacity 0.2s ease-in-out;
 
             &:after{
                 content: '';
@@ -251,8 +243,8 @@
                 height: 0;
                 position: absolute;
                 bottom: -6px;
-                left: calc-em($vertical_padding);
-                @include triangle(12px, rgba(0,0,0,0.8), down);
+                left: $vertical_padding;
+                // @include triangle(12px, rgba(0,0,0,0.8), down);
             }
         }
 
@@ -284,7 +276,7 @@
     }
     &__option{
         color: $grey;
-        padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding);
+        padding: $vertical_padding / 2 $horizontal_padding;
         text-align: left;
         &--focused, &:hover, &:focus{
             background-color: $grey--light;
@@ -327,7 +319,7 @@
         text-transform: uppercase;
         font-size: $font_size--small;
         font-weight: bold;
-        padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding);
+        padding: $vertical_padding / 2 $horizontal_padding;
         text-align: left;
     }
 }
@@ -338,6 +330,6 @@
         padding-left: 0;
     }
     &__label{
-        margin-left: calc-em($horizontal_padding / 2);
+        margin-left: $horizontal_padding / 2;
     }
 }

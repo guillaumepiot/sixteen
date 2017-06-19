@@ -24,15 +24,15 @@
     }
 
     &--stack-mobile{
-        @include media($mobile) {
+        @media screen and (max-width: $mobile-width) {
             thead{
                 display: none;
             }
             .table-row{
                 display: block;
-                margin-bottom: calc-em($vertical_padding);
-                margin-left: calc-em($horizontal_padding);
-                margin-right: calc-em($horizontal_padding);
+                margin-bottom: $vertical_padding;
+                margin-left: $horizontal_padding;
+                margin-right: $horizontal_padding;
                 border: 1px solid $table-row-border-color;
                 border-bottom: none;
                 border-radius: $border-radius;
@@ -59,7 +59,7 @@
     &:hover, &:active, &:focus{
         background-color: darken(#fff, 2%);
     }
-    @include media($tablet) {
+    @media screen and (min-width: $tablet-width) {
         &:last-child td{
             border-bottom: none;
         }
@@ -68,12 +68,12 @@
 
 .table-head-cell{
     background-color: $table-header-background-color;
-    padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
+    padding: $vertical_padding / 1.4 $horizontal_padding;
     font-weight: 700;
     text-align: left;
 }
 
 .table-cell{
-    padding: calc-em($vertical_padding / 1.4) calc-em($horizontal_padding);
+    padding: $vertical_padding / 1.4 $horizontal_padding;
     border-bottom: 1px solid $table-row-border-color;
 }

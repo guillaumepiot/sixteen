@@ -1,10 +1,9 @@
-@import "bourbon";
 @import "neat";
+@import "bourbon";
 
 // Sixteen framework
 @import "sixteen/settings";
 @import "sixteen/components/reset";
-@import "sixteen/components/mixin";
 @import "sixteen/components/util";
 @import "sixteen/components/animation";
 @import "sixteen/components/grid";

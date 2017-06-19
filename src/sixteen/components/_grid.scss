@@ -2,12 +2,17 @@
  * CSS styles used to format grid layouts.
  */
 
+// $neat-grid: (
+//     columns: $grid-columns,
+//     gutter: 20px,
+// );
+
 .grid{
-    @include outer-container(100%);
+    @include grid-container;
 
     @for $i from 1 through $grid-columns {
         &__span-#{$i}{
-            @include span-columns($i);
+            @include grid-column($i);
         }
     }
 
@@ -16,12 +21,12 @@
         @for $i from 1 through $grid-columns {
             > .grid__span-#{$i}{
                 width: (100 * ($i / $grid-columns)) * 1%;
-                @include omega;
+                @include grid-collapse;
             }
         }
     }
     &--break-mobile{
-        @include media($mobile) {
+        @media screen and (max-width: $mobile-width) {
             @for $i from 1 through $grid-columns {
                 > .grid__span-#{$i}{
                     float: none;
@@ -32,11 +37,17 @@
         }
     }
 }
+//
+// .pull-right{
+//     float: right;
+// }
+//
+// .pull-left{
+//     float: left;
+// }
 
-.pull-right{
-    float: right;
-}
 
-.pull-left{
-    float: left;
-}
+
+// .grid{
+//     @include $neat-grid;
+// }
