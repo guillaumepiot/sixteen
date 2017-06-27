@@ -7,47 +7,61 @@
 //     gutter: 20px,
 // );
 
+// $neat-grid: (
+//   columns: 12,
+//   gutter: 20px,
+// );
+
+$base-grid: (
+  columns: 12,
+  gutter: 20px,
+);
+
+$collapse-grid: (
+  columns: 12,
+  // Use a really low value to pretend a 0 value and avoid a "0px == 0"
+  // deprecation warning in SASS
+  gutter: 0.00001px,
+);
+
 .grid{
     @include grid-container;
 
     @for $i from 1 through $grid-columns {
         &__span-#{$i}{
-            @include grid-column($i);
+            @include grid-column($i, $base-grid);
+        }
+        &__shift-#{$i}{
+            @include grid-shift($i, $base-grid);
+        }
+        &__unshift-#{$i}{
+            @include grid-shift(-$i, $base-grid);
         }
     }
 
     &--collapse{
-
         @for $i from 1 through $grid-columns {
             > .grid__span-#{$i}{
-                width: (100 * ($i / $grid-columns)) * 1%;
-                @include grid-collapse;
+                @include grid-column($i, $collapse-grid);
+            }
+            > .grid__shift-#{$i}{
+                @include grid-shift($i, $collapse-grid);
+            }
+            > .grid__unshift-#{$i}{
+                @include grid-shift(-$i, $collapse-grid);
             }
         }
     }
+
     &--break-mobile{
         @media screen and (max-width: $mobile-width) {
             @for $i from 1 through $grid-columns {
                 > .grid__span-#{$i}{
                     float: none;
-                    margin-right: auto;
-                    width: auto;
+                    margin: 0;
+                    width: 100%;
                 }
             }
         }
     }
 }
-//
-// .pull-right{
-//     float: right;
-// }
-//
-// .pull-left{
-//     float: left;
-// }
-
-
-
-// .grid{
-//     @include $neat-grid;
-// }

@@ -124,19 +124,10 @@ $error_background: rgba(213, 0, 0, 0.8);
  * Breakpoints
  */
 
-/* Mobile */
-$mobile-width: 767px;
-$mobile: screen and (max-width: $mobile-width);
-
-
-/* Tablet */
-$tablet-width: 768px;
-$tablet: screen and (min-width: $tablet-width);
-
-
-/* Desktop */
-$desktop-width: 1024px;
-$desktop: screen and (min-width: $desktop-width + 1);
+ $desktop-width: 1280px;
+ $laptop-width: 1024px;
+ $tablet-width: 768px;
+ $mobile-width: 767px;
 
 
 /**
