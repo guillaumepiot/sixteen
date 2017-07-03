@@ -9,8 +9,8 @@
     color: darken($cyan, 10%);
     border-radius: $border-radius;
 
-    padding: calc-em($vertical_padding) calc-em($horizontal_padding);
-    margin-bottom: calc-em($vertical_padding);
+    padding: $vertical_padding $horizontal_padding;
+    margin-bottom: $vertical_padding;
 
     &--error{
         background-color: lighten($red, 50%);
