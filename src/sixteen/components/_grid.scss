@@ -1,16 +1,8 @@
-/** ---- GRID ----
+/**
+ * ---- GRID ----
+ *
  * CSS styles used to format grid layouts.
  */
-
-// $neat-grid: (
-//     columns: $grid-columns,
-//     gutter: 20px,
-// );
-
-// $neat-grid: (
-//   columns: 12,
-//   gutter: 20px,
-// );
 
 $base-grid: (
   columns: 12,
@@ -27,6 +19,10 @@ $collapse-grid: (
 .grid{
     @include grid-container;
 
+    &__row{
+        @include grid-collapse($base-grid)
+    }
+
     @for $i from 1 through $grid-columns {
         &__span-#{$i}{
             @include grid-column($i, $base-grid);
@@ -37,26 +33,54 @@ $collapse-grid: (
         &__unshift-#{$i}{
             @include grid-shift(-$i, $base-grid);
         }
+        &__push-#{$i}{
+            @include grid-push($i, $base-grid);
+        }
+        &__pull-#{$i}{
+            @include grid-push(-$i, $base-grid);
+        }
     }
 
     &--collapse{
+        > .grid__row{
+            @include grid-collapse($collapse-grid)
+        }
+
         @for $i from 1 through $grid-columns {
-            > .grid__span-#{$i}{
+            > .grid__span-#{$i},
+            > .grid__row > .grid__span-#{$i}{
                 @include grid-column($i, $collapse-grid);
             }
-            > .grid__shift-#{$i}{
+            > .grid__shift-#{$i},
+            > .grid__row > .grid__shift-#{$i}{
                 @include grid-shift($i, $collapse-grid);
             }
-            > .grid__unshift-#{$i}{
+            > .grid__unshift-#{$i},
+            > .grid__row > .grid__unshift-#{$i}{
                 @include grid-shift(-$i, $collapse-grid);
+            }
+            > .grid__push-#{$i},
+            > .grid__row > .grid__push-#{$i}{
+                @include grid-push($i, $collapse-grid);
+            }
+            > .grid__pull-#{$i},
+            > .grid__row > .grid__pull-#{$i}{
+                @include grid-push(-$i, $collapse-grid);
             }
         }
     }
 
     &--break-mobile{
         @media screen and (max-width: $mobile-width) {
+            > .grid__row{
+                margin-left: 0;
+                margin-right: 0;
+                width: 100%;
+            }
+
             @for $i from 1 through $grid-columns {
-                > .grid__span-#{$i}{
+                > .grid__span-#{$i},
+                > .grid__row > .grid__span-#{$i}{
                     float: none;
                     margin: 0;
                     width: 100%;
