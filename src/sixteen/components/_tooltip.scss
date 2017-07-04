@@ -4,7 +4,7 @@
 
 @mixin tooltip(){
     background-color: rgba(0,0,0,0.75);
-    padding: calc-em($vertical_padding / 2) calc-em($horizontal_padding / 1.4);
+    padding: $vertical_padding / 2 $horizontal_padding / 1.4;
     border-radius: $border-radius;
     white-space: nowrap;
     content: attr(data-tooltip);
@@ -62,7 +62,7 @@
         }
         &:after{
             top: 0;
-            left: calc-em($horizontal_padding);
+            left: $horizontal_padding;
             @include tooltip-arrow-top;
         }
         &:hover{
@@ -78,7 +78,7 @@
         }
         &:after{
             bottom: 0;
-            left: calc-em($horizontal_padding);
+            left: $horizontal_padding;
             @include tooltip-arrow-bottom;
         }
         &:hover{
@@ -94,7 +94,7 @@
         }
         &:after{
             top: 0;
-            right: calc-em($horizontal_padding);
+            right: $horizontal_padding;
             @include tooltip-arrow-top;
         }
         &:hover{
@@ -110,7 +110,7 @@
         }
         &:after{
             bottom: 0;
-            right: calc-em($horizontal_padding);
+            right: $horizontal_padding;
             @include tooltip-arrow-bottom;
         }
         &:hover{

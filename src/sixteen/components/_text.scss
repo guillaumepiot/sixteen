@@ -98,7 +98,7 @@ a {
 
 ul,
 ol {
-    padding-left: calc-em($horizontal_padding * 2);
+    padding-left: $horizontal_padding * 2;
 }
 
 ul{
@@ -110,7 +110,7 @@ ol{
 }
 
 figure{
-    margin: calc-em($vertical_padding * 2) 0 ;
+    margin: $vertical_padding * 2 0 ;
 }
 
 blockquote {
@@ -119,16 +119,16 @@ blockquote {
     font-family: $font_family--serif;
     font-style: italic;
     font-size: $font_size * 1.25;
-    line-height: calc-em($font_size * 1.25 * 1.25);
+    line-height: $font_size * 1.25 * 1.25;
 
     border-left: 4px solid $grey--medium;
-    margin: calc-em($vertical_padding) 0;
-    padding-left: calc-em($horizontal_padding);
+    margin: $vertical_padding 0;
+    padding-left: $horizontal_padding;
 }
 
 figcaption {
-    padding-left: calc-em($horizontal_padding + 4);
-    margin-left: calc-em($horizontal_padding);
+    padding-left: $horizontal_padding;
+    margin-left: $horizontal_padding;
     font-family: $font_family--serif;
 }
 
@@ -137,7 +137,7 @@ hr {
     border-top: 1px solid $grey--light;
 
     padding: 0;
-    margin: calc-em($vertical_padding * 4) 0;
+    margin: $vertical_padding * 4 0;
 }
 
 

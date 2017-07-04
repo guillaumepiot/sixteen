@@ -61,17 +61,6 @@
 
         }
 
-        &--select{
-            &:after{
-                content: "";
-                position: absolute;
-                right: $horizontal_padding;
-                top: $vertical_padding + 0.5rem;
-                @include triangle(10px, $grey, down);
-                pointer-events: none;
-            }
-        }
-
         &--radio-btn{
             display: flex;
             label{
@@ -117,18 +106,14 @@
 
     &__text{
 
-        /* Remove First */
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-
         font-family: $font_family--primary;
         font-size: $font_size;
 
         position: relative;
         width:100%;
         margin: 0;
-        padding: $vertical_padding - 1 $horizontal_padding * 0.9;
+        height: 2.8rem;
+        padding: 0 0.6rem;
 
         border:1px solid $input_border_color;
         border-radius: $border-radius;
@@ -146,11 +131,6 @@
 
     &__select{
 
-        /* Remove First */
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-
         font-family: $font_family--primary;
         font-size: $font_size;
 
@@ -158,8 +138,7 @@
         width:100%;
         margin: 0;
 
-        /* -1 on vertical padding to account for border thickness */
-        padding: $vertical_padding - 1 $horizontal_padding * 2 $vertical_padding - 1 $horizontal_padding * 0.9;
+        height: 2.8rem;
 
         background-color: #fff;
         border:1px solid $input_border_color;
