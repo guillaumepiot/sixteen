@@ -4,18 +4,78 @@
  */
 
 /*
- * Hide the content of the page but still allow screen readers to see it.
+ * Completely hide the content using display none.
  */
 
 @mixin hidden(){
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+    display: none;
 }
 
 .hidden{
     @include hidden();
+}
+
+.hidden-mobile{
+    @media screen and (max-width: $mobile-width) {
+        @include hidden();
+    }
+}
+
+.hidden-tablet{
+    @media screen and (min-width: $tablet-width) {
+        @include hidden();
+    }
+}
+
+.hidden-laptop{
+    @media screen and (min-width: $laptop-width) {
+        @include hidden();
+    }
+}
+
+.hidden-desktop{
+    @media screen and (min-width: $desktop-width) {
+        @include hidden();
+    }
+}
+
+/*
+ * Hide for screen readers bu pushing the content away from the viewport.
+ */
+
+@mixin hiddenSR(){
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.hidden-sr{
+    @include hiddenSR();
+}
+
+.hidden-sr-mobile{
+    @media screen and (max-width: $mobile-width) {
+        @include hiddenSR();
+    }
+}
+
+.hidden-sr-tablet{
+    @media screen and (min-width: $tablet-width) {
+        @include hiddenSR();
+    }
+}
+
+.hidden-sr-laptop{
+    @media screen and (min-width: $laptop-width) {
+        @include hiddenSR();
+    }
+}
+
+.hidden-sr-desktop{
+    @media screen and (min-width: $desktop-width) {
+        @include hiddenSR();
+    }
 }
