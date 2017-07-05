@@ -4,7 +4,7 @@
  .form{
 
     &__group{
-        position:relative;
+        position: relative;
         margin-bottom: $vertical_padding;
 
         &--error{
@@ -40,14 +40,15 @@
                     right: 2em;
                 }
             }
+
             .control-select__options{
                 border-color: $red;
             }
-
         }
 
         .form__error{
             margin-bottom: $vertical_padding;
+
             &--tooltip{
                 margin-bottom: 0;
             }
