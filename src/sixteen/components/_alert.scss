@@ -3,7 +3,7 @@
  *
  */
 
-.alert{
+.alert{ 
 
     background-color: lighten($cyan, 50%);
     color: darken($cyan, 10%);
@@ -25,5 +25,10 @@
     &--warning{
         background-color: lighten($orange, 42%);
         color: darken($orange, 10%);
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
     }
 }
