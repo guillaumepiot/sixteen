@@ -2,18 +2,29 @@
  * Menu
  */
 
+.header {
+    &__logo {
+        padding: $vertical_padding $horizontal_padding;
+        float:left;
+
+        &:hover {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+}
+
 .menu{
     position: absolute;
     width: 100%;
     right: 0;
-    background-color: $grey--light;
+    background-color: $grey--lighter;
 
     
     &__item{
         display: block;
         float: left;
         position: relative;
-        margin-left: 2px;
         transition: border-color 0.2s ease-in-out; 
         
         &--open{
@@ -38,19 +49,21 @@
             }
         }
         &--home{
-            @media screen and (min-width: $mobile-width) {
+            @media screen and (max-width: $mobile-width) {
                 display: none;
             }
         }
         &:hover{
             .menu-sub-nav{
-                display: block;
+                @media screen and (min-width: $tablet-width) {
+                    display: block !important; 
+                } 
             }
         }
     }
-    @media screen and (min-width: $mobile-width) {
+    @media screen and (max-width: $mobile-width) {
         &__item{
-            float: none;
+            float: right;
             display: none;
             &--open{
                 display: block;
@@ -76,20 +89,44 @@
 }
 
 .menu-item{
+    &:hover{
+        .menu-sub-nav {
+            background-color: $grey--light;
+
+            @media screen and (max-width: $mobile-width) {
+                background-color: $grey--lighter;
+            }
+        }
+
+        .menu-item__link {
+            background-color: $grey--light;
+
+            @media screen and (max-width: $mobile-width) {
+                background-color: $grey--lighter;
+            }
+        }
+    }
+
     &__link{
         color: $grey--dark;
-        line-height: $base-line-height * 1.5;
-        padding: 0 2rem;
-        padding-top: 1.65em;
-        padding-bottom: 1.9em;
-        border-bottom: 2px solid transparent;
+        padding: $vertical_padding $horizontal_padding;
         display: block;
 
         &:hover{
-            border-bottom: 2px solid $green;
+            background-color: $grey--light;
+
+            @media screen and (max-width: $mobile-width) {
+                background-color: $grey--lighter;
+            }
         }
         &--active{
-            border-bottom: 2px solid $green;
+            background-color: $grey--light;
+
+            @media screen and (max-width: $mobile-width) {
+                &:hover{
+                    background-color: $grey--light !important;
+                }
+            }
         }
         @media screen and (max-width: $mobile-width) {
             margin-left: 0;
@@ -114,18 +151,20 @@
 .menu-sub-nav{
     display: none;
     position: absolute;
-    width: 100%;
+    width: auto;
     background-color: #fff;
+    right: 0;
+
     .menu-item{
         float: none;
-    }
-    .menu-item__link{
-        padding-top: 1em;
-        padding-bottom: 1em;
     }
 }
 
 .menu-container{
+    @media screen and (min-width: $tablet-width) {
+        display: block !important;
+    }
+
     @media screen and (max-width: $mobile-width) {
         position: fixed;
         top: 0;
@@ -153,16 +192,18 @@
             left: 0;
             right: 0;
             padding-bottom: 1.5rem;
-            background-color: rgba(19, 34, 95, 0.9);
+            background-color: $grey--lighter;
             z-index: 2;
             overflow-y: scroll;
             .menu__item{
                 display: block;
+                width: 100%;
+
                 &:last-child{
                     margin-bottom: 0px;
                 }
                 &--close{ 
-                    margin: 0 2em .75em;
+                    margin: 0 $horizontal_padding .75em;
                     line-height: 3em;
                     padding: 0 1em;
                     &:before{
@@ -172,7 +213,7 @@
                         top: (1 / 3) * 1em;
                         font-size: 2em;
                         line-height: 1em;
-                        color: #fff;
+                        color: $grey--dark;
                     }
                     &:hover{
                         background-color: transparent;
@@ -181,31 +222,27 @@
                 &:hover{
                     background-color: transparent;
                 }
-                &--touched{
-                    background-color: #111d50;
-                    &:hover{
-                        background-color: #111d50;
-                    }
-                }
             }
             .menu-item__link{
                 display: block;
-                margin: 0 2rem 0.75rem;
+                margin: 0 $horizontal_padding 1px;
                 line-height: $base-line-height * 2;
-                padding: 0 1rem;
-                &:hover{
-                    background-color: transparent;
+                padding: 0 $horizontal_padding;
+
+                &:focus + .menu-sub-nav, &:hover + .menu-sub-nav {
+                    display: block !important;
                 }
             }
             .menu-sub-nav{
-                display: block;
+                display: none;
                 position: relative;
                 padding-left: 2rem;
             }
         }
     }
     @media screen and (min-width: $tablet-width) {
-        display: block !important;
+        // display: block !important;
         opacity: 1 !important;
+        float: right;
     }
 }
