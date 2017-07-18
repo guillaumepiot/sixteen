@@ -109,7 +109,6 @@
 
         font-family: $font_family--primary;
         font-size: $font_size;
-
         position: relative;
         width:100%;
         margin: 0;
@@ -133,7 +132,6 @@
 
         font-family: $font_family--primary;
         font-size: $font_size;
-
         position: relative;
         width:100%;
         margin: 0;
@@ -188,9 +186,6 @@
                 bottom: -6px;
                 left: $vertical_padding;
                 // @include triangle(12px, $error_background, down);
-
-
-
             }
         }
         &--tooltip-on{
@@ -312,3 +307,9 @@
         margin-left: $horizontal_padding / 2;
     }
 }
+
+[type=submit], button {
+    -webkit-appearance: none; // removes Safari's excessive styling on mobile phones
+    -webkit-border-radius: 0; // removes Safari's excessive styling on mobile phones
+}
+
