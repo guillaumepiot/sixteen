@@ -1,17 +1,17 @@
 .dialog{
     &--small{
         .dialog__content, .dialog__content--pre, .dialog__content--post{
-            @media screen and (min-width: $tablet-width) {
-                width: 360px;
-            }
+            max-width: 360px;
         }
     }
     &--large{
         .dialog__content, .dialog__content--pre, .dialog__content--post{
-            @media screen and (min-width: $tablet-width) {
-                width: 80%;
-                max-width: $desktop-width;
-            }
+            max-width: $desktop-width;
+        }
+    }
+    &--full-width{
+        .dialog__content, .dialog__content--pre, .dialog__content--post{
+            max-width: none;
         }
     }
     &--modal{
@@ -23,19 +23,11 @@
         height: 100%;
         z-index: 101;
         &-open{
-            padding-top: $vertical_padding * 3;
-            padding-bottom: $horizontal_padding / 2;
-            padding-left: $horizontal_padding / 2;
-            padding-right: $horizontal_padding / 2;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             @media screen and (min-width: $tablet-width) {
                 overflow-y: auto;
-                padding-top: $vertical_padding * 2;
-                padding-bottom: $vertical_padding * 2;
-                padding-left: 0;
-                padding-right: 0;
             }
             &:after{
                 content: "";
@@ -57,7 +49,7 @@
             @media screen and (max-width: $mobile-width){
                 display: flex;
                 flex-direction: column;
-                max-height: 100%;
+                max-height: calc(100% - #{$vertical_padding * 1.33});
             }
         }
         .dialog__body{
@@ -86,14 +78,13 @@
     &__content{
         border-bottom: $dialog_content_border;
         background-color: $dialog_content_bg;
-        @media screen and (max-width: $mobile-width) {
-            width: 100%;
-        }
+        width: calc(100% - #{$horizontal_padding});
+        max-width: 540px;
+        margin: $vertical_padding * 0.67 0;
         @media screen and (min-width: $tablet-width) {
             border: $dialog_content_border;
             border-radius: $border-radius;
-            margin: $vertical_padding * 2 auto;
-            width: 540px;
+            margin: $vertical_padding * 4 0;
         }
         &--pre{
             border: none;
@@ -123,7 +114,10 @@
     }
     &__body{
         &--padded{
-            padding: $vertical_padding * 2;
+            padding: $vertical_padding $horizontal_padding;
+            @media screen and (min-width: $tablet-width) {
+                padding: $vertical_padding $horizontal_padding * 2;
+            }
         }
         &--center{
             text-align: center;
@@ -142,7 +136,6 @@
             border: none;
         }
         .dialog__header{
-            // border-bottom: none;
             background-color: $background_color--delete;
             color: #fff;
             font-weight: bold;
@@ -150,15 +143,17 @@
                 color: #fff;
             }
         }
-        .dialog__footer{
-            // border-top: none;
-        }
     }
 }
 
 .dialog-header{
     &__title{
-        padding: 0 $vertical_padding * 2;
+        font-size: $font_size--emphasis;
+        padding: $vertical_padding $horizontal_padding;
+        @media screen and (min-width: $tablet-width) {
+            font-size: $font_size--medium;
+            padding: $vertical_padding * 2 $horizontal_padding * 2;
+        }
         &--center{
             text-align: center;
         }
@@ -192,7 +187,10 @@
 
 .dialog-footer{
     &__actions{
-        padding: $vertical_padding * 2;
+        padding: $vertical_padding $horizontal_padding;
+        @media screen and (min-width: $tablet-width) {
+            padding: $vertical_padding * 2 $horizontal_padding * 2;
+        }
         &--center{
             text-align: center;
         }
