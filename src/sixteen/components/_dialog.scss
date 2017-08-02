@@ -63,10 +63,6 @@
             color: $modal_header_color;
             border-top-left-radius: $border-radius;
             border-top-right-radius: $border-radius;
-
-            .dialog-header__action-btn{
-                color: $modal_header_action_color;
-            }
         }
         .dialog__footer{
             background-color: $modal_footer_bg;
@@ -168,21 +164,26 @@
         align-items: center;
         &--left{
             left: 0;
+            margin-left: $horizontal_padding;
+            @media screen and (min-width: $tablet-width) {
+                margin-left: $horizontal_padding * 2;
+            }
+            .dialog-header__action-btn{
+                padding-right: $horizontal_padding;
+            }
         }
         &--right{
             right: 0;
+            margin-right: $horizontal_padding;
+            @media screen and (min-width: $tablet-width) {
+                margin-left: $horizontal_padding * 2;
+            }
+            .dialog-header__action-btn{
+                padding-left: $horizontal_padding;
+            }
         }
     }
-    &__action-btn{
-        color: $dialog_header_action_color;
-        padding: $horizontal_padding $vertical_padding;
-        background: transparent;
-        border: none;
-        &:hover{
-            cursor: pointer;
-            color: darken($font_color--primary, 10%);
-        }
-    }
+    
 }
 
 .dialog-footer{
