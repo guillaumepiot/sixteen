@@ -1,5 +1,5 @@
 /**
- * Label - Standard label mixin.
+ * Label
  */
 
 @mixin label(){
@@ -9,9 +9,7 @@
     border-radius: $border-radius;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    text-transform: uppercase;
     white-space: nowrap;
-    overflow: ellipsis;
 }
 
 .label{
