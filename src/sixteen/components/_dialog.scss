@@ -1,4 +1,8 @@
 .dialog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     &--small{
         .dialog__content, .dialog__content--pre, .dialog__content--post{
             max-width: 360px;
@@ -24,8 +28,6 @@
         z-index: 101;
         &-open{
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
             @media screen and (min-width: $tablet-width) {
                 overflow-y: auto;
             }
@@ -72,15 +74,28 @@
         }
     }
     &__content{
-        border-bottom: $dialog_content_border;
         background-color: $dialog_content_bg;
+        border: $dialog_content_border;
+        border-radius: $border-radius;
         width: calc(100% - #{$horizontal_padding});
         max-width: 540px;
-        margin: $vertical_padding * 0.67 0;
+
+        // We use first and last child in case we are using dialog content
+        // multiple times, in the example of using a pre header or post footer
+        &:first-child{
+            margin-top: $vertical_padding * 0.67;
+        }
+        &:last-child{
+            margin-bottom: $vertical_padding * 0.67;
+        }
+
         @media screen and (min-width: $tablet-width) {
-            border: $dialog_content_border;
-            border-radius: $border-radius;
-            margin: $vertical_padding * 4 0;
+            &:first-child{
+                margin-top: $vertical_padding * 4;
+            }
+            &:last-child{
+                margin-bottom: $vertical_padding * 4;
+            }
         }
         &--pre{
             border: none;
@@ -94,19 +109,14 @@
             border: none;
             background-color: transparent;
         }
-        &--shadow{
-            box-shadow: 0px 5px 22px rgba(0,0,0,0.1);
-        }
     }
     &__header{
         background-color: $dialog_header_bg;
         border-bottom: $dialog_header_border;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
         color: $dialog_header_color;
         position: relative;
-        @media screen and (min-width: $tablet-width) {
-            border-top-left-radius: $border-radius;
-            border-top-right-radius: $border-radius;
-        }
     }
     &__body{
         &--padded{
@@ -122,10 +132,8 @@
     &__footer{
         background-color: $dialog_footer_bg;
         border-top: $dialog_footer_border;
-        @media screen and (min-width: $tablet-width) {
-            border-bottom-left-radius: $border-radius;
-            border-bottom-right-radius: $border-radius;
-        }
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
     }
     &--error{
         .dialog__content{
@@ -183,7 +191,7 @@
             }
         }
     }
-    
+
 }
 
 .dialog-footer{
