@@ -22,13 +22,13 @@
 }
 
 .hidden-tablet{
-    @media screen and (min-width: $tablet-width) {
+    @media screen and (min-width: $tablet-width) and (max-width: $laptop-width - 1) {
         @include hidden();
     }
 }
 
 .hidden-laptop{
-    @media screen and (min-width: $laptop-width) {
+    @media screen and (min-width: $laptop-width) and (max-width: $desktop-width - 1) {
         @include hidden();
     }
 }
@@ -43,39 +43,11 @@
  * Hide for screen readers bu pushing the content away from the viewport.
  */
 
-@mixin hiddenSR(){
+.sr-only{
     position: absolute !important;
     left: -10000px !important;
     top: auto !important;
     width: 1px !important;
     height: 1px !important;
     overflow: hidden !important;
-}
-
-.hidden-sr{
-    @include hiddenSR();
-}
-
-.hidden-sr-mobile{
-    @media screen and (max-width: $mobile-width) {
-        @include hiddenSR();
-    }
-}
-
-.hidden-sr-tablet{
-    @media screen and (min-width: $tablet-width) {
-        @include hiddenSR();
-    }
-}
-
-.hidden-sr-laptop{
-    @media screen and (min-width: $laptop-width) {
-        @include hiddenSR();
-    }
-}
-
-.hidden-sr-desktop{
-    @media screen and (min-width: $desktop-width) {
-        @include hiddenSR();
-    }
 }
