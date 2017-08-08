@@ -131,7 +131,7 @@
                 top: - $vertical_padding / 4;
                 position: relative;
                 margin-left: $horizontal_padding / 2;
-                @include triangle(8px, $grey, down);
+                @include triangle(8px, $menu_link_color, down);
             }
         }
     }
