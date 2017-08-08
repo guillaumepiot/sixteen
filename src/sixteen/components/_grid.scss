@@ -5,12 +5,12 @@
  */
 
 $base-grid: (
-  columns: 12,
+  columns: $grid-columns,
   gutter: 20px,
 );
 
 $collapse-grid: (
-  columns: 12,
+  columns: $grid-columns,
   // Use a really low value to pretend a 0 value and avoid a "0px == 0"
   // deprecation warning in SASS
   gutter: 0.00001px,

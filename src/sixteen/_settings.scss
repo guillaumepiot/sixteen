@@ -85,6 +85,7 @@ $vertical_padding: 0.75rem;
 $horizontal_padding: 1rem;
 $border-radius: 4px;
 
+
 /**
  * Dialog
  */
@@ -120,6 +121,7 @@ $input_border_color: #dddddd;
 $input_focus_color: #666666;
 $error_background: rgba(213, 0, 0, 0.8);
 
+
 /**
  * Breakpoints
  */
@@ -136,6 +138,7 @@ $error_background: rgba(213, 0, 0, 0.8);
 
 $grid-columns: 12 !default;
 
+
 /**
  * Table
  */
@@ -143,3 +146,15 @@ $grid-columns: 12 !default;
 $table-border-color: $grey--light;
 $table-header-background-color: $grey--light;
 $table-row-border-color: $grey--light;
+
+
+/**
+ * Menu
+ */
+
+$menu_background_color: $grey--lighter;
+$menu_link_color: $grey--dark;
+$menu_link_background_color: transparent;
+$menu_link_background_color_hover: $grey--light;
+$menu_link_background_color_active: $grey--light;
+$menu_subnav_min_width: 180px;
