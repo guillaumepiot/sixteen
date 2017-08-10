@@ -16,7 +16,7 @@
     }
 
     &--clickable{
-        .table-cell{
+        td{
             &:hover{
                 cursor: pointer;
             }
@@ -28,7 +28,7 @@
             thead{
                 display: none;
             }
-            .table-row{
+            tr{
                 display: block;
                 margin-bottom: $vertical_padding;
                 margin-left: $horizontal_padding;
@@ -36,44 +36,42 @@
                 border: 1px solid $table-row-border-color;
                 border-bottom: none;
                 border-radius: $border-radius;
-            }
-            .table-head-cell{
-                display: none;
-            }
-            .table-cell{
-                display: block;
-                text-align: right;
-                &:before{
+                th{
+                    display: none;
+                }
+                td{
                     display: block;
-                    float: left;
-                    font-weight: bold;
-                    content: attr(data-header);
+                    text-align: right;
+                    &:before{
+                        display: block;
+                        float: left;
+                        font-weight: bold;
+                        content: attr(data-header);
+                    }
                 }
             }
         }
     }
-}
 
-.table-row{
-    background-color: #fff;
-    &:hover, &:active, &:focus{
-        background-color: darken(#fff, 2%);
-    }
-    @media screen and (min-width: $tablet-width) {
-        &:last-child td{
-            border-bottom: none;
+    tr{
+        background-color: #fff;
+        &:hover, &:active, &:focus{
+            background-color: darken(#fff, 2%);
+        }
+        @media screen and (min-width: $tablet-width) {
+            &:last-child td{
+                border-bottom: none;
+            }
+        }
+        th{
+            background-color: $table-header-background-color;
+            padding: $vertical_padding / 1.4 $horizontal_padding;
+            font-weight: 700;
+            text-align: left;
+        }
+        td{
+            padding: $vertical_padding / 1.4 $horizontal_padding;
+            border-bottom: 1px solid $table-row-border-color;
         }
     }
-}
-
-.table-head-cell{
-    background-color: $table-header-background-color;
-    padding: $vertical_padding / 1.4 $horizontal_padding;
-    font-weight: 700;
-    text-align: left;
-}
-
-.table-cell{
-    padding: $vertical_padding / 1.4 $horizontal_padding;
-    border-bottom: 1px solid $table-row-border-color;
 }
