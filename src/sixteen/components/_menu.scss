@@ -11,6 +11,7 @@
         @media screen and (max-width: $mobile-width) {
             background-color: $menu_background_color;
             position: fixed;
+            z-index: 10;
             top: 0;
             left: -100%;
             width: 100%;
