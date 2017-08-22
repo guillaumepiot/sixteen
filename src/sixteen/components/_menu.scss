@@ -109,6 +109,10 @@
         }
     }
 
+    &:hover{
+        background-color: $menu_link_background_color_active;
+    }
+
     &__link{
         position: relative;
         color: $menu_link_color;
