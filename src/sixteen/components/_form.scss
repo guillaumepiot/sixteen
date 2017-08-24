@@ -114,32 +114,6 @@
         display: block;
     }
 
-//     &__select{
-
-//         font-family: $font_family--primary;
-//         font-size: $font_size;
-//         position: relative;
-//         width:100%;
-//         margin: 0;
-
-//         height: 2.7rem;
-
-//         background-color: #fff;
-//         border:1px solid $input_border_color;
-//         border-radius: $border-radius;
-
-//         :placeholder {
-//             color: $grey;
-//         }
-
-//         &:focus, *:focus {
-//             outline: none;
-//             box-shadow: none;
-//             // border: 1px solid $cyan;
-//         }
-
-//     }
-
     &__error{
         color: $red;
         font-size: $font_size--small;
