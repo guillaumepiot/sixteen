@@ -165,6 +165,7 @@
     &__option{
         padding: $vertical_padding / 2 $horizontal_padding;
         text-align: left;
+        cursor: pointer;
         &--focused, &:hover, &:focus{
             background-color: $grey--light;
             color: $grey--dark;
