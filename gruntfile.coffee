@@ -6,7 +6,7 @@ module.exports = (grunt) ->
                 options:
                     loadPath: require('node-neat').includePaths.concat(require('node-bourbon').includePaths)
                 files:
-                    'docs/sixteen.css': 'src/sixteen.scss'
+                    'dist/sixteen.css': 'src/sixteen.scss'
 
         cssmin:
             options:
@@ -15,7 +15,7 @@ module.exports = (grunt) ->
 
             target:
                 files:
-                    'docs/sixteen.min.css': ['docs/sixteen.css']
+                    'dist/sixteen.min.css': ['dist/sixteen.css']
 
         copy: {
             main: {

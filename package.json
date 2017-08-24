@@ -1,10 +1,11 @@
 {
   "name": "sixteen",
-  "version": "0.2.24",
+  "version": "0.2.25",
   "description": "SASS foundation for web projects following the BEM method.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "grunt frontend"
   },
   "repository": {
     "type": "git",
