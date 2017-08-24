@@ -161,6 +161,12 @@
         &--center{
             text-align: center;
         }
+        &--left{
+            text-align: left;
+        }
+        &--right{
+            text-align: right;
+        }
     }
     &__action{
         top: 0;
@@ -202,6 +208,12 @@
         }
         &--center{
             text-align: center;
+        }
+        &--left{
+            text-align: left;
+        }
+        &--right{
+            text-align: right;
         }
         @include clearfix;
     }
