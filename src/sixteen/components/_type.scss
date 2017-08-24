@@ -141,22 +141,103 @@ hr {
 }
 
 
+/*
+ * Text styles
+ */
+
 .text-right{
-    text-align: right;
+    text-align: right !important;
 }
 
 .text-left{
-    text-align: left;
+    text-align: left !important;
 }
 
 .text-center{
-    text-align: center;
+    text-align: center !important;
 }
 
 .text-strong{
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 
 .text-italic{
-    font-style: italic;
+    font-style: italic !important;
+}
+
+.text-cap {
+    font-variant: small-caps !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+/*
+ * Text sizes
+ */
+
+.text-hero {
+    font-size: $font_size--hero !important;
+}
+.text-large {
+    font-size: $font_size--large !important;
+}
+.text-medium {
+    font-size: $font_size--medium !important;
+}
+.text-emphasis {
+    font-size: $font_size--emphasis !important;
+}
+.text-normal {
+    font-size: $font_size !important;
+}
+.text-small {
+    font-size: $font_size--small !important;
+}
+
+/*
+ * Text colours
+ */
+
+.text-default {
+    color: $font_color !important;
+}
+.text-cyan {
+    color: $cyan !important;
+}
+.text-red {
+    color: $red !important;
+}
+.text-green {
+    color: $green !important;
+}
+.text-orange {
+    color: $orange !important;
+}
+.text-grey--dark {
+    color: $grey--dark !important;
+}
+.text-grey {
+    color: $grey !important;
+}
+.text-grey--medium {
+    color: $grey--medium !important;
+}
+.text-grey--light {
+    color: $grey--light !important;
+}
+.text-grey--lighter {
+    color: $grey--lighter !important;
+}
+.text-white {
+    color: #fff !important;
 }
