@@ -27,6 +27,7 @@
     }
 
     &__control {
+        display: flex;
         input[type="text"],
         input[type="password"],
         input[type="email"] ,
@@ -42,7 +43,8 @@
             padding-bottom: $vertical_padding / 4;
             transition: border-color 0.3s ease;
             width: 100%;
-            &:focus {
+            &:focus,
+            &:focus ~ .input-addon {
                 border-color: $grey;
             }
             &::placeholder {
@@ -126,6 +128,21 @@
         font-size: $font_size--small;
         line-height: $base-line-height;
         margin-top: $vertical_padding / 4;
+    }
+}
+
+.input-addon{
+    color: $grey--dark;
+    font-size: $font_size;
+    border-bottom:1px solid $input_border_color;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+    &--prefix {
+        padding-right: $horizontal_padding / 2;
+        order: -1;
+    }
+    &--suffix {
+        padding-left: $horizontal_padding / 2;
     }
 }
 
