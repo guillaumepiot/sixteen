@@ -1,15 +1,21 @@
+@charset "UTF-8";
+
+@import "../lib/triangle";
+
 /*
  * Menu
  */
 
-.menu{
+.menu {
     background-color: $menu_background_color;
+    background-color: var(--menu_background_color, $menu_background_color);
 
-    &__container{
+    &__container {
         padding: 0;
 
-        @media screen and (max-width: $mobile-width) {
-            background-color: $menu_background_color;
+        @media screen and (max-width: $menu_mobile_breakpoint) {
+            background-color: $menu_background_color_mobile;
+            background-color: var(--menu_background_color_mobile, $menu_background_color_mobile);
             position: fixed;
             z-index: 10;
             top: 0;
@@ -19,124 +25,153 @@
             transition: left 0.3s ease;
             overflow-y: scroll;
 
-            .menu__item{
+            .menu__item {
                 float: none;
             }
-            .menu__sub-nav{
+
+            .menu__sub-nav {
                 position: static;
             }
         }
 
-        &--mobile-right{
-            @media screen and (max-width: $mobile-width) {
+        &--mobile-right {
+            @media screen and (max-width: $menu_mobile_breakpoint) {
                 left: 100%;
             }
         }
 
-        &--mobile-active{
+        &--mobile-active {
             left: 0;
         }
 
-        &:after{
+        &:after {
             content: "";
             display: block;
             clear: both;
         }
     }
 
-    &__item{
+    &__item {
         position: relative;
         display: block;
         float: left;
 
-        &--open{
+        &--open {
             display: inline-block;
-            @media screen and (min-width: $tablet-width) {
+
+            @media screen and (min-width: $menu_mobile_breakpoint + 1) {
                 display: none;
             }
         }
-        &--open-right{
+
+        &--open-right {
             float: right;
         }
-        &--close{
-            @media screen and (min-width: $tablet-width) {
+
+        &--close {
+            @media screen and (min-width: $menu_mobile_breakpoint + 1) {
                 display: none;
             }
         }
-        &--close-right{
+
+        &--close-right {
             text-align: right;
         }
-        &--sub-nav{
-            &:hover{
-                .menu__sub-nav{
+
+        &--sub-nav {
+            &:hover {
+                .menu__sub-nav {
                     display: block;
                 }
             }
         }
     }
 
-    &__sub-nav{
+    &__sub-nav {
         padding: 0;
         display: none;
         position: absolute;
         width: auto;
-        background-color: $menu_background_color;
+        background-color: $menu_background_color_mobile;
+        background-color: var(--menu_background_color_mobile, $menu_background_color_mobile);
         z-index: 10;
 
-        @media screen and (min-width: $tablet-width) {
+        @media screen and (min-width: $menu_mobile_breakpoint + 1) {
+            background-color: $menu_background_color;
+            background-color: var(--menu_background_color, $menu_background_color);
             min-width: $menu_subnav_min_width;
         }
-        .menu__item{
+
+        .menu__item {
             float: none;
         }
     }
 
-    &:after{
+    &:after {
         content: "";
         display: block;
         clear: both;
     }
 }
 
-.menu-item{
-
+.menu-item {
     &--right {
-        @media screen and (min-width: $tablet-width) {
+        @media screen and (min-width: $menu_mobile_breakpoint + 1) {
             float: right;
-            .menu__sub-nav{
+
+            .menu__sub-nav {
                 right: 0;
             }
         }
     }
 
-    &:hover{
+    &:hover {
         background-color: $menu_link_background_color_active;
+        background-color: var(--menu_link_background_color_active, $menu_link_background_color_active);
+
+        @media screen and (max-width: $menu_mobile_breakpoint) {
+            background-color: $menu_link_background_color_active_mobile;
+            background-color: var(--menu_link_background_color_active_mobile, $menu_link_background_color_active_mobile);
+        }
     }
 
-    &__link{
+    &__link {
         position: relative;
         color: $menu_link_color;
         background-color: $menu_link_background_color;
+        background-color: var(--menu_link_background_color, $menu_link_background_color);
         padding: $vertical_padding $horizontal_padding;
         display: block;
 
-        &:hover{
+        @media screen and (max-width: $menu_mobile_breakpoint) {
+            background-color: $menu_link_background_color_mobile;
+            background-color: var(--menu_link_background_color_mobile, $menu_link_background_color_mobile);
+        }
+
+        &:hover {
             background-color: $menu_link_background_color_hover;
+            background-color: var(--menu_link_background_color_hover, $menu_link_background_color_hover);
+
+            @media screen and (max-width: $menu_mobile_breakpoint) {
+                background-color: $menu_link_background_color_hover_mobile;
+                background-color: var(--menu_link_background_color_hover_mobile, $menu_link_background_color_hover_mobile);
+            }
         }
 
-        &--active{
+        &--active {
             background-color: $menu_link_background_color_active;
+            background-color: var(--menu_link_background_color_active, $menu_link_background_color_active);
         }
 
-        &--drop-arrow{
+        &--drop-arrow {
+            &:after {
+                @include triangle(down, 8px, 4px, $menu_link_color);
 
-            &:after{
                 content: "";
                 display: inline-block;
                 top: - $vertical_padding / 4;
                 position: relative;
                 margin-left: $horizontal_padding / 2;
-                @include triangle(8px, $menu_link_color, down);
             }
         }
     }

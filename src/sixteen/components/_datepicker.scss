@@ -1,90 +1,102 @@
-.datepicker{
-    
+@charset "UTF-8";
+
+@import "../lib/triangle";
+
+
+.datepicker {
     border: 1px solid darken($grey--light, 5%);
     border-radius: $border-radius;
     background-color: #fff;
+    cursor: default;
+    user-select: none;
 
-    table{
-        tr{
-            td, th{
+    table {
+        tr {
+            td, th {
                 vertical-align: middle;
             }
         }
     }
 
-    &__day{
+    &__day {
         display: block;
         color: #333;
         text-decoration: none;
         text-align: center;
         padding: 4px 8px;
         font-size: 0.9em;
-        &:hover{
+
+        &:hover {
             background-color: #eee;
         }
-        &--muted{
+
+        &--muted {
             color: #999;
         }
-        &--selected{
+
+        &--selected {
             background-color: #666;
             color: #fff;
-            &:hover{
+
+            &:hover {
                 background-color: #999;
                 color: #fff;
             }
         }
-        &--today{
+
+        &--today {
             background-color: $cyan;
             color: #fff;
-            &:hover{
+
+            &:hover {
                 background-color: #666;
                 color: #fff;
             }
         }
-
     }
 
-    &__weekday{
+    &__weekday {
         text-align: center;
         padding: 4px 6px;
         font-size: 0.9em;
         border-bottom: 1px solid #f4f4f4;
         color: $grey--medium;
     }
-    
-    &__selected-date{
+
+    &__selected-date {
         display: block;
         text-align: center;
     }
 
-    &__nav{
+    &__nav {
         display: block;
         text-decoration: none;
         text-align: center;
         color: #333;
         padding: 8px 0 4px 0;
 
-        &--previous{
-            &:after{
+        &--previous {
+            &:after {
                 content: '';
                 display: inline-block;
-                @include triangle(12px, #ccc, left);
-                
+                @include triangle(left, 12px, 12px, #ccc);
             }
-            &:hover:after{
-                @include triangle(12px, #666, left);
+
+            &:hover:after {
+                @include triangle(left, 12px, 12px, #666);
             }
         }
-        &--next{
-            &:after{
+
+        &--next {
+            &:after {
                 content: '';
                 display: inline-block;
-                @include triangle(12px, #ccc, right);
+                @include triangle(right, 12px, 12px, #ccc);
             }
-            &:hover:after{
-                @include triangle(12px, #666, right);
+
+            &:hover:after {
+                @include triangle(right, 12px, 12px, #666);
             }
         }
     }
-    
 }

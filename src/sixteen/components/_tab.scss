@@ -1,0 +1,128 @@
+.tabs {
+    &__nav {
+        @media screen and (min-width: $tablet-width) {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+
+    &--borderless {
+        .tabs__nav {
+            @media screen and (min-width: $tablet-width) {
+                margin: 0 1rem;
+            }
+        }
+
+        .tab__label {
+            @media screen and (max-width: $mobile-width) {
+                border-left: none;
+                border-right: none;
+            }
+        }
+
+        .tab__panel {
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+            background-color: $tab_panel_background_color;
+        }
+    }
+
+    .dialog & {
+        @media screen and (max-width: $mobile-width) {
+            .tab__label {
+                margin-bottom: 0;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    pointer-events: none;
+                    right: calc(1rem + 2px);
+                    top: 50%;
+                    margin-top: -4px;
+                    @include triangle(right, 5px, 10px, $form_color_input);
+                }
+
+                &--active {
+                    &::after {
+                        right: 1rem;
+                        @include triangle(down, 10px, 5px, $form_color_input);
+                    }
+                }
+            }
+            .tab__label:first-child {
+                border-top: none;
+            }
+
+            .tab__label:last-child {
+                border-right: none;
+            }
+        }
+
+        @media screen and (min-width: $tablet-width) {
+            margin-top: 1rem;
+        }
+    }
+
+}
+
+.tab {
+    &--active {
+        .tab__panel {
+            display: block;
+        }
+    }
+
+    &__label {
+        background-color: $tab_background_color;
+        border-left: 1px solid $tab_border_color;
+        border-right: 1px solid $tab_border_color;
+        border-top: 1px solid $tab_border_color;
+        color: $tab_color;
+        display: block;
+        padding: 0.5rem 1rem;
+        transition: background-color  $animation-speed--fast ease;
+
+        @media screen and (min-width: $tablet-width) {
+            border-right: none;
+            padding: 1rem;
+        }
+
+        &:hover {
+            background-color: $tab_background_color--hover;
+        }
+
+        &:last-child {
+            border-right: 1px solid $tab_border_color;
+        }
+
+        &--active {
+            background-color: $tab_background_color--active;
+            color: $tab_color--active;
+            // Hack to hide top border from the panel at the bottom of the tab.
+            margin-bottom: -1px;
+
+            &:hover {
+                background-color: $tab_background_color--active;
+            }
+        }
+    }
+
+    &__panel {
+        border: 1px solid $tab_border_color;
+        display: none;
+
+        &--active {
+            display: block;
+        }
+
+        &--padded {
+            padding: 1rem;
+
+            @media screen and (min-width: $tablet-width) {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+    }
+}

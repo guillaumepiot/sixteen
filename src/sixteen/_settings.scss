@@ -1,135 +1,126 @@
-/**
- * Base settings
- */
-
+@charset "UTF-8";
 
 /**
  * Colors
  */
 
-$cyan: #00abd3;
-$red: #d50000;
-$green: #00b100;
-$orange: #ff8a00;
-$grey--dark: #333333;
-$grey: #666666;
-$grey--medium: #aaaaaa;
-$grey--light: #eeeeee;
-$grey--lighter: #fafafa;
+$cyan: #00abd3 !default;
+$red: #d50000 !default;
+$green: #00b100 !default;
+$orange: #ff8a00 !default;
+$grey: #7f878a !default;
+$grey--dark: #111315 !default;
+$grey--medium: #555A5D !default;
+$grey--light: #D0D5D7 !default;
+$grey--lighter: #E5EBED !default;
 
-$background_color: #ffffff;
-$background_color--primary: $cyan;
-$background_color--create: $green;
-$background_color--change: $orange;
-$background_color--cancel: $grey;
-$background_color--delete: $red;
+$background_color: #ffffff !default;
+$background_color--primary: $cyan !default;
+$background_color--create: $green !default;
+$background_color--change: $orange !default;
+$background_color--cancel: $grey--lighter !default;
+$background_color--delete: $red !default;
 
 
 /**
  * Typography
  */
 
-$font_family--primary: "Helvetica Neue", sans-serif !default;
-$font_family--heading: "Helvetica Neue", sans-serif !default;
+$font_family--primary: 'Roboto', Helvetica, sans-serif !default;
+$font_family--heading: 'Roboto', Helvetica, sans-serif !default;
 $font_family--serif: Georgia, serif !default;
 $font_family--monospace: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
 
-$font_color: #444444;
-$font_color--primary: $cyan;
-$font_color--light: $grey--light;
+$font_color: #444444 !default;
+$font_color--primary: $cyan !default;
+$font_color--light: $grey--light !default;
 
-$font_weight: 400;
-$font_weight--bold: 700;
+$font_weight: 400 !default;
+$font_weight--bold: 700 !default;
 
-$base-line-height: 1.5em;
+// How to modify the base font size between the different viewports.
+$font_size_multiplier--mobile: 1 !default;
+$font_size_multiplier--tablet: 1 !default;
+$font_size_multiplier--desktop: 1 !default;
 
-$font_size: 16px;
-$font_size--hero: 2.441em;
-$font_size--large: 1.953em;
-$font_size--medium: 1.563em;
-$font_size--emphasis: 1.25em;
-$font_size--small: 0.80em;
+// The actual ratio between neighbouring font size variants (normal/emphasis, large/hero, etc.).
+$font_size_ratio_multiplier--mobile: 1.125 !default;
+$font_size_ratio_multiplier--tablet: 1.25 !default;
+$font_size_ratio_multiplier--desktop: 1.333 !default;
 
+// How the line height should change between size variants (normal/emphasis, large/hero, etc.).
+// Remember that this multiplier increases as the perceived font size increases, so to tighten the
+// line height, you should use a number less than 1.
+$line_height_ratio_multiplier: 0.94269 !default;
 
-/**
- * Headers
- */
+// Actual base font size and line height that everything is calculated from.
+$base_font_size: 16px !default;
+$base_line_height: 1.5em !default;
 
-$h1-ratio: $font_size--hero;
-$h2-ratio: $font_size--large;
-$h3-ratio: $font_size--medium;
-$h4-ratio: $font_size--emphasis;
-$h5-ratio: 1em;
-$h6-ratio: 1em;
-
-$h1-weight: 700;
-$h2-weight: 700;
-$h3-weight: 400;
-$h4-weight: 400;
-$h5-weight: 400;
-$h6-weight: 400;
-
-$h1-line-height: 1.3em;
-$h2-line-height: 1.3em;
-$h3-line-height: 1.3em;
-$h4-line-height: 1.3em;
-$h5-line-height: 1.3em;
-$h6-line-height: 1.3em;
+$loader_size: 24px !default;
 
 
 /**
  * Layout
  */
 
-$vertical_padding: 0.75rem;
-$horizontal_padding: 1rem;
-$border-radius: 4px;
+$vertical_padding: 0.75rem !default;
+$horizontal_padding: 1rem !default;
+$border-radius: 2px !default;
+
+
+/**
+ * Button
+ */
+
+$button_border_width: 2px !default;
 
 
 /**
  * Dialog
  */
 
-$dialog_content_border: 1px solid $grey--light;
-$dialog_header_bg: $grey--lighter;
-$dialog_header_color: $grey--dark;
-$dialog_header_border: 1px solid $grey--light;
-$dialog_header_action_color: $font_color--primary;
-$dialog_content_bg: #fff;
-$dialog_footer_bg: #fff;
-$dialog_footer_border: none;
+$dialog_content_border: 1px solid $grey--light !default;
+$dialog_header_bg: $grey--lighter !default;
+$dialog_header_color: $grey--dark !default;
+$dialog_header_border: 1px solid $grey--light !default;
+$dialog_header_action_color: $font_color--primary !default;
+$dialog_content_bg: #fff !default;
+$dialog_footer_bg: #fff !default;
+$dialog_footer_border: none !default;
 
 
 /**
  * Modal
  */
 
-$modal_content_border: none;
-$modal_header_bg: $grey--lighter;
-$modal_header_color: $grey--dark;
-$modal_header_border: none;
-$modal_header_action_color: $cyan;
-$modal_content_bg: #fff;
-$modal_footer_bg: #fff;
-$modal_footer_border: none;
+$modal_content_border: none !default;
+$modal_header_bg: #fff !default;
+$modal_header_color: $grey--dark !default;
+$modal_header_border: none !default;
+$modal_header_action_color: $grey !default;
+$modal_content_bg: #fff !default;
+$modal_footer_bg: #fff !default;
+$modal_footer_border: none !default;
+
 
 /**
  * Form
  */
 
-$input_border_color: #dddddd;
-$input_focus_color: #666666;
-$error_background: rgba(213, 0, 0, 0.8);
+$input_border_color: #dddddd !default;
+$input_focus_color: #666666 !default;
+$error_background: rgba(213, 0, 0, 0.8) !default;
 
 
 /**
  * Breakpoints
  */
 
-$desktop-width: 1280px;
-$laptop-width: 1024px;
-$tablet-width: 768px;
-$mobile-width: 767px;
+$desktop-width: 1280px !default;
+$laptop-width: 1024px !default;
+$tablet-width: 768px !default;
+$mobile-width: 767px !default;
 
 
 /**
@@ -143,18 +134,60 @@ $grid-columns: 12 !default;
  * Table
  */
 
-$table-border-color: $grey--light;
-$table-header-background-color: $grey--light;
-$table-row-border-color: $grey--light;
+$table-border-color: $grey--light !default;
+$table-header-background-color: $grey--light !default;
+$table-row-border-color: $grey--light !default;
 
 
 /**
  * Menu
  */
 
-$menu_background_color: $grey--lighter;
-$menu_link_color: $grey--dark;
-$menu_link_background_color: transparent;
-$menu_link_background_color_hover: $grey--light;
-$menu_link_background_color_active: $grey--light;
-$menu_subnav_min_width: 180px;
+$menu_background_color: $grey--lighter !default;
+$menu_background_color_mobile: $grey--lighter !default;
+$menu_link_color: $grey--dark !default;
+$menu_link_background_color: transparent !default;
+$menu_link_background_color_mobile: transparent !default;
+$menu_link_background_color_hover: $grey--light !default;
+$menu_link_background_color_hover_mobile: $grey--light !default;
+$menu_link_background_color_active: $grey--light !default;
+$menu_link_background_color_active_mobile: $grey--light !default;
+$menu_subnav_min_width: 180px !default;
+$menu_mobile_breakpoint: 1023px !default;
+
+
+/**
+ * Animations
+ */
+
+$animation-speed: 0.4s !default;
+$animation-speed--fast: 0.2s !default;
+$animation-speed--slow: 0.8s !default;
+
+
+/**
+ * Form
+ */
+
+$form_color_active: $cyan !default;
+$form_color_hover: $grey !default;
+$form_color_error: $red !default;
+$form_color_input: $grey--dark !default;
+$form_color_label: $grey !default;
+$form_color_help: $grey !default;
+$form_color_select_focus: $grey--lighter !default;
+$form_label_font_size: 80% !default;
+$form_help_font_size: 80% !default;
+
+
+/**
+ * Tabs
+ */
+
+$tab_color: $grey--medium !default;
+$tab_color--active: $grey--dark !default;
+$tab_panel_background_color: #fff !default;
+$tab_background_color: lighten($grey--lighter, 3%) !default;
+$tab_background_color--hover: $grey--lighter !default;
+$tab_background_color--active: $tab_panel_background_color !default;
+$tab_border_color: $grey--light !default;

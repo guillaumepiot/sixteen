@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/**
+ * Btn - Standard button mixin.
+ */
+
+@mixin btn(
+    $background_color: #666,
+    $text_color: #fff,
+    $font_family: $font_family--primary,
+    $font_size: $font_size--normal,
+    $font_weight: $font_weight,
+    $height: 2em,
+    $border_radius: $border-radius
+) {
+    @include font_size($font_size);
+
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+
+    outline: none;
+    vertical-align: middle;
+    background-color: $background_color;
+    border: $button_border_width solid $background_color;
+    color: $text_color;
+
+    padding: 0.5rem $horizontal_padding;
+
+    font-family: $font_family;
+    font-style: normal;
+    text-align: center;
+    font-weight: $font_weight;
+    text-decoration: none;
+
+    border-radius: $border_radius;
+
+    user-select: none;
+
+    transition: background $animation-speed ease,
+                border-color $animation-speed ease;
+
+    &:hover {
+        background-color: lighten($background-color, 3%);
+        text-decoration: none;
+        color: $text_color;
+    }
+
+    &:active, &:focus {
+        background-color: darken($background-color, 3%);
+        color: $text_color;
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+        cursor: auto;
+        cursor: not-allowed;
+    }
+}
+
+@mixin button-solid-attributes($colour, $text_colour: #fff) {
+    background: $colour;
+    border-color: $colour;
+    color: $text_colour;
+
+    &:hover {
+        background: darken($colour, 8%);
+        border-color: darken($colour, 8%);
+        color: $text_colour;
+    }
+
+    &:focus, &:active {
+        background: darken($colour, 12%);
+        border-color: darken($colour, 12%);
+        color: $text_colour;
+    }
+
+    &[disabled] {
+        background: $colour;
+        border-color: $colour;
+        color: $text_colour;
+        &:hover, &:focus {
+            background-color: $colour;
+            border-color: $colour;
+            color: $text_colour;
+        }
+    }
+
+    &.btn--loading {
+        color: transparent;
+    }
+}
+
+@mixin button-outline-attributes($colour: $grey--medium, $text_colour_hover: #fff) {
+    background-color: transparent;
+    border-color: $colour;
+    color: $colour;
+
+    &:hover {
+        background-color: $colour;
+        border-color: $colour;
+        color: $text_colour_hover;
+    }
+
+    &:focus, &:active {
+        background-color: darken($colour, 8%);
+        border-color: darken($colour, 8%);
+        color: $text_colour_hover;
+    }
+
+    &[disabled] {
+        &:hover, &:focus {
+            background-color: transparent;
+            border-color: $colour;
+            color: $colour;
+        }
+    }
+
+    &.btn--loading {
+        color: transparent;
+        &:before {
+            border-top-color: $colour;
+            border-left-color: $colour;
+            border-right-color: $colour;
+        }
+
+        &:hover:before {
+            border-top-color: $text_colour_hover;
+            border-left-color: $text_colour_hover;
+            border-right-color: $text_colour_hover;
+        }
+    }
+
+}
+
+@mixin button-link-attributes($colour) {
+    border-color: transparent;
+    background-color: transparent;
+    color: $colour;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:hover {
+        background-color: transparent;
+        color: darken($colour, 8%);
+    }
+
+    &:focus, &:active {
+        background-color: transparent;
+        color: darken($colour, 12%);
+    }
+
+    &:after {
+        background: $colour;
+    }
+
+    &:hover:after, &:focus:after {
+        background: darken($colour,8%);
+    }
+
+    &[disabled] {
+        &:hover, &:focus {
+            background-color: transparent;
+            border-color: transparent;
+            color: $colour;
+        }
+    }
+
+    &.btn--loading {
+        color: transparent;
+        &:before {
+            border-top-color: $colour;
+            border-left-color: $colour;
+            border-right-color: $colour;
+        }
+
+        &:hover:before {
+            border-top-color: darken($colour, 8%);
+            border-left-color: darken($colour, 8%);
+            border-right-color: darken($colour, 8%);
+        }
+    }
+}

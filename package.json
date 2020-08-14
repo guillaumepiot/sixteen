@@ -1,39 +1,90 @@
 {
-  "name": "sixteen",
-  "version": "0.2.27",
-  "description": "SASS foundation for web projects following the BEM method.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "grunt frontend"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Cotidia/sixteen.git"
-  },
-  "keywords": [
-    "sass",
-    "bem"
+  "_args": [
+    [
+      "sixteen@^0.3.11",
+      "/var/www/cotidia/cotidia/www"
+    ]
   ],
-  "author": {
-    "name": "Guillaume Piot",
-    "email": "guillaume@cotidia.com"
+  "_from": "sixteen@>=0.3.11 <0.4.0",
+  "_id": "sixteen@0.3.11",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/sixteen",
+  "_nodeVersion": "8.9.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/sixteen_0.3.11_1520965611818_0.3865669956179978"
   },
-  "license": "ISC",
+  "_npmUser": {
+    "email": "guillaume@cotidia.com",
+    "name": "guillaumepiot"
+  },
+  "_npmVersion": "5.5.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "sixteen",
+    "raw": "sixteen@^0.3.11",
+    "rawSpec": "^0.3.11",
+    "scope": null,
+    "spec": ">=0.3.11 <0.4.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/sixteen/-/sixteen-0.3.11.tgz",
+  "_shasum": "a637c249cbe103de8960d411f1a1f84df0ef03e1",
+  "_shrinkwrap": null,
+  "_spec": "sixteen@^0.3.11",
+  "_where": "/var/www/cotidia/cotidia/www",
+  "author": {
+    "email": "guillaume@cotidia.com",
+    "name": "Guillaume Piot"
+  },
   "bugs": {
     "url": "https://github.com/Cotidia/sixteen/issues"
   },
-  "homepage": "https://github.com/Cotidia/sixteen",
-  "readme": "# sixteen\n\nMinimal SASS framework written following the BEM method.",
-  "readmeFilename": "README.md",
+  "dependencies": {},
+  "description": "SASS foundation for web projects following the BEM method.",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.2.0",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "node-bourbon": "^4.2.8",
-    "node-neat": "^2.0.0-beta.0"
+    "grunt-contrib-watch": "^1.0.0"
   },
-  "dependencies": {}
+  "directories": {},
+  "dist": {
+    "fileCount": 51,
+    "integrity": "sha512-HgozcoHpditEoUlbAfo0+fH0aLgfu3KgsiHiBS1B0/lbmnjR+UIjH8VEVazAIzeibCrpj7sQQO8KCzZXfCMjzw==",
+    "shasum": "a637c249cbe103de8960d411f1a1f84df0ef03e1",
+    "tarball": "https://registry.npmjs.org/sixteen/-/sixteen-0.3.11.tgz",
+    "unpackedSize": 299590
+  },
+  "gitHead": "4e332776e797ae38136f5c33d91e5d758d611e3f",
+  "homepage": "https://github.com/Cotidia/sixteen",
+  "keywords": [
+    "bem",
+    "sass"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "guillaumepiot",
+      "email": "guillaume@cotidia.com"
+    }
+  ],
+  "name": "sixteen",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cotidia/sixteen.git"
+  },
+  "scripts": {
+    "prepublish": "grunt frontend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.3.11"
 }

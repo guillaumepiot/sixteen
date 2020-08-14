@@ -1,53 +1,70 @@
-/*
- * Util mixins and classes
- *
- */
+@charset "UTF-8";
 
 /*
  * Completely hide the content using display none.
  */
 
-@mixin hidden(){
+@mixin hidden() {
     display: none !important;
 }
 
-.hidden{
+.hidden {
     @include hidden();
 }
 
-.hidden-mobile{
+.hidden-mobile {
     @media screen and (max-width: $mobile-width) {
         @include hidden();
     }
 }
 
-.hidden-tablet{
+.hidden-tablet {
     @media screen and (min-width: $tablet-width) and (max-width: $laptop-width - 1) {
         @include hidden();
     }
 }
 
-.hidden-laptop{
+.hidden-laptop {
     @media screen and (min-width: $laptop-width) and (max-width: $desktop-width - 1) {
         @include hidden();
     }
 }
 
-.hidden-desktop{
+.hidden-desktop {
     @media screen and (min-width: $desktop-width) {
         @include hidden();
     }
 }
 
 /*
- * Hide for screen readers bu pushing the content away from the viewport.
+ * Hide for screen readers by pushing the content away from the viewport.
  */
 
-.sr-only{
+.sr-only {
     position: absolute !important;
     left: -10000px !important;
     top: auto !important;
     width: 1px !important;
     height: 1px !important;
     overflow: hidden !important;
+}
+
+/*
+ * Alignment.
+ */
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+/*
+ * Wrapping.
+ */
+
+.nowrap {
+    white-space: nowrap !important;
 }

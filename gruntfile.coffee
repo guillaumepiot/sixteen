@@ -3,8 +3,6 @@ module.exports = (grunt) ->
     grunt.initConfig({
         sass:
             dist:
-                options:
-                    loadPath: require('node-neat').includePaths.concat(require('node-bourbon').includePaths)
                 files:
                     'dist/sixteen.css': 'src/sixteen.scss'
 
@@ -29,9 +27,10 @@ module.exports = (grunt) ->
         watch:
             frontend:
                 files: [
-                    'components/*.scss'
-                    '_settings.scss'
-                    'sixteen.scss'
+                    'src/sixteen/components/*.scss'
+                    'src/sixteen/components/*/*.scss'
+                    'src/sixteen/_settings.scss'
+                    'src/sixteen.scss'
                     ]
                 tasks: ['frontend']
     })

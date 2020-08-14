@@ -1,33 +1,34 @@
-/**
- * Bagde
- */
+@charset "UTF-8";
 
-@mixin badge(){
+@mixin badge() {
+    @include font_size($font_size--small);
+
     color: #fff;
     background-color: $grey;
     display: inline-block;
-    border-radius: $base-line-height;
-    font-size: $font_size--small;
-    line-height: $base-line-height;
+    border-radius: line_height($font_size--small) / 2;
     padding-left: 0.5em;
     padding-right: 0.5em;
     white-space: nowrap;
-    top: - (1 - $font_size--small) / 2;
     position: relative;
 }
 
-.badge{
+.badge {
     @include badge();
-    &--primary{
+
+    &--primary {
         background-color: $background_color--primary;
     }
-    &--success{
+
+    &--success {
         background-color: $background_color--create;
     }
-    &--warning{
+
+    &--warning {
         background-color: $background_color--change;
     }
-    &--danger{
+
+    &--danger {
         background-color: $background_color--delete;
     }
 }

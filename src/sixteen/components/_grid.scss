@@ -1,3 +1,8 @@
+@charset "UTF-8";
+
+@import "../lib/grid";
+
+
 /**
  * ---- GRID ----
  *
@@ -5,15 +10,15 @@
  */
 
 $base-grid: (
-  columns: $grid-columns,
-  gutter: 20px,
+    columns: $grid-columns,
+    gutter: 20px,
 );
 
 $collapse-grid: (
-  columns: $grid-columns,
-  // Use a really low value to pretend a 0 value and avoid a "0px == 0"
-  // deprecation warning in SASS
-  gutter: 0.00001px,
+    columns: $grid-columns,
+    // Use a really low value to pretend a 0 value and avoid a "0px == 0"
+    // deprecation warning in SASS
+    gutter: 0.00001px,
 );
 
 .grid {
@@ -24,43 +29,67 @@ $collapse-grid: (
         &__span-#{$i} {
             @include grid-column($i, $base-grid);
         }
+    }
+
+    @for $i from 1 through $grid-columns {
         &__shift-#{$i} {
             @include grid-shift($i, $base-grid);
         }
+    }
+
+    @for $i from 1 through $grid-columns {
         &__unshift-#{$i} {
             @include grid-shift(-$i, $base-grid);
         }
+    }
+
+    @for $i from 1 through $grid-columns {
         &__push-#{$i} {
             @include grid-push($i, $base-grid);
         }
+    }
+
+    @for $i from 1 through $grid-columns {
         &__pull-#{$i} {
             @include grid-push(-$i, $base-grid);
         }
     }
 
-    &--collapse{
+    &--collapse {
         @include grid-collapse($collapse-grid);
 
         @for $i from 1 through $grid-columns {
             > .grid__span-#{$i} {
                 @include grid-column($i, $collapse-grid);
             }
+        }
+
+        @for $i from 1 through $grid-columns {
             > .grid__shift-#{$i} {
                 @include grid-shift($i, $collapse-grid);
             }
+        }
+
+        @for $i from 1 through $grid-columns {
             > .grid__unshift-#{$i} {
                 @include grid-shift(-$i, $collapse-grid);
             }
+        }
+
+        @for $i from 1 through $grid-columns {
             > .grid__push-#{$i} {
                 @include grid-push($i, $collapse-grid);
             }
+        }
+
+        @for $i from 1 through $grid-columns {
             > .grid__pull-#{$i} {
                 @include grid-push(-$i, $collapse-grid);
             }
         }
     }
 
-    &--break-mobile{
+    &--break-mobile {
         @media screen and (max-width: $mobile-width) {
 
             margin-left: 0;
@@ -71,6 +100,7 @@ $collapse-grid: (
                 > .grid__span-#{$i} {
                     float: none;
                     margin: 0;
+                    position: static;
                     width: 100%;
                 }
             }

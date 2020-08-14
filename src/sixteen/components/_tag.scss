@@ -1,12 +1,16 @@
+@charset "UTF-8";
+
 /*
  * Tag label with close button
  */
 
-.tag{
+.tag {
     @include label();
+
     margin-right: 0.5em;
     padding-right: 0;
-    &__clear{
+
+    &__clear {
         border-top-right-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
         display: inline-block;
@@ -15,7 +19,8 @@
         color: #fff;
         text-align: center;
         margin-left: 0.5em;
-        &:hover{
+
+        &:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
     }

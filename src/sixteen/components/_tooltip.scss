@@ -1,8 +1,10 @@
+@charset "UTF-8";
+
 /**
  * Tooltip
  */
 
-@mixin tooltip(){
+@mixin tooltip() {
     background-color: rgba(0,0,0,0.75);
     padding: $vertical_padding / 2 $horizontal_padding / 1.4;
     border-radius: $border-radius;
@@ -12,36 +14,39 @@
     text-transform: none;
 }
 
-@mixin tooltip-arrow-left{
+@mixin tooltip-arrow-left {
     content: '';
-    @include triangle(10px, rgba(0,0,0,0.75), right);
+    @include triangle(right, 10px, 5px, rgba(0,0,0,0.75));
 }
 
-@mixin tooltip-arrow-right{
+@mixin tooltip-arrow-right {
     content: '';
-    @include triangle(10px, rgba(0,0,0,0.75), left);
+    @include triangle(left, 10px, 5px, rgba(0,0,0,0.75));
 }
 
-@mixin tooltip-arrow-top{
+@mixin tooltip-arrow-top {
     content: '';
-    @include triangle(10px, rgba(0,0,0,0.75), down);
+    @include triangle(down, 10px, 5px, rgba(0,0,0,0.75));
 }
 
-@mixin tooltip-arrow-bottom{
+@mixin tooltip-arrow-bottom {
     content: '';
-    @include triangle(10px, rgba(0,0,0,0.75), up);
+    @include triangle(up, 10px, 5px, rgba(0,0,0,0.75));
 }
 
-.tooltip{
+.tooltip {
     position: relative;
-    &:before{
+
+    &:before {
         @include tooltip();
         z-index: 99;
     }
-    &:after{
+
+    &:after {
         z-index: 99;
     }
-    &:before, &:after{
+
+    &:before, &:after {
         position: absolute;
         visibility: hidden;
         opacity: 0;
@@ -49,118 +54,139 @@
         transform: translate3d(0,0,0);
         transition: all 0.3s ease-in-out;
     }
-    &:hover{
-        &:before, &:after{
+
+    &:hover {
+        &:before, &:after {
             visibility: visible;
             opacity: 1;
         }
     }
-    &--top-left{
-        &:before{
+
+    &--top-left {
+        &:before {
             bottom: 100%;
             left: 0;
         }
-        &:after{
+
+        &:after {
             top: 0;
             left: $horizontal_padding;
             @include tooltip-arrow-top;
         }
-        &:hover{
-            &:before, &:after{
+
+        &:hover {
+            &:before, &:after {
                 transform: translateY(-6px);
             }
         }
     }
-    &--bottom-left{
-        &:before{
+
+    &--bottom-left {
+        &:before {
             top: 100%;
             left: 0;
         }
-        &:after{
+
+        &:after {
             bottom: 0;
             left: $horizontal_padding;
             @include tooltip-arrow-bottom;
         }
-        &:hover{
-            &:before, &:after{
+
+        &:hover {
+            &:before, &:after {
                 transform: translateY(6px);
             }
         }
     }
-    &--top-right{
-        &:before{
+
+    &--top-right {
+        &:before {
             bottom: 100%;
             right: 0;
         }
-        &:after{
+
+        &:after {
             top: 0;
             right: $horizontal_padding;
             @include tooltip-arrow-top;
         }
-        &:hover{
-            &:before, &:after{
+
+        &:hover {
+            &:before, &:after {
                 transform: translateY(-6px);
             }
         }
     }
-    &--bottom-right{
-        &:before{
+
+    &--bottom-right {
+        &:before {
             top: 100%;
             right: 0;
         }
-        &:after{
+
+        &:after {
             bottom: 0;
             right: $horizontal_padding;
             @include tooltip-arrow-bottom;
         }
-        &:hover{
-            &:before, &:after{
+
+        &:hover {
+            &:before, &:after {
                 transform: translateY(6px);
             }
         }
     }
-    &--top-center{
-        &:before{
+
+    &--top-center {
+        &:before {
             bottom: 100%;
             left: 50%;
             transform: translateX(-50%);
         }
-        &:after{
+
+        &:after {
             top: 0;
             left: 50%;
             transform: translateX(-50%);
             @include tooltip-arrow-top;
         }
-        &:hover{
-            &:before, &:after{
+
+        &:hover {
+            &:before, &:after {
                 transform: translate3d(-50%,-6px,0);
             }
         }
     }
-    &--bottom-center{
-        &:before{
+
+    &--bottom-center {
+        &:before {
             top: 100%;
             left: 50%;
             transform: translateX(-50%);
         }
-        &:after{
+
+        &:after {
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             @include tooltip-arrow-bottom;
         }
-        &:hover{
-            &:before, &:after{
+
+        &:hover {
+            &:before, &:after {
                 transform: translate3d(-50%,6px,0);
             }
         }
     }
-    &--small{
-        &:hover{
-            &:before{
+
+    &--small {
+        &:hover {
+            &:before {
+                @include font_size($font_size--small);
+
                 top: - 1.25rem - $vertical_padding / 2;
                 padding: $vertical_padding / 4 $horizontal_padding / 2;
-                font-size: $font_size--small;
             }
         }
     }

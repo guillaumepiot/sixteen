@@ -1,51 +1,38 @@
-/**
- *
- * All animations must live in their own file
- * in the animations directory and be included
- * here.
- *
- */
-
+@charset "UTF-8";
 
 @-webkit-keyframes rotate {
-  /* line 150, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-
-  /* line 154, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  50% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg); }
-
-  /* line 158, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 
 @keyframes rotate {
-  /* line 206, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
 
-  /* line 210, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  50% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg); }
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
 
-  /* line 214, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 
-
-/**
- * Create a loading animation.
- *
- */
-
-.loader{
+.loader {
     display: inline-block;
     height: $horizontal_padding;
     width: $horizontal_padding;
@@ -58,27 +45,33 @@
 
     animation: rotate 1s 0s linear infinite;
 
-    &--primary{
+    &--primary {
         border-color: $cyan;
         border-bottom-color: transparent;
     }
-    &--create{
+
+    &--create {
         border-color: $green;
         border-bottom-color: transparent;
     }
-    &--change{
+
+    &--change {
         border-color: $orange;
         border-bottom-color: transparent;
     }
 
-    &--large{
+    &--delete {
+        border-color: $red;
+        border-bottom-color: transparent;
+    }
+
+    &--large {
         height: $horizontal_padding * 2;
         width: $horizontal_padding * 2;
     }
 
-    &--small{
+    &--small {
         height: $horizontal_padding * 0.75;
         width: $horizontal_padding * 0.75;
     }
-
 }

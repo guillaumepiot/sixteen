@@ -1,10 +1,64 @@
+@charset "UTF-8";
+
+@import "../lib/pow";
+
+// The numbers here define to what power the ratio multiplier is to be raised in order to determine
+// the true size for the given keyword size.
+$font_size--micro: -2;
+$font_size--small: -1;
+$font_size--normal: 0;
+$font_size--emphasis: 1;
+$font_size--medium: 2;
+$font_size--large: 3;
+$font_size--hero: 4;
+$font_size--jumbo: 5;
+
+@mixin font_size($size: $font_size--normal) {
+    // Find the font size multiplier by raising the font size ratio multiplier to the power
+    // specified by the size in question.
+    $multiplier--mobile: pow($font_size_ratio_multiplier--mobile, $size);
+    $multiplier--tablet: pow($font_size_ratio_multiplier--tablet, $size);
+    $multiplier--desktop: pow($font_size_ratio_multiplier--desktop, $size);
+
+    // Ditto above but for line height, so we only need one "global" multiplier.
+    $line_height_multiplier: pow($line_height_ratio_multiplier, $size);
+
+    // Start of actual CSS rules:
+
+    line-height: #{$base_line_height * $line_height_multiplier} !important;
+
+    font-size: #{$multiplier--mobile}rem !important;
+
+    @media screen and (min-width: $tablet-width) {
+        font-size: #{$multiplier--tablet}rem !important;
+    }
+
+    @media screen and (min-width: $laptop-width) {
+        font-size: #{$multiplier--desktop}rem !important;
+    }
+}
+
+@function line_height($size: $font_size--normal) {
+    $line_height_multiplier: pow($line_height_ratio_multiplier, $size);
+
+    @return $base_line_height * $line_height_multiplier
+}
+
 /**
  * Text
  *
  */
 
-html{
-    font-size: $font_size;
+html {
+    font-size: $base_font_size * $font_size_multiplier--mobile;
+
+    @media screen and (min-width: $tablet-width) {
+        font-size: #{$base_font_size * $font_size_multiplier--tablet} !important;
+    }
+
+    @media screen and (min-width: $laptop-width) {
+        font-size: #{$base_font_size * $font_size_multiplier--desktop} !important;
+    }
 }
 
 body {
@@ -13,7 +67,7 @@ body {
     font-size: 100%;
     font-style: normal;
     font-weight: $font_weight;
-    line-height: $base-line-height;
+    line-height: $base_line_height;
 }
 
 p {
@@ -27,7 +81,6 @@ h4,
 h5,
 h6 {
     font-family: $font_family--heading;
-    line-height: $base-line-height;
     margin: 0.5em 0;
 }
 
@@ -38,51 +91,40 @@ h6 {
 
 
 h1 {
-    font-size: $h1-ratio;
-    font-weight: $h1-weight;
-    line-height: $h1-line-height;
+    @include font_size($font_size--hero);
 }
 
 h2 {
-    font-size: $h2-ratio;
-    font-weight: $h2-weight;
-    line-height: $h2-line-height;
+    @include font_size($font_size--large);
 }
 
 h3 {
-    font-size: $h3-ratio;
-    font-weight: $h3-weight;
-    line-height: $h3-line-height;
+    @include font_size($font_size--medium);
 }
 
 h4 {
-    font-size: $h4-ratio;
-    font-weight: $h4-weight;
-    line-height: $h4-line-height;
+    @include font_size($font_size--emphasis);
 }
 
 h5 {
-    font-size: $h5-ratio;
-    font-weight: $h5-weight;
-    line-height: $h5-line-height;
+    @include font_size($font_size--normal);
 }
 
 h6 {
-    font-size: $h6-ratio;
-    font-weight: $h6-weight;
-    line-height: $h6-line-height;
+    @include font_size($font_size--small);
 }
 
 small {
-    font-size: $font-size--small;
+    @include font_size($font_size--small);
+
     color: $grey--medium;
 }
 
-b, strong{
-    font-weight: bold;
+b, strong {
+    font-weight: $font_weight--bold;
 }
 
-i, em{
+i, em {
     font-style: italic;
 }
 
@@ -101,25 +143,24 @@ ol {
     padding-left: $horizontal_padding * 2;
 }
 
-ul{
+ul {
     list-style-type: disc;
 }
 
-ol{
+ol {
     list-style-type: decimal;
 }
 
-figure{
+figure {
     margin: $vertical_padding * 2 0 ;
 }
 
 blockquote {
+    @include font_size($font_size--emphasis);
 
     color: $grey;
     font-family: $font_family--serif;
     font-style: italic;
-    font-size: $font_size * 1.25;
-    line-height: $font_size * 1.25 * 1.25;
 
     border-left: 4px solid $grey--medium;
     margin: $vertical_padding 0;
@@ -145,23 +186,23 @@ hr {
  * Text styles
  */
 
-.text-right{
+.text-right {
     text-align: right !important;
 }
 
-.text-left{
+.text-left {
     text-align: left !important;
 }
 
-.text-center{
+.text-center {
     text-align: center !important;
 }
 
-.text-strong{
+.text-strong {
     font-weight: 700 !important;
 }
 
-.text-italic{
+.text-italic {
     font-style: italic !important;
 }
 
@@ -185,23 +226,29 @@ hr {
  * Text sizes
  */
 
+.text-jumbo {
+    @include font_size($font_size--jumbo);
+}
 .text-hero {
-    font-size: $font_size--hero !important;
+    @include font_size($font_size--hero);
 }
 .text-large {
-    font-size: $font_size--large !important;
+    @include font_size($font_size--large);
 }
 .text-medium {
-    font-size: $font_size--medium !important;
+    @include font_size($font_size--medium);
 }
 .text-emphasis {
-    font-size: $font_size--emphasis !important;
+    @include font_size($font_size--emphasis);
 }
 .text-normal {
-    font-size: $font_size !important;
+    @include font_size($font_size--normal);
 }
 .text-small {
-    font-size: $font_size--small !important;
+    @include font_size($font_size--small);
+}
+.text-micro {
+    @include font_size($font_size--micro);
 }
 
 /*

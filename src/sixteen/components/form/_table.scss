@@ -1,0 +1,121 @@
+$form_table_legend_background_color: $grey--lighter;
+$form_table_legend_color: $grey--dark;
+
+.form {
+    &--table {
+        fieldset {
+            border: none;
+            margin-bottom: 0;
+
+            legend {
+                @include font-size($font_size--normal);
+                background-color: $form_table_legend_background_color;
+                border-bottom: 1px solid $input_border_color;
+                color: $form_table_legend_color;
+            }
+        }
+
+        .form__row {
+            padding: 0;
+
+            .form__group {
+                margin: 0;
+                padding: 0.5rem 0 0 0;
+
+                &:not(:last-child) {
+                    @media screen and (min-width: $tablet-width) {
+                        border-right: 1px solid $input_border_color;
+                    }
+                }
+
+                &--error {
+                    input[type="date"],
+                    input[type="email"],
+                    input[type="number"],
+                    input[type="password"],
+                    input[type="search"],
+                    input[type="tel"],
+                    input[type="text"],
+                    input[type="time"],
+                    input[type="url"],
+                    textarea,
+                    select,
+                    .input-addon {
+                        border-width: 1px;
+                    }
+                }
+
+                &--btn {
+                    align-items: center;
+                    border-bottom: 1px solid $input_border_color;
+                    display: flex;
+                    padding-left: 1rem;
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+
+                    @media screen and (min-width: $tablet-width) {
+                        padding-top: 0;
+                        padding-bottom: 0;
+                    }
+
+
+                }
+
+                .form__label {
+                    padding-left: 1rem;
+                }
+
+                .form__control {
+                    input[type="date"],
+                    input[type="email"],
+                    input[type="number"],
+                    input[type="password"],
+                    input[type="search"],
+                    input[type="tel"],
+                    input[type="text"],
+                    input[type="time"],
+                    input[type="url"],
+                    textarea,
+                    select {
+                        margin-bottom: 0;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+
+                        &:hover {
+                            border-color: $form_color_hover;
+                            border-width: 1px;
+                            margin-bottom: 0px;
+                        }
+
+                        &:focus,
+                        &:focus ~ .input-addon {
+                            border-color: $form_color_active;
+                            border-width: 1px;
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+
+                .form__help {
+                    position: absolute;
+                    top: 0.6rem;
+                    right: 1rem;
+                }
+            }
+        }
+
+        .input-addon {
+            margin-bottom: 0px;
+
+            &--prefix {
+                padding-left: 1rem;
+                padding-right: 0;
+                margin-right: -0.5rem;
+            }
+
+            &--suffix {
+                padding-right: 1rem;
+            }
+        }
+    }
+}

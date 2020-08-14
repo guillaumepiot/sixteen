@@ -1,18 +1,23 @@
+@charset "UTF-8";
+
 /*
  * Page wrappers
  */
 
-.wrapper{
+.wrapper {
     @media screen and (max-width: $mobile-width) {
-        margin: 0 $horizontal_padding
+        margin: 0 $horizontal_padding * 2;
     }
+
     @media screen and (min-width: $tablet-width) {
         margin: 0 auto;
         max-width: calc(#{$tablet-width} - #{$horizontal_padding * 4});
     }
+
     @media screen and (min-width: $laptop-width) {
         max-width: calc(#{$laptop-width} - #{$horizontal_padding * 4});
     }
+
     @media screen and (min-width: $desktop-width) {
         max-width: calc(#{$desktop-width} - #{$horizontal_padding * 4});
     }

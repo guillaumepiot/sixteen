@@ -1,88 +1,6 @@
-/**
- * Btn - Standard button mixin.
- */
+@charset "UTF-8";
 
-@mixin btn(
-    $background_color: #666,
-    $text_color: #fff,
-    $font_family: $font_family--primary,
-    $font_size: $font_size,
-    $font_weight: $font_weight,
-    $height: 2em,
-    $border_radius: $border-radius) {
-
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-
-    outline: none;
-    vertical-align: middle;
-    background-color: $background_color;
-    border: 1px solid $background_color;
-    color: $text_color;
-
-    padding: $vertical_padding $horizontal_padding;
-
-    font-family: $font_family;
-    font-size: $font_size;
-    font-style: normal;
-    text-align: center;
-    font-weight: $font_weight;
-    text-decoration: none;
-    line-height: 1em;
-
-    border-radius: $border_radius;
-
-    user-select: none;
-
-    &:hover {
-        background-color: lighten($background-color, 3%);
-        text-decoration: none;
-        color: $text_color;
-        transition: all 0.2s ease-in-out;
-    }
-
-    &:active, &:focus{
-        background-color: darken($background-color, 3%);
-        color: $text_color;
-    }
-
-    &[disabled]{
-        opacity: 0.5;
-        cursor: auto;
-        cursor: not-allowed;
-    }
-}
-
-@mixin transparent($border_color: $grey--medium, $color: $grey, $color_hover: $font_color--primary){
-    background-color: transparent;
-    color: $color;
-    border: 1px solid $border_color;
-
-    &:active, &:focus{
-        background-color: transparent;
-        color: $color;
-    }
-
-    &:hover {
-        background-color: transparent;
-        color: $color_hover;
-        border-color: $color_hover;
-    }
-
-    &[disabled]{
-        cursor: auto;
-        background-color: transparent;
-        color: $color;
-        border: 1px solid $border_color;
-        &:hover {
-            border-color: $border_color;
-            color: $color;
-            background-color: transparent;
-            cursor: not-allowed;
-        }
-    }
-}
+@import "../lib/button";
 
 /**
  * Btn - Standard button component style.
@@ -91,176 +9,87 @@
 .btn {
     @include btn();
 
-    &--primary{
-        background-color: $background_color--primary;
-        border-color: $background_color--primary;
-        &:hover {
-            background-color: lighten($background_color--primary, 3%);
-            border-color: lighten($background_color--primary, 3%);
-        }
-        &:active, &:focus{
-            background-color: darken($background_color--primary, 3%);
-            border-color: darken($background_color--primary, 3%);
-        }
-        &[disabled]{
-            &:hover {
-                background-color: $background_color--primary;
-                border-color: $background_color--primary;
-            }
-        }
-        &.btn--transparent{
-            border-color: $background_color--primary;
-            color: $background_color--primary;
+    &.btn--outline {
+        @include button-outline-attributes($grey);
+    }
 
-            &:active, &:focus{
-                color: $background_color--primary;
-            }
+    &.btn--link {
+        @include button-link-attributes($grey);
+    }
 
-            &:hover {
-                border-color: lighten($background_color--primary, 3%);
-                color: lighten($background_color--primary, 3%);
-            }
+    &--primary {
+        @include button-solid-attributes($background_color--primary);
+
+        &.btn--outline {
+            @include button-outline-attributes($background_color--primary);
+        }
+
+        &.btn--link {
+            @include button-link-attributes($background_color--primary);
         }
     }
 
-    &--create{
-        background-color: $background_color--create;
-        border-color: $background_color--create;
-        &:hover {
-            background-color: lighten($background_color--create, 3%);
-            border-color: lighten($background_color--create, 3%);
-        }
-        &:active, &:focus{
-            background-color: darken($background_color--create, 3%);
-            border-color: darken($background_color--create, 3%);
-        }
-        &[disabled]{
-            &:hover {
-                background-color: $background_color--create;
-                border-color: $background_color--create;
-            }
-        }
-        &.btn--transparent{
-            border-color: $background_color--create;
-            color: $background_color--create;
+    &--create {
+        @include button-solid-attributes($background_color--create);
 
-            &:active, &:focus{
-                color: $background_color--create;
-            }
+        &.btn--outline {
+            @include button-outline-attributes($background_color--create);
+        }
 
-            &:hover {
-                border-color: lighten($background_color--create, 3%);
-                color: lighten($background_color--create, 3%);
-            }
+        &.btn--link {
+            @include button-link-attributes($background_color--create);
         }
     }
 
-    &--change{
-        background-color: $background_color--change;
-        border-color:  $background_color--change;
-        &:hover {
-            background-color: lighten($background_color--change, 3%);
-            border-color: lighten($background_color--change, 3%);
-        }
-        &:active, &:focus{
-            background-color: darken($background_color--change, 3%);
-            border-color: darken($background_color--change, 3%);
-        }
-        &[disabled]{
-            &:hover {
-                background-color: $background_color--change;
-                border-color: $background_color--change;
-            }
-        }
-        &.btn--transparent{
-            border-color: $background_color--change;
-            color: $background_color--change;
+    &--change {
+        @include button-solid-attributes($background_color--change);
 
-            &:active, &:focus{
-                color: $background_color--change;
-            }
+        &.btn--outline {
+            @include button-outline-attributes($background_color--change);
+        }
 
-            &:hover {
-                border-color: lighten($background_color--change, 3%);
-                color: lighten($background_color--change, 3%);
-            }
+        &.btn--link {
+            @include button-link-attributes($background_color--change);
         }
     }
 
-    &--cancel{
-        background-color: $background_color--cancel;
-        border-color:  $background_color--cancel;
-        &:hover {
-            background-color: lighten($background_color--cancel, 3%);
-            border-color: lighten($background_color--cancel, 3%);
-        }
-        &:active, &:focus{
-            background-color: darken($background_color--cancel, 3%);
-            border-color: darken($background_color--cancel, 3%);
-        }
-        &[disabled]{
-            &:hover {
-                background-color: $background_color--cancel;
-                border-color: $background_color--cancel;
-            }
-        }
-        &.btn--transparent{
-            border-color: $background_color--cancel;
-            color: $background_color--cancel;
+    &--cancel {
+        @include button-solid-attributes($background_color--cancel, $grey--medium);
 
-            &:active, &:focus{
-                color: $background_color--cancel;
-            }
+        &.btn--outline {
+            @include button-outline-attributes($grey);
+            color: $grey;
+        }
 
-            &:hover {
-                border-color: lighten($background_color--cancel, 3%);
-                color: lighten($background_color--cancel, 3%);
-            }
+        &.btn--link {
+            @include button-link-attributes($grey);
+        }
+
+        &.btn--loading:before {
+            border-top-color: $grey;
+            border-left-color: $grey;
+            border-right-color: $grey;
         }
     }
 
-    &--delete{
-        background-color: $background_color--delete;
-        border-color: $background_color--delete;
-        &:hover {
-            background-color: lighten($background_color--delete, 3%);
-            border-color: lighten($background_color--delete, 3%);
-        }
-        &:active, &:focus{
-            background-color: darken($background_color--delete, 3%);
-            border-color: darken($background_color--delete, 3%);
-        }
-        &[disabled]{
-            &:hover {
-                background-color: $background_color--delete;
-                border-color: $background_color--delete;
-            }
-        }
-        &.btn--transparent{
-            border-color: $background_color--delete;
-            color: $background_color--delete;
+    &--delete {
+        @include button-solid-attributes($background_color--delete);
 
-            &:active, &:focus{
-                color: $background_color--delete;
-            }
+        &.btn--outline {
+            @include button-outline-attributes($background_color--delete);
+        }
 
-            &:hover {
-                border-color: lighten($background_color--delete, 3%);
-                color: lighten($background_color--delete, 3%);
-            }
+        &.btn--link {
+            @include button-link-attributes($background_color--delete);
         }
     }
 
-    &--transparent{
-        @include transparent();
-    }
-
-    &--full-width{
+    &--full-width {
         display: block;
         width:100%;
     }
 
-    &--round{
+    &--round {
         border-radius: 50%;
         width: $vertical_padding * 2 + 1rem;
         height: $vertical_padding * 2 + 1rem;
@@ -268,7 +97,7 @@
         padding-right: 0;
     }
 
-    &--round-large{
+    &--round-large {
         border-radius: 50%;
         width: ($vertical_padding * 1.4 * 2) + 1rem;
         height: ($vertical_padding * 1.4 * 2) + 1rem;
@@ -276,15 +105,15 @@
         padding-right: 0;
     }
 
-    &--large{
-        padding: $vertical_padding * 1.4 $horizontal_padding;
+    &--large {
+        padding: $vertical_padding $horizontal_padding * 1.5;
     }
 
-    &--small{
-        padding: $vertical_padding / 3 $horizontal_padding / 2;
+    &--small {
+        padding: 0 $horizontal_padding / 2;
 
-        &.btn--loading{
-            &:before{
+        &.btn--loading {
+            &:before {
                 height: 12px;
                 width: 12px;
                 margin-top: - 12px / 2;
@@ -293,58 +122,69 @@
         }
     }
 
-    &--margin-bottom{
+    &--micro {
+        @include font_size($font_size--small);
+        padding: 1px 0.25rem 0 0.25rem;
+
+        &.btn--loading {
+            &:before {
+                height: 12px;
+                width: 12px;
+                margin-top: - 12px / 2;
+                margin-left: - 12px / 2;
+            }
+        }
+    }
+
+    &--margin-bottom {
         margin-bottom: $vertical_padding;
     }
 
-    &--loading{
-
-        .btn__text{
-            opacity:0;
-        }
-        &:before{
-            content: " ";
-            display: inline-block;
-            height: $base_line_height;
-            width: $base_line_height;
+    &--loading {
+        &:before {
+            content: "";
+            display: block;
+            height: $loader_size;
+            width: $loader_size;
 
             position: absolute;
             top: 50%;
             left: 50%;
-            margin-top: - $base_line_height / 2;
-            margin-left: - $base_line_height / 2;
+            margin-top: - $loader_size / 2;
+            margin-left: - $loader_size / 2;
 
-            border-radius: 100%;
+            border-radius: 50%;
             border: 2px solid #fff;
             border-bottom-color: transparent;
 
             background: transparent !important;
 
             animation: rotate 1s 0s linear infinite;
-
         }
-
     }
 
-    &--tab{
+    &--tab {
         border-radius: $border_radius $border_radius 0 0;
         border-bottom: none;
         margin-right: 2px;
         margin-bottom: 1px;
-        &.btn--transparent{
+
+        &.btn--outline {
             padding-bottom: $vertical_padding;
         }
     }
 }
 
-.btn-group{
-    .btn{
+.btn-group {
+    .btn {
         margin-right: $horizontal_padding;
-        &:last-child{
+
+        &:last-child {
             margin-right: 0;
         }
     }
-    .btn--small{
+
+    .btn--small {
         margin-right: $horizontal_padding / 2;
     }
 }

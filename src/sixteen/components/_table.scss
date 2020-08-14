@@ -1,34 +1,37 @@
+@charset "UTF-8";
+
 /**
  * Table
  *
  */
 
-.table{
+.table {
     width: 100%;
     border-collapse:collapse;
     border-spacing: 0;
     border: 1px solid $table-border-color;
 
     @for $i from 1 through $grid-columns {
-        td.span-#{$i}, th.span-#{$i}{
-            width: 100% / ($grid-columns/$i);
+        td.span-#{$i}, th.span-#{$i} {
+            width: 100% / ($grid-columns / $i);
         }
     }
 
-    &--clickable{
-        td{
-            &:hover{
+    &--clickable {
+        td {
+            &:hover {
                 cursor: pointer;
             }
         }
     }
 
-    &--stack-mobile{
+    &--stack-mobile {
         @media screen and (max-width: $mobile-width) {
-            thead{
+            thead {
                 display: none;
             }
-            tr{
+
+            tr {
                 display: block;
                 margin-bottom: $vertical_padding;
                 margin-left: $horizontal_padding;
@@ -36,16 +39,19 @@
                 border: 1px solid $table-row-border-color;
                 border-bottom: none;
                 border-radius: $border-radius;
-                th{
+
+                th {
                     display: none;
                 }
-                td{
+
+                td {
                     display: block;
                     text-align: right;
-                    &:before{
+
+                    &:before {
                         display: block;
                         float: left;
-                        font-weight: bold;
+                        font-weight: $font_weight--bold;
                         content: attr(data-header);
                     }
                 }
@@ -53,23 +59,27 @@
         }
     }
 
-    tr{
+    tr {
         background-color: #fff;
-        &:hover, &:active, &:focus{
+
+        &:hover, &:active, &:focus {
             background-color: darken(#fff, 2%);
         }
+
         @media screen and (min-width: $tablet-width) {
-            &:last-child td{
+            &:last-child td {
                 border-bottom: none;
             }
         }
-        th{
+
+        th {
             background-color: $table-header-background-color;
             padding: $vertical_padding / 1.4 $horizontal_padding;
             font-weight: 700;
             text-align: left;
         }
-        td{
+
+        td {
             padding: $vertical_padding / 1.4 $horizontal_padding;
             border-bottom: 1px solid $table-row-border-color;
         }

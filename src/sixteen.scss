@@ -1,10 +1,8 @@
-@import "neat";
-@import "bourbon";
-
-// Sixteen framework
 @import "sixteen/settings";
 
 @import "sixteen/components/reset";
+@import "sixteen/components/util";
+@import "sixteen/components/type";
 
 @import "sixteen/components/alert";
 @import "sixteen/components/animation";
@@ -12,13 +10,16 @@
 @import "sixteen/components/button";
 @import "sixteen/components/datepicker";
 @import "sixteen/components/dialog";
-@import "sixteen/components/form";
+
+// Form
+@import "sixteen/components/form/base";
+@import "sixteen/components/form/table";
+
 @import "sixteen/components/grid";
 @import "sixteen/components/label";
 @import "sixteen/components/menu";
 @import "sixteen/components/table";
 @import "sixteen/components/tag";
+@import "sixteen/components/tab";
 @import "sixteen/components/tooltip";
-@import "sixteen/components/type";
 @import "sixteen/components/layout";
-@import "sixteen/components/util";

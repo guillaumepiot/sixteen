@@ -1,8 +1,10 @@
+@charset "UTF-8";
+
 /**
  * Label
  */
 
-@mixin label(){
+@mixin label() {
     color: #fff;
     background-color: $grey--medium;
     display: inline-block;
@@ -12,18 +14,22 @@
     white-space: nowrap;
 }
 
-.label{
+.label {
     @include label();
-    &--primary{
+
+    &--primary {
         background-color: $background_color--primary;
     }
-    &--success{
+
+    &--success {
         background-color: $background_color--create;
     }
-    &--warning{
+
+    &--warning {
         background-color: $background_color--change;
     }
-    &--danger{
+
+    &--danger {
         background-color: $background_color--delete;
     }
 }

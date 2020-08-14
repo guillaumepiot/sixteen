@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@function pow($number, $power) {
+    @if ($power == 0) {
+        @return 1;
+    }
+
+    $value: $number;
+
+    @if ($power > 0) {
+        @for $i from 1 to $power {
+            $value: $value * $number;
+        }
+    } @else {
+        $value: 1;
+
+        @for $i from -1 through $power {
+            $value: $value / $number;
+        }
+    }
+
+    @return $value;
+}

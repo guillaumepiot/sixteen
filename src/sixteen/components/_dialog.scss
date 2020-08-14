@@ -1,24 +1,33 @@
-.dialog{
+@charset "UTF-8";
+
+@import "../lib/clearfix";
+
+
+.dialog {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    &--small{
-        .dialog__content, .dialog__content--pre, .dialog__content--post{
+
+    &--small {
+        .dialog__content, .dialog__content--pre, .dialog__content--post {
             max-width: 360px;
         }
     }
-    &--large{
-        .dialog__content, .dialog__content--pre, .dialog__content--post{
+
+    &--large {
+        .dialog__content, .dialog__content--pre, .dialog__content--post {
             max-width: $desktop-width;
         }
     }
-    &--full-width{
-        .dialog__content, .dialog__content--pre, .dialog__content--post{
+
+    &--full-width {
+        .dialog__content, .dialog__content--pre, .dialog__content--post {
             max-width: none;
         }
     }
-    &--modal{
+
+    &--modal {
         display: none;
         position: fixed;
         top: 0;
@@ -26,12 +35,15 @@
         width: 100%;
         height: 100%;
         z-index: 101;
-        &-open{
+
+        &-open {
             display: flex;
+
             @media screen and (min-width: $tablet-width) {
                 overflow-y: auto;
             }
-            &:after{
+
+            &:after {
                 content: "";
                 display: block;
                 position: fixed;
@@ -43,37 +55,43 @@
                 z-index: -1;
             }
         }
-        .dialog__content{
+
+        .dialog__content {
             border-radius: $border-radius;
             position: relative;
             border: $modal_content_border;
             background-color: $modal_content_bg;
-            @media screen and (max-width: $mobile-width){
+
+            @media screen and (max-width: $mobile-width) {
                 display: flex;
                 flex-direction: column;
                 max-height: calc(100% - #{$vertical_padding * 1.33});
             }
         }
-        .dialog__body{
+
+        .dialog__body {
             @media screen and (max-width: $mobile-width) {
                 overflow-y: auto;
             }
         }
-        .dialog__header{
+
+        .dialog__header {
             background-color: $modal_header_bg;
             border-bottom: $modal_header_border;
             color: $modal_header_color;
             border-top-left-radius: $border-radius;
             border-top-right-radius: $border-radius;
         }
-        .dialog__footer{
+
+        .dialog__footer {
             background-color: $modal_footer_bg;
             border-top: $modal_footer_border;
             border-bottom-left-radius: $border-radius;
             border-bottom-right-radius: $border-radius;
         }
     }
-    &__content{
+
+    &__content {
         background-color: $dialog_content_bg;
         border: $dialog_content_border;
         border-radius: $border-radius;
@@ -82,35 +100,41 @@
 
         // We use first and last child in case we are using dialog content
         // multiple times, in the example of using a pre header or post footer
-        &:first-child{
+        &:first-child {
             margin-top: $vertical_padding * 0.67;
         }
-        &:last-child{
+
+        &:last-child {
             margin-bottom: $vertical_padding * 0.67;
         }
 
         @media screen and (min-width: $tablet-width) {
-            &:first-child{
+            &:first-child {
                 margin-top: $vertical_padding * 4;
             }
-            &:last-child{
+
+            &:last-child {
                 margin-bottom: $vertical_padding * 4;
             }
         }
-        &--pre{
+
+        &--pre {
             border: none;
             background-color: transparent;
+
             @media screen and (max-width: $mobile-width) {
                 border-bottom: $dialog_content_border;
                 padding: 0 $horizontal_padding;
             }
         }
-        &--post{
+
+        &--post {
             border: none;
             background-color: transparent;
         }
     }
-    &__header{
+
+    &__header {
         background-color: $dialog_header_bg;
         border-bottom: $dialog_header_border;
         border-top-left-radius: $border-radius;
@@ -118,57 +142,56 @@
         color: $dialog_header_color;
         position: relative;
     }
-    &__body{
-        &--padded{
-            padding: $vertical_padding $horizontal_padding;
-            @media screen and (min-width: $tablet-width) {
-                padding: $vertical_padding $horizontal_padding * 2;
-            }
-        }
-        &--center{
+
+    &__body {
+        &--center {
             text-align: center;
         }
     }
-    &__footer{
+
+    &__footer {
         background-color: $dialog_footer_bg;
         border-top: $dialog_footer_border;
         border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
     }
-    &--error{
-        .dialog__content{
+
+    &--error {
+        .dialog__content {
             border: none;
         }
-        .dialog__header{
+
+        .dialog__header {
             background-color: $background_color--delete;
             color: #fff;
-            font-weight: bold;
-            .dialog-header__action-btn{
+            font-weight: $font_weight--bold;
+
+            .dialog-header__action-btn {
                 color: #fff;
             }
         }
     }
 }
 
-.dialog-header{
-    &__title{
-        font-size: $font_size--emphasis;
-        padding: $vertical_padding $horizontal_padding;
-        @media screen and (min-width: $tablet-width) {
-            font-size: $font_size--medium;
-            padding: $vertical_padding * 2 $horizontal_padding * 2;
-        }
-        &--center{
+.dialog-header {
+
+    &__title {
+        @include font_size($font_size--emphasis);
+
+        &--center {
             text-align: center;
         }
-        &--left{
+
+        &--left {
             text-align: left;
         }
-        &--right{
+
+        &--right {
             text-align: right;
         }
     }
-    &__action{
+
+    &__action {
         top: 0;
         bottom: 0;
         position: absolute;
@@ -176,46 +199,80 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        &--left{
+
+
+        &--left {
             left: 0;
-            margin-left: $horizontal_padding;
+            margin-left: $horizontal_padding * 2;
+
             @media screen and (min-width: $tablet-width) {
                 margin-left: $horizontal_padding * 2;
             }
-            .dialog-header__action-btn{
+
+            .dialog-header__action-btn {
                 padding-right: $horizontal_padding;
             }
         }
-        &--right{
+
+        &--right {
             right: 0;
-            margin-right: $horizontal_padding;
+            margin-right: $horizontal_padding * 2;
+
             @media screen and (min-width: $tablet-width) {
                 margin-left: $horizontal_padding * 2;
             }
-            .dialog-header__action-btn{
+
+            .dialog-header__action-btn {
                 padding-left: $horizontal_padding;
             }
         }
     }
 
+    &__action-btn {
+        @include font_size($font_size--normal);
+
+        border: none;
+        background-color: transparent;
+        color: $modal_header_action_color;
+        cursor: pointer;
+        padding: 0;
+
+        &:hover {
+            color: darken($font_color--primary, 5%);
+        }
+    }
+
 }
 
-.dialog-footer{
-    &__actions{
-        padding: $vertical_padding $horizontal_padding;
+.dialog-footer {
+
+    @media screen and (max-width: $mobile-width) {
+        flex-wrap: nowrap;
+    }
+
+    display: flex;
+    justify-content: space-between;
+
+    &--reverse {
+        flex-direction: row-reverse;
+    }
+
+    &--center {
+        justify-content: center;
+    }
+
+    &__actions {
+        white-space: nowrap;
+    }
+}
+
+.dialog-section {
+    &--padded {
+        padding: 1rem;
+
         @media screen and (min-width: $tablet-width) {
-            padding: $vertical_padding * 2 $horizontal_padding * 2;
+            padding: 2rem;
         }
-        &--center{
-            text-align: center;
-        }
-        &--left{
-            text-align: left;
-        }
-        &--right{
-            text-align: right;
-        }
-        @include clearfix;
     }
 }
 
@@ -225,7 +282,7 @@
  * Only assign when the modal is open.
  */
 
-.no-scroll{
+.no-scroll {
     overflow: hidden;
     height: 100%;
 }
