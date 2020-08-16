@@ -7,9 +7,8 @@
 
 .table {
     width: 100%;
-    border-collapse:collapse;
+    border-collapse: collapse;
     border-spacing: 0;
-    border: 1px solid $table-border-color;
 
     @for $i from 1 through $grid-columns {
         td.span-#{$i}, th.span-#{$i} {
@@ -18,70 +17,95 @@
     }
 
     &--clickable {
-        td {
-            &:hover {
-                cursor: pointer;
+        > thead, > tbody, > tfoot {
+            > tr > td {
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }
 
     &--stack-mobile {
         @media screen and (max-width: $mobile-width) {
-            thead {
+            > thead {
                 display: none;
             }
-
-            tr {
-                display: block;
-                margin-bottom: $vertical_padding;
-                margin-left: $horizontal_padding;
-                margin-right: $horizontal_padding;
-                border: 1px solid $table-row-border-color;
-                border-bottom: none;
-                border-radius: $border-radius;
-
-                th {
-                    display: none;
-                }
-
-                td {
+            > thead, > tbody, > tfoot {
+                > tr {
                     display: block;
-                    text-align: right;
+                    margin-bottom: $vertical_padding;
+                    margin-left: $horizontal_padding;
+                    margin-right: $horizontal_padding;
+                    border: 1px solid $table-row-border-color;
+                    border-bottom: none;
+                    border-radius: $border-radius;
 
-                    &:before {
+                    > th {
+                        display: none;
+                    }
+
+                    > td {
                         display: block;
-                        float: left;
-                        font-weight: $font_weight--bold;
-                        content: attr(data-header);
+                        text-align: right;
+
+                        &:before {
+                            display: block;
+                            float: left;
+                            font-weight: $font_weight--bold;
+                            content: attr(data-header);
+                        }
                     }
                 }
             }
         }
     }
 
-    tr {
-        background-color: #fff;
-
-        &:hover, &:active, &:focus {
-            background-color: darken(#fff, 2%);
-        }
-
-        @media screen and (min-width: $tablet-width) {
-            &:last-child td {
-                border-bottom: none;
+    &--striped {
+        > thead, > tbody, > tfoot {
+            > tr {
+                &:nth-child(odd) > td {
+                    background-color: $table-row-background-color-even;
+                }
             }
         }
+    }
 
-        th {
-            background-color: $table-header-background-color;
-            padding: $vertical_padding / 1.4 $horizontal_padding;
-            font-weight: 700;
-            text-align: left;
+    > thead, > tbody, > tfoot {
+        > tr {
+            background-color: #fff;
+
+            &:hover, &:active, &:focus {
+                > td{
+                    background-color: $table-row-background-color-hover;
+                }
+            }
+
+            > th {
+                background-color: $table-header-background-color;
+                padding: 0.5rem 1rem;
+                font-weight: 500;
+                text-align: left;
+                transition: background-color $animation-speed--fast ease ;
+            }
+
+            > td {
+                padding: 0.5rem 1rem;
+                border-bottom: 1px solid $table-row-border-color;
+                background-color: $table-cell-background-color;
+            }
         }
+    }
 
-        td {
-            padding: $vertical_padding / 1.4 $horizontal_padding;
-            border-bottom: 1px solid $table-row-border-color;
+    > thead {
+        > th {
+            padding: 1rem 1rem;
+        }
+    }
+
+    > tfoot {
+        > th {
+            padding: 1rem 1rem;
         }
     }
 }

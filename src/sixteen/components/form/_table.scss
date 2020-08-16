@@ -94,6 +94,12 @@ $form_table_legend_color: $grey--dark;
                             margin-bottom: 0px;
                         }
                     }
+
+                    &--radio {
+                        ul {
+                            padding-left: 1rem;
+                        }
+                    }
                 }
 
                 .form__help {

@@ -1,50 +1,38 @@
 {
-  "_args": [
-    [
-      "sixteen@^0.3.12",
-      "/var/www/cotidia/cotidia/www"
-    ]
-  ],
-  "_from": "sixteen@>=0.3.12 <0.4.0",
-  "_id": "sixteen@0.3.12",
-  "_inCache": true,
-  "_installable": true,
+  "_from": "sixteen@0.4.6",
+  "_id": "sixteen@0.4.6",
+  "_inBundle": false,
+  "_integrity": "sha512-eejaOd5Cu1tEfa3s8+p1ubzkft2yBOMlRMzqj1ug0JnHfWVqYao3o1AITrvja3VMGY+dFHTnzzzzFOAQufeqKg==",
   "_location": "/sixteen",
-  "_nodeVersion": "8.9.1",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/sixteen_0.3.12_1520965611818_0.3865669956179978"
-  },
-  "_npmUser": {
-    "email": "guillaume@cotidia.com",
-    "name": "guillaumepiot"
-  },
-  "_npmVersion": "5.5.1",
   "_phantomChildren": {},
   "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "sixteen@0.4.6",
     "name": "sixteen",
-    "raw": "sixteen@^0.3.12",
-    "rawSpec": "^0.3.12",
-    "scope": null,
-    "spec": ">=0.3.12 <0.4.0",
-    "type": "range"
+    "escapedName": "sixteen",
+    "rawSpec": "0.4.6",
+    "saveSpec": null,
+    "fetchSpec": "0.4.6"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/sixteen/-/sixteen-0.3.12.tgz",
-  "_shasum": "a637c249cbe103de8960d411f1a1f84df0ef03e1",
-  "_shrinkwrap": null,
-  "_spec": "sixteen@^0.3.12",
-  "_where": "/var/www/cotidia/cotidia/www",
+  "_resolved": "https://registry.npmjs.org/sixteen/-/sixteen-0.4.6.tgz",
+  "_shasum": "87f8bdd2edca1c8545be4be5380116af53cadfe9",
+  "_spec": "sixteen@0.4.6",
+  "_where": "/Users/guillaumepiot/Documents/Projects",
   "author": {
-    "email": "guillaume@cotidia.com",
-    "name": "Guillaume Piot"
+    "name": "Guillaume Piot",
+    "email": "guillaume@piot.co.uk"
   },
   "bugs": {
-    "url": "https://github.com/Cotidia/sixteen/issues"
+    "url": "https://github.com/guillaumepiot/sixteen/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {},
+  "deprecated": false,
   "description": "SASS foundation for web projects following the BEM method.",
   "devDependencies": {
     "grunt": "^1.0.1",
@@ -53,38 +41,21 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0"
   },
-  "directories": {},
-  "dist": {
-    "fileCount": 51,
-    "integrity": "sha512-HgozcoHpditEoUlbAfo0+fH0aLgfu3KgsiHiBS1B0/lbmnjR+UIjH8VEVazAIzeibCrpj7sQQO8KCzZXfCMjzw==",
-    "shasum": "a637c249cbe103de8960d411f1a1f84df0ef03e1",
-    "tarball": "https://registry.npmjs.org/sixteen/-/sixteen-0.3.12.tgz",
-    "unpackedSize": 299590
-  },
-  "gitHead": "4e332776e797ae38136f5c33d91e5d758d611e3f",
-  "homepage": "https://github.com/Cotidia/sixteen",
+  "homepage": "https://github.com/guillaumepiot/sixteen",
   "keywords": [
-    "bem",
-    "sass"
+    "sass",
+    "bem"
   ],
   "license": "ISC",
   "main": "index.js",
-  "maintainers": [
-    {
-      "name": "guillaumepiot",
-      "email": "guillaume@cotidia.com"
-    }
-  ],
   "name": "sixteen",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cotidia/sixteen.git"
+    "url": "git+https://github.com/guillaumepiot/sixteen.git"
   },
   "scripts": {
     "prepublish": "grunt frontend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.3.12"
+  "version": "0.4.6"
 }

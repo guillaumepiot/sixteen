@@ -51,7 +51,6 @@
                 &:hover {
                     border-color: $form_color_active;
                     border-width: 2px;
-                    // padding-bottom: 1px;
                 }
             }
         }
@@ -63,7 +62,7 @@
             }
 
             .form__control {
-                &--input, &--select {
+                &--input, &--select, &--textarea {
                     border-color: $form_color_error;
                     border-width: 2px;
                     padding-bottom: 0px;
@@ -125,13 +124,100 @@
                 }
             }
         }
+
+        &--boxed {
+            .form__control {
+                background-color: #fff;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                border: 1px solid $input_border_color;
+                border-radius: $border-radius;
+
+                box-sizing: padding-box;
+
+                &--input, &--select, &--textarea {
+
+                    input, select {
+                        padding-right: 1rem;
+                    }
+
+                    &::after {
+                        top: calc(1.25rem - 2px);
+                        right: 1rem;
+                    }
+                    &:hover {
+                        border-width: 1px;
+                        padding-bottom: 0.5rem;
+                    }
+
+                    &.control-select--focus {
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 0;
+                    }
+                }
+
+                .control-select__options {
+                    line-height: 1.5;
+                    width: calc(100% + 2px);
+                    left: -1px;
+                    // border-top: 1px solid $input_border_color;
+                    margin-top: -1px;
+                }
+
+
+                input[type="text"],
+                textarea {
+                    &::placeholder {
+                        color: lighten($form_color_help, 16%);
+                    }
+                }
+            }
+
+            &.form__group--error {
+                .form__control {
+                    border: 1px solid $form_color_error;
+                }
+            }
+
+            &.form__group--active {
+                .form__label {
+                    display: none;
+                }
+            }
+
+            &.form__group--inactive {
+                .form__label {
+                    display: block;
+                }
+            }
+
+            .form__label {
+                display: none;
+                position: absolute;
+                left: 1rem;
+                // top: calc(0.5rem + 1px);
+                transform: translateY(0);
+            }
+
+            .control-select__clear-button {
+                top: calc(0.5rem - 1px);
+                padding-top: 2px;
+                right: 1.55rem;
+            }
+        }
+
+        // Selected tag for multiple select
+        .tag {
+            margin-top: 0.5rem;
+        }
     }
 
     &__control {
         min-height: line_height($font_size--normal);
         padding-bottom: 1px;
         transition: border-color 0.3s ease;
-
 
         input[type="date"],
         input[type="email"],
@@ -145,7 +231,7 @@
         textarea,
         select {
             @include font_size($font_size--normal);
-
+            font-family: $font_family--primary;
             background-color: transparent;
             border: none;
             color: $form_color_input;
@@ -163,8 +249,14 @@
             @extend .btn--cancel;
         }
 
+        input[type="date"],
+        input[type="time"] {
+            width: auto;
+        }
+
         select {
             border-radius: 0;
+            padding-right: 1.5rem;
             -webkit-appearance: none;
             -moz-appearance: none;
         }
@@ -180,7 +272,7 @@
             display: flex;
 
             &:hover {
-                border-color: $form_color_hover;
+                border-color: $input_focus_color;
                 border-width: 2px;
                 padding-bottom: 0px;
             }
@@ -193,14 +285,10 @@
                 content: "";
                 position: absolute;
                 pointer-events: none;
-                right: 1rem;
-                top: 50%;
-                margin-top: -4px;
+                cursor: pointer;
+                right: 0.5rem;
+                top: calc(0.75rem - 2px);
                 @include triangle(down, 10px, 5px, $form_color_input);
-            }
-
-            &:hover::after {
-                margin-top: -3px;
             }
         }
 
@@ -217,7 +305,7 @@
                     pointer-events: none;
                     left: -1rem;
                     top: 50%;
-                    margin-top: -4px;
+                    margin-top: -1px;
                     @include triangle(down, 10px, 5px, $form_color_input);
                 }
             }
@@ -254,7 +342,7 @@
             }
         }
 
-        &--checkbox-multiple {
+        &--checkbox-multiple, &--radio {
             label {
                 color: $form_color_label;
                 display: inline;
@@ -306,13 +394,10 @@
 
 .input-addon {
     align-items: center;
-    // border-bottom:1px solid $input_border_color;
     background-color: transparent;
     color: $form_color_input;
     display: flex;
     transition: border-color 0.3s ease;
-    // margin-bottom: 1px;
-    padding-bottom: 2px;
     white-space: nowrap;
     position: relative;
 
@@ -324,12 +409,22 @@
     &--suffix {
         padding-left: $horizontal_padding / 2;
     }
+
+    > .fa {
+        position: relative;
+        top: -1px;
+    }
 }
 
 .control-select {
+
+    input[type="text"] {
+        padding-right: 2rem;
+    }
+
     &__options {
         background-color: #fff;
-        border:1px solid $input_border_color;
+        border: 1px solid $input_border_color;
         border-top: none;
         border-bottom-right-radius: $border-radius;
         border-bottom-left-radius: $border-radius;
@@ -346,6 +441,7 @@
     &__option {
         padding: $vertical_padding / 2 $horizontal_padding;
         text-align: left;
+        color: $form_color_input;
         cursor: pointer;
 
         &--focused, &:hover, &:focus {
@@ -358,6 +454,10 @@
             background-color: $form_color_active;
             color: #fff;
             cursor: pointer;
+        }
+
+        &--selected:hover, &--selected:focus, &--selected.control-select__option--focused {
+            background-color: darken($form_color_active, 5%);
         }
 
         &--highlighted {
@@ -393,23 +493,41 @@
         padding: $vertical_padding / 2 $horizontal_padding;
         text-align: left;
     }
+
+    &__clear-button {
+        border: none;
+        border-radius: 1em;
+        cursor: pointer;
+        font-size: 1em; // the browser/reset styles sometimes make button font extra small or big, this makes it the same as the form control itself
+        opacity: 0.6;
+        position: absolute; // so we can position it within the form control - this may be your issue with boxed, it may be relative to the group and not the control, so we may need pos:rel on the __control
+        top: 2px;
+        right: 1.25rem; // IIRC I did this to allow for the triangle with the "best" calculations (triangle is defined as 10px and then 0.5rem for the extra padding or something)
+        height: 1.25em;
+        width: 1.25em;
+        padding: 0 0 2px 0;
+        display: none;
+    }
+
+    &:hover {
+        .control-select__clear-button {
+            display: block;
+        }
+    }
 }
 
-[type=submit], button {
-    -webkit-appearance: none; // removes Safari's excessive styling on mobile phones
-    -webkit-border-radius: 0; // removes Safari's excessive styling on mobile phones
+@media screen and (max-width: $mobile-width) {
+    [type=submit], button {
+        -webkit-appearance: none; // removes iOS Safari's excessive styling on mobile phones
+    }
 }
+
 
 fieldset{
     border-radius: $border_radius;
     background-color: #fff;
     border: 1px solid $input_border_color;
     margin-bottom: 1rem;
-
-    &:only-child {
-        margin-bottom: 0;
-    }
-
 
     legend{
         @include font-size($font_size--emphasis);
@@ -431,6 +549,20 @@ fieldset{
         padding: 0 $horizontal_padding;
         .form__group {
             margin-bottom: 0.5rem;
+        }
+    }
+
+    .dialog & {
+        border: none;
+        margin-bottom: 0;
+        padding-top: 1rem;
+
+        .form__row {
+            padding: 0 1rem;
+
+            @media screen and (min-width: $tablet-width) {
+                padding: 0 2rem;
+            }
         }
     }
 }

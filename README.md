@@ -11,15 +11,10 @@ $ npm install sixteen
 On your project level, import the required Sixteen components:
 
 ```scss
-@import "bourbon";
-@import "neat";
-
 @import "sixteen/settings";
 
-@import "sixteen/components/util";
-
 @import "sixteen/components/reset";
-
+@import "sixteen/components/util";
 @import "sixteen/components/type";
 
 @import "sixteen/components/alert";
@@ -28,12 +23,17 @@ On your project level, import the required Sixteen components:
 @import "sixteen/components/button";
 @import "sixteen/components/datepicker";
 @import "sixteen/components/dialog";
-@import "sixteen/components/form";
+
+// Form
+@import "sixteen/components/form/base";
+@import "sixteen/components/form/table";
+
 @import "sixteen/components/grid";
 @import "sixteen/components/label";
 @import "sixteen/components/menu";
 @import "sixteen/components/table";
 @import "sixteen/components/tag";
+@import "sixteen/components/tab";
 @import "sixteen/components/tooltip";
 @import "sixteen/components/layout";
 ```

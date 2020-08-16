@@ -4,13 +4,15 @@
  * Label
  */
 
+$label-padding: 0.5em;
+
 @mixin label() {
     color: #fff;
     background-color: $grey--medium;
     display: inline-block;
     border-radius: $border-radius;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: $label-padding;
+    padding-right: $label-padding;
     white-space: nowrap;
 }
 

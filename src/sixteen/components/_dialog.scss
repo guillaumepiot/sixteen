@@ -53,15 +53,11 @@
                 height: 100%;
                 background-color: rgba(0,0,0,0.35);
                 z-index: -1;
+                pointer-events: none;
             }
         }
 
         .dialog__content {
-            border-radius: $border-radius;
-            position: relative;
-            border: $modal_content_border;
-            background-color: $modal_content_bg;
-
             @media screen and (max-width: $mobile-width) {
                 display: flex;
                 flex-direction: column;
@@ -76,16 +72,16 @@
         }
 
         .dialog__header {
-            background-color: $modal_header_bg;
-            border-bottom: $modal_header_border;
-            color: $modal_header_color;
+            background-color: $dialog_header_bg;
+            border-bottom: $dialog_header_border;
+            color: $dialog_header_color;
             border-top-left-radius: $border-radius;
             border-top-right-radius: $border-radius;
         }
 
         .dialog__footer {
-            background-color: $modal_footer_bg;
-            border-top: $modal_footer_border;
+            background-color: $dialog_footer_bg;
+            border-top: $dialog_footer_border;
             border-bottom-left-radius: $border-radius;
             border-bottom-right-radius: $border-radius;
         }
@@ -97,6 +93,7 @@
         border-radius: $border-radius;
         width: calc(100% - #{$horizontal_padding});
         max-width: 540px;
+        position: relative;
 
         // We use first and last child in case we are using dialog content
         // multiple times, in the example of using a pre header or post footer
@@ -233,7 +230,7 @@
 
         border: none;
         background-color: transparent;
-        color: $modal_header_action_color;
+        color: $dialog_header_action_color;
         cursor: pointer;
         padding: 0;
 

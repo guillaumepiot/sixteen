@@ -7,21 +7,32 @@
 .tag {
     @include label();
 
-    margin-right: 0.5em;
+    margin-right: $label-padding;
     padding-right: 0;
 
     &__clear {
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
         border-top-right-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
-        display: inline-block;
-        width: 1.5em;
-        background-color: rgba(0, 0, 0, 0.3);
         color: #fff;
+        display: inline-block;
+        margin-left: $label-padding;
+        min-width: 1.5em;
         text-align: center;
-        margin-left: 0.5em;
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
+    }
+
+    &__category {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-right: 1px solid rgba(0, 0, 0, 0.25);
+        display: inline-block;
+        margin-left: -$label-padding; // Pull to left of tag
+        margin-right: $label-padding;
+        padding-left: $label-padding;
+        padding-right: $label-padding;
     }
 }

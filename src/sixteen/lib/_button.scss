@@ -19,13 +19,15 @@
     display: inline-block;
     position: relative;
 
+    box-sizing: border-box;
+
     outline: none;
     vertical-align: middle;
     background-color: $background_color;
     border: $button_border_width solid $background_color;
     color: $text_color;
 
-    padding: 0.5rem $horizontal_padding;
+    padding: calc(0.5rem - #{$button_border_width - 1}) $horizontal_padding;
 
     font-family: $font_family;
     font-style: normal;

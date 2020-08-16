@@ -64,7 +64,7 @@ $loader_size: 24px !default;
  * Layout
  */
 
-$vertical_padding: 0.75rem !default;
+$vertical_padding: 1rem !default;
 $horizontal_padding: 1rem !default;
 $border-radius: 2px !default;
 
@@ -91,36 +91,15 @@ $dialog_footer_border: none !default;
 
 
 /**
- * Modal
- */
-
-$modal_content_border: none !default;
-$modal_header_bg: #fff !default;
-$modal_header_color: $grey--dark !default;
-$modal_header_border: none !default;
-$modal_header_action_color: $grey !default;
-$modal_content_bg: #fff !default;
-$modal_footer_bg: #fff !default;
-$modal_footer_border: none !default;
-
-
-/**
- * Form
- */
-
-$input_border_color: #dddddd !default;
-$input_focus_color: #666666 !default;
-$error_background: rgba(213, 0, 0, 0.8) !default;
-
-
-/**
  * Breakpoints
  */
 
 $desktop-width: 1280px !default;
 $laptop-width: 1024px !default;
 $tablet-width: 768px !default;
-$mobile-width: 767px !default;
+
+// No need to override this unless you want a gap in your breakpoints.
+$mobile-width: $tablet-width - 1px !default;
 
 
 /**
@@ -134,10 +113,11 @@ $grid-columns: 12 !default;
  * Table
  */
 
-$table-border-color: $grey--light !default;
-$table-header-background-color: $grey--light !default;
+$table-header-background-color: #eef0f5 !default;
+$table-cell-background-color: #ffffff !default;
 $table-row-border-color: $grey--light !default;
-
+$table-row-background-color-even: #f3f4f7 !default;
+$table-row-background-color-hover: #e6e8ec !default;
 
 /**
  * Menu
@@ -153,7 +133,9 @@ $menu_link_background_color_hover_mobile: $grey--light !default;
 $menu_link_background_color_active: $grey--light !default;
 $menu_link_background_color_active_mobile: $grey--light !default;
 $menu_subnav_min_width: 180px !default;
-$menu_mobile_breakpoint: 1023px !default;
+// You should specify this as one of the standard named breakpoints so that it
+// fits in (i.e. breaks with) with the rest of the design.
+$menu_mobile_breakpoint: $laptop-width !default;
 
 
 /**
@@ -168,6 +150,10 @@ $animation-speed--slow: 0.8s !default;
 /**
  * Form
  */
+
+$input_border_color: $grey--light !default;
+$input_focus_color: $grey--medium !default;
+$error_background: rgba(213, 0, 0, 0.8) !default;
 
 $form_color_active: $cyan !default;
 $form_color_hover: $grey !default;

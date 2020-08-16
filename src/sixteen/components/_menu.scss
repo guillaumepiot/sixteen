@@ -13,7 +13,7 @@
     &__container {
         padding: 0;
 
-        @media screen and (max-width: $menu_mobile_breakpoint) {
+        @media screen and (max-width: $menu_mobile_breakpoint - 1) {
             background-color: $menu_background_color_mobile;
             background-color: var(--menu_background_color_mobile, $menu_background_color_mobile);
             position: fixed;
@@ -22,7 +22,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            transition: left 0.3s ease;
+            transition: left $animation-speed ease-in;
             overflow-y: scroll;
 
             .menu__item {
@@ -35,7 +35,7 @@
         }
 
         &--mobile-right {
-            @media screen and (max-width: $menu_mobile_breakpoint) {
+            @media screen and (max-width: $menu_mobile_breakpoint - 1) {
                 left: 100%;
             }
         }
@@ -59,7 +59,7 @@
         &--open {
             display: inline-block;
 
-            @media screen and (min-width: $menu_mobile_breakpoint + 1) {
+            @media screen and (min-width: $menu_mobile_breakpoint) {
                 display: none;
             }
         }
@@ -69,7 +69,7 @@
         }
 
         &--close {
-            @media screen and (min-width: $menu_mobile_breakpoint + 1) {
+            @media screen and (min-width: $menu_mobile_breakpoint) {
                 display: none;
             }
         }
@@ -96,7 +96,7 @@
         background-color: var(--menu_background_color_mobile, $menu_background_color_mobile);
         z-index: 10;
 
-        @media screen and (min-width: $menu_mobile_breakpoint + 1) {
+        @media screen and (min-width: $menu_mobile_breakpoint) {
             background-color: $menu_background_color;
             background-color: var(--menu_background_color, $menu_background_color);
             min-width: $menu_subnav_min_width;
@@ -116,7 +116,7 @@
 
 .menu-item {
     &--right {
-        @media screen and (min-width: $menu_mobile_breakpoint + 1) {
+        @media screen and (min-width: $menu_mobile_breakpoint) {
             float: right;
 
             .menu__sub-nav {
@@ -129,7 +129,7 @@
         background-color: $menu_link_background_color_active;
         background-color: var(--menu_link_background_color_active, $menu_link_background_color_active);
 
-        @media screen and (max-width: $menu_mobile_breakpoint) {
+        @media screen and (max-width: $menu_mobile_breakpoint - 1) {
             background-color: $menu_link_background_color_active_mobile;
             background-color: var(--menu_link_background_color_active_mobile, $menu_link_background_color_active_mobile);
         }
@@ -137,13 +137,14 @@
 
     &__link {
         position: relative;
-        color: $menu_link_color;
         background-color: $menu_link_background_color;
         background-color: var(--menu_link_background_color, $menu_link_background_color);
-        padding: $vertical_padding $horizontal_padding;
+        color: $menu_link_color;
+        color: var(--menu_link_color, $menu_link_color);
         display: block;
+        padding: $vertical_padding $horizontal_padding;
 
-        @media screen and (max-width: $menu_mobile_breakpoint) {
+        @media screen and (max-width: $menu_mobile_breakpoint - 1) {
             background-color: $menu_link_background_color_mobile;
             background-color: var(--menu_link_background_color_mobile, $menu_link_background_color_mobile);
         }
@@ -152,7 +153,7 @@
             background-color: $menu_link_background_color_hover;
             background-color: var(--menu_link_background_color_hover, $menu_link_background_color_hover);
 
-            @media screen and (max-width: $menu_mobile_breakpoint) {
+            @media screen and (max-width: $menu_mobile_breakpoint - 1) {
                 background-color: $menu_link_background_color_hover_mobile;
                 background-color: var(--menu_link_background_color_hover_mobile, $menu_link_background_color_hover_mobile);
             }
@@ -166,6 +167,7 @@
         &--drop-arrow {
             &:after {
                 @include triangle(down, 8px, 4px, $menu_link_color);
+                @include triangle(down, 8px, 4px, var(--menu_link_color, $menu_link_color));
 
                 content: "";
                 display: inline-block;
